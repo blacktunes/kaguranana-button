@@ -8,6 +8,12 @@ import Locales from '../public/translate/locales'
 
 import './assets/style/transition.styl'
 
+/* eslint-disable */
+// import vConsole from 'vconsole'
+// const VConsole = new vConsole()
+// console.log(navigator.userAgent)
+/** eslint-enable */
+
 const CN = { ...Locales['zh-CN'], voice: {}, voicecategory: {} }
 const JP = { ...Locales['ja-JP'], voice: {}, voicecategory: {} }
 

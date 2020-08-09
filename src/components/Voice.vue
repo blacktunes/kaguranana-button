@@ -7,17 +7,17 @@
         </template>
         <div class="content">
           <div v-for="voice in item.voiceList" :key="voice.name">
-            <v-btn v-if="_needToShow(voice.description)" :text="$t('voice.' + voice.name)" :playing="overlapShowList.includes(voice.name)" :duration="setting && setting.nowPlay && setting.nowPlay.name === voice.name ? duration : 0" @click="play(voice, item.categoryName)" />
+            <v-btn v-if="_needToShow(voice.description)" :text="$t('voice.' + voice.name)" :playing="overlapShowList.includes(voice.name)" :progress="setting && setting.nowPlay && setting.nowPlay.name === voice.name ? progress : 0" @click="play(voice, item.categoryName)" />
           </div>
         </div>
       </card>
     </div>
-    <audio ref="player" @ended="voiceEnd" @canplaythrough="canplaythrough" @error="error"></audio>
+    <audio ref="player" @ended="voiceEnd" @canplay="canplay" @timeupdate="timeupdate" @error="error"></audio>
   </div>
 </template>
 
 <script>
-import { reactive, inject, ref, getCurrentInstance } from 'vue'
+import { reactive, inject, ref, getCurrentInstance, computed } from 'vue'
 import VoiceList from '../../public/translate/voices.json'
 import Card from './common/Card'
 import VBtn from './common/VoiveBtn'
@@ -52,19 +52,21 @@ export default {
       if (!setting.overlap) {
         player.value.pause()
         if (setting.nowPlay && setting.nowPlay.name === data.name) {
-          duration.value = 0
+          player.value.currentTime = 0
+          player.value.pause()
           timer = setTimeout(() => {
-            player.value.currentTime = 0
-          }, 300)
+            player.value.play()
+          }, 350)
         } else {
           reset()
           player.value.src = `voices/${category}/${data.path}`
           setting.nowPlay = data
+          player.value.play()
         }
       } else {
         const key = new Date().getTime()
         overlapShowList.push(data.name)
-        overlapPlayList[key] = new Audio('voices/' + data.path)
+        overlapPlayList[key] = new Audio(`voices/${category}/${data.path}`)
         overlapPlayList[key].addEventListener('ended', () => {
           delete overlapPlayList[key]
           if (overlapShowList.includes(data.name)) {
@@ -80,11 +82,24 @@ export default {
     }
 
     const duration = ref(0)
+    const currentTime = ref(0)
 
-    const canplaythrough = (e) => {
+    const progress = computed(() => {
+      const num = Number((currentTime.value / duration.value * 100).toFixed(0))
+      if (num !== Infinity && !isNaN(num)) {
+        return num
+      } else {
+        return 0
+      }
+    })
+
+    const canplay = (e) => {
       duration.value = e.target.duration
       setting.loading = false
-      player.value.play()
+    }
+
+    const timeupdate = (e) => {
+      currentTime.value = e.target.currentTime
     }
 
     const error = () => {
@@ -141,9 +156,10 @@ export default {
       overlapShowList,
       voices,
       play,
-      canplaythrough,
+      progress,
+      canplay,
+      timeupdate,
       error,
-      duration,
       voiceEnd,
       _needToShow
     }

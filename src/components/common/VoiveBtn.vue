@@ -36,8 +36,8 @@ export default {
           btnBg.value.style.width = '0'
         }, 200)
       } else {
-        timer = null
         clearTimeout(timer)
+        timer = null
         btnBg.value.style.transition = 'width 0.25s linear'
         btnBg.value.style.width = props.progress + 5 + '%'
       }

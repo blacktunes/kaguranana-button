@@ -6,7 +6,7 @@
     </div>
     <div class="text-right">
       <div class="git">
-        <i-btn class="btn" :url="githubUrl" :img="require('../assets/image/github-fill.svg')" />
+        <i-btn class="btn" :url="githubUrl" :img="require('../assets/image/github-fill.png')" />
         <a :href="githubUrl" target="_blank">
           {{$t("info.toGithub")}}
         </a>

@@ -56,6 +56,7 @@ export default {
 .btn
   position relative
   overflow hidden
+  min-height 34px
   box-sizing border-box
   border-radius 18px
   color $btn-text-color
@@ -65,10 +66,11 @@ export default {
   cursor pointer
   transition box-shadow 0.25s
   .bg
-    position relative
+    position absolute
     top 0
     left 0
     width 0
+    min-height 34px
     height 100%
     background $sub-color
   span
@@ -97,6 +99,15 @@ export default {
 .shake
   animation shake 3s linear infinite
 
+@media only screen and (max-width: 600px)
+  .btn:hover
+    background $main-color
+    box-shadow none
+    span
+      animation none
+  .btn:active
+    background $active-color
+
 @keyframes playing
   0%
     width 0
@@ -105,17 +116,17 @@ export default {
 
 @keyframes shake
   0%
-    line-height 34px
+    transform translateY(0px)
   20%
-    line-height 34px
+    transform translateY(0px)
   25%
-    line-height 30px
+    transform translateY(-4px)
   30%
-    line-height 34px
+    transform translateY(0px)
   35%
-    line-height 30px
+    transform translateY(-4px)
   40%
-    line-height 34px
+    transform translateY(0px)
   100%
-    line-height 34px
+    transform translateY(0px)
 </style>

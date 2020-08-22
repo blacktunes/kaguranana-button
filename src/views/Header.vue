@@ -25,15 +25,15 @@ export default {
     const btnList = [
       {
         url: 'https://www.youtube.com/channel/UCbfv8uuUXt3RSJGEwxny5Rw',
-        img: require('../assets/image/youtube-fill.svg')
+        img: require('../assets/image/youtube-fill.png')
       },
       {
         url: 'https://twitter.com/nana_kaguraaa',
-        img: require('../assets/image/twitter-fill.svg')
+        img: require('../assets/image/twitter-fill.png')
       },
       {
         url: 'https://live.bilibili.com/21304638',
-        img: require('../assets/image/bilibili-fill.svg')
+        img: require('../assets/image/bilibili-fill.png')
       }
     ]
 

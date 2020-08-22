@@ -57,9 +57,7 @@ export default {
   position relative
   overflow hidden
   box-sizing border-box
-  height 34px
   border-radius 18px
-  margin 5px
   color $btn-text-color
   background $main-color
   box-shadow 0px 1px 5px 0px $main-color
@@ -80,6 +78,7 @@ export default {
     left 0
     line-height 34px
     padding 0 15px
+    word-break break-all
   &:hover
     background $hover-color
     box-shadow 0px 2px 10px 0px $main-color

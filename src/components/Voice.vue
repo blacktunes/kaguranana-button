@@ -7,7 +7,10 @@
         </template>
         <div class="content">
           <div v-for="voice in item.voiceList" :key="voice.name">
-            <v-btn v-if="_needToShow(voice.description)" :text="$t('voice.' + voice.name)" :playing="overlapShowList.includes(voice.name)" :progress="setting && setting.nowPlay && setting.nowPlay.name === voice.name ? progress : 0" @click="play(voice, item.categoryName)" />
+            <div v-if="_needToShow(voice.description)" class="btn-wrapper">
+              <v-btn :text="$t('voice.' + voice.name)" :playing="overlapShowList.includes(voice.name)" :progress="setting && setting.nowPlay && setting.nowPlay.name === voice.name ? progress : 0" @click="play(voice, item.categoryName)" />
+              <img class="pic" v-if="_needUsePicture(voice.usePicture)" :src="usePicture(item.categoryName, voice.usePicture)">
+            </div>
           </div>
         </div>
       </card>
@@ -180,6 +183,20 @@ export default {
       player.value.pause()
     })
 
+    const usePicture = (categoryName, name) => {
+      const locale = ctx.$i18n.locale
+      return `/voices/${categoryName}/${name[locale]}`
+    }
+
+    const _needUsePicture = (usePicture) => {
+      if (usePicture) {
+        const locale = ctx.$i18n.locale
+        return usePicture[locale] !== undefined
+      } else {
+        return false
+      }
+    }
+
     const _getrRandomInt = (max) => {
       return Math.floor(Math.random() * Math.floor(max))
     }
@@ -199,6 +216,8 @@ export default {
       canplay,
       error,
       voiceEnd,
+      usePicture,
+      _needUsePicture,
       _needToShow
     }
   }
@@ -206,10 +225,33 @@ export default {
 
 </script>
 <style lang="stylus" scoped>
+@import '~@/assets/style/base.styl'
+
 .category
   font-size 24px
   padding 14px 10px
 .content
   display flex
   flex-wrap wrap
+  .btn-wrapper
+    position relative
+    margin 5px
+    .pic
+      position absolute
+      bottom calc(100% + 10px)
+      left 50%
+      width 120%
+      opacity 0
+      transform translateX(-50%)
+      transition opacity 0.5s
+      pointer-events none
+    &:hover
+      .pic
+        opacity 1
+        box-shadow 0px 5px 10px 0px $main-color
+
+@media only screen and (max-width: 600px)
+  .btn-wrapper:hover
+    .pic
+      display none
 </style>

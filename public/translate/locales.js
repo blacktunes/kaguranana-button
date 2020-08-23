@@ -3,7 +3,7 @@ const local = {
     info: {
       title: '妈按钮',
       toGithub: '请在Github参与翻译、增补音频或提出建议',
-      notOfficial: '本站为爱好者作品，和hololive官方没有关联'
+      notOfficial: '本站为爱好者作品，和官方没有关联'
     },
     action: {
       randomplay: '帮我选一个',

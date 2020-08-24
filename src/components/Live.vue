@@ -1,3 +1,8 @@
+/**
+ * 该组件使用HoloAPI获取直播信息
+ * 非Hololive vtuber请按需修改
+ */
+
 <template>
   <div class="live-wrapper">
     <card>

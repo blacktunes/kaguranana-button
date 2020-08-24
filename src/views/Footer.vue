@@ -1,8 +1,15 @@
 <template>
   <div class="footer">
-    <div class="author">
-      <div>©2020</div>
-      <a href="https://github.com/blacktunes" target="_blank">Blacktunes</a>
+    <div>
+      <div class="author">
+        <div>©2020</div>
+        <a href="https://github.com/blacktunes" target="_blank">Blacktunes</a>
+        <a> & 辣辣七奈军</a>
+      </div>
+      <div class="info">
+        <div>对于按钮有什么建议欢迎加入按钮反馈群:<a href="https://jq.qq.com/?_wv=1027&k=HIjrzGAJ">589314972</a></div>
+        <div>适合语音按钮的表情包募集中！</div>
+      </div>
     </div>
     <div class="text-right">
       <div class="git">
@@ -48,6 +55,9 @@ a
   .author
     display flex
     align-items center
+  .info
+    margin-top 5px
+    line-height 18px
   .text-right
     text-align right
     .git

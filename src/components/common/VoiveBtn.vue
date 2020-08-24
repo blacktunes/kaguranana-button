@@ -32,9 +32,9 @@ export default {
     }, () => {
       if (props.progress === 0) {
         timer = setTimeout(() => {
-          btnBg.value.style.transition = 'width 0.3s linear'
+          btnBg.value.style.transition = 'width 0.2s linear'
           btnBg.value.style.width = '0'
-        }, 200)
+        }, 100)
       } else {
         clearTimeout(timer)
         timer = null
@@ -90,11 +90,9 @@ export default {
     background $active-color
 
 .playing
-  background $sub-color
+  background $sub-color !important
   span
-    animation shake 3s linear infinite
-  &:hover
-    background $sub-color
+    animation shake 3s linear infinite !important
 
 .shake
   animation shake 3s linear infinite

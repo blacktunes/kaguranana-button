@@ -68,9 +68,6 @@ export default {
 
     const play = (data, category) => {
       if (!setting.overlap) {
-        if (isQuark) {
-          overlapShowList.push(data.name)
-        }
         player.value.pause()
         resetInterval()
         if (setting.nowPlay && setting.nowPlay.name === data.name) {
@@ -82,6 +79,9 @@ export default {
         } else {
           if (setting.nowPlay) {
             reset()
+          }
+          if (isQuark) {
+            overlapShowList.push(data.name)
           }
           player.value.src = `voices/${category}/${data.path}`
           setting.nowPlay = data
@@ -230,6 +230,7 @@ export default {
 .category
   font-size 24px
   padding 14px 10px
+  user-select none
 .content
   display flex
   flex-wrap wrap
@@ -241,17 +242,28 @@ export default {
       bottom calc(100% + 10px)
       left 50%
       width 120%
+      max-width 200px
       opacity 0
       transform translateX(-50%)
-      transition opacity 0.5s
       pointer-events none
+
+@media only screen and (min-width: 600px)
+  .btn-wrapper
+    .pic
+      transition opacity 0.5s
     &:hover
       .pic
         opacity 1
         box-shadow 0px 5px 10px 0px $main-color
-
 @media only screen and (max-width: 600px)
-  .btn-wrapper:hover
+  .btn-wrapper
     .pic
-      display none
+      transition opacity 0.5s
+      transition-delay 1.5s
+    &:active
+      .pic
+        opacity 1
+        transition opacity 0s
+        transition-delay 0s
+
 </style>

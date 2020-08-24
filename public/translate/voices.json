@@ -658,7 +658,6 @@
                     "name": "チラ1",
                     "path": "チラ1.mp3",
                     "description": {
-                        "zh-CN": "喵1",
                         "ja-JP": "チラ1"
                     }
                 },
@@ -666,7 +665,6 @@
                     "name": "チラ2",
                     "path": "チラ2.mp3",
                     "description": {
-                        "zh-CN": "喵2",
                         "ja-JP": "チラ2"
                     }
                 },
@@ -1015,10 +1013,10 @@
                     }
                 },
                 {
-                    "name": "笑_(2)",
-                    "path": "笑_(2).mp3",
+                    "name": "笑(2)",
+                    "path": "笑(2).mp3",
                     "description": {
-                        "zh-CN": "笑(2)"
+                        "zh-CN": "笑"
                     }
                 }
             ]

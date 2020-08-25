@@ -1,4 +1,4 @@
-# 妈按钮 / ANANA BUTTON
+# 妈按钮 / NANA BUTTON
 
 项目地址: https://kaguranana.moe/
 
@@ -11,7 +11,7 @@
 
 ## 参与完善本项目
 
-您可以发在 [Issues](https://github.com/blacktunes/nanakagura-button/issues) ，同样也请带上标题和内容。
+您可以发在 [Issues](https://github.com/blacktunes/kaguranana-button/issues) ，同样也请带上标题和内容。
 
 如果您可以进行开发，那么请Fork本项目进行修改，完成修改后在本项目中发起一个Pull Request，详细说明如下：
 

@@ -32,7 +32,7 @@ export default {
   },
   data () {
     return {
-      githubUrl: 'https://github.com/blacktunes/nanakagura-button'
+      githubUrl: 'https://github.com/blacktunes/kaguranana-button'
     }
   }
 }

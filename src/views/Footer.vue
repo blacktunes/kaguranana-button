@@ -39,11 +39,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-a
-  margin-left 5px
-  color #888
-  text-decoration none
-
 .footer
   display flex
   justify-content space-between

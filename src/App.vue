@@ -31,6 +31,8 @@ export default {
     })
 
     provide('setting', setting)
+
+    console.log('%c❤神楽七奈%c ', 'font-size: 20px;color: pink', 'padding-right:100%;padding-top:84%;background:url(\'https://img.moegirl.org.cn/common/e/e1/%E7%8B%97%E5%A6%88%E8%80%B3%E6%9C%B5.png\') no-repeat;background-size:100% 100%')
   }
 }
 </script>
@@ -41,6 +43,11 @@ export default {
 body
   margin 0
   -webkit-tap-highlight-color rgba(0, 0, 0, 0)
+
+a
+  margin-left 5px
+  color #888
+  text-decoration none
 
 ::-webkit-scrollbar
   width 7px

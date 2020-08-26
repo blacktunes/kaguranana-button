@@ -87,7 +87,7 @@ export default {
     flex-shrink 0
     color #eee
     font-size 20px
-    margin-right 20px
+    margin-right 10px
     user-select none
   .btn
     flex-shrink 0

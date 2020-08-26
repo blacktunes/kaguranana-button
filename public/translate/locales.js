@@ -23,6 +23,8 @@ const local = {
       noLive: '还没有发现正在或计划中的直播哦~',
       error: '直播计划获取异常X'
     },
+    vtbbtn: 'VTuber按钮集合',
+    voiceTotalTip: '当前语音量',
     lang: '日本語に切り替え'
   },
   'ja-JP': {
@@ -49,6 +51,8 @@ const local = {
       noLive: 'ライブ放送が見つからなかったか、計画されていません',
       error: '生放送プランが異常X'
     },
+    vtbbtn: 'VTuberの音声ボタンコレクション',
+    voiceTotalTip: '現在の音声数',
     lang: '切换至简体中文'
   }
 }

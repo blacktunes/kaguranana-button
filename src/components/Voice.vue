@@ -3,7 +3,7 @@
     <div v-for="item in voices" :key="item.categoryName">
       <card v-if="_needToShow(item.translate)">
         <template v-slot:header>
-          <div class="category">{{ $t("voicecategory." + item.name) }}</div>
+          <div class="category">{{ $t('voicecategory.' + item.name) }}</div>
         </template>
         <div class="content">
           <div v-for="voice in item.voiceList" :key="voice.name">
@@ -15,6 +15,12 @@
         </div>
       </card>
     </div>
+    <card>
+      <div style="text-align: center">{{ $t('voiceTotalTip') }}: {{ $t('voiceTotal') }}</div>
+    </card>
+    <card style="display: flex;justify-content: center">
+      <a href="https://vtbbtn.org/" target="_blank">{{ $t('vtbbtn') }}</a>
+    </card>
     <audio ref="player" @ended="voiceEnd" @canplay="canplay" @error="error"></audio>
   </div>
 </template>

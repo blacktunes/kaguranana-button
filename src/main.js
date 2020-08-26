@@ -11,23 +11,24 @@ import './assets/style/transition.styl'
 const CN = { ...Locales['zh-CN'], voice: {}, voicecategory: {} }
 const JP = { ...Locales['ja-JP'], voice: {}, voicecategory: {} }
 
-for (const voiceCategoryList of VoiceList.voices) {
-  if (voiceCategoryList.categoryDescription !== undefined) {
-    if (voiceCategoryList.categoryDescription['zh-CN'] !== undefined) {
-      CN.voicecategory[voiceCategoryList.categoryName] = voiceCategoryList.categoryDescription['zh-CN']
+for (const category of VoiceList.category) {
+  if (category.translate !== undefined) {
+    if (category.translate['zh-CN'] !== undefined) {
+      CN.voicecategory[category.name] = category.translate['zh-CN']
     }
-    if (voiceCategoryList.categoryDescription['ja-JP'] !== undefined) {
-      JP.voicecategory[voiceCategoryList.categoryName] = voiceCategoryList.categoryDescription['ja-JP']
+    if (category.translate['ja-JP'] !== undefined) {
+      JP.voicecategory[category.name] = category.translate['ja-JP']
     }
   }
-  for (const voiceItem of voiceCategoryList.voiceList) {
-    if (voiceItem.description !== undefined) {
-      if (voiceItem.description['zh-CN'] !== undefined) {
-        CN.voice[voiceItem.name] = voiceItem.description['zh-CN']
-      }
-      if (voiceItem.description['ja-JP'] !== undefined) {
-        JP.voice[voiceItem.name] = voiceItem.description['ja-JP']
-      }
+}
+
+for (const voice of VoiceList.voices) {
+  if (voice.translate !== undefined) {
+    if (voice.translate['zh-CN'] !== undefined) {
+      CN.voice[voice.name] = voice.translate['zh-CN']
+    }
+    if (voice.translate['ja-JP'] !== undefined) {
+      JP.voice[voice.name] = voice.translate['ja-JP']
     }
   }
 }

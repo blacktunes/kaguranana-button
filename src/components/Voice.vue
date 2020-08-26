@@ -1,15 +1,15 @@
 <template>
   <div>
     <div v-for="item in voices" :key="item.categoryName">
-      <card v-if="_needToShow(item.categoryDescription)">
+      <card v-if="_needToShow(item.translate)">
         <template v-slot:header>
-          <div class="category">{{ $t("voicecategory." + item.categoryName) }}</div>
+          <div class="category">{{ $t("voicecategory." + item.name) }}</div>
         </template>
         <div class="content">
           <div v-for="voice in item.voiceList" :key="voice.name">
-            <div v-if="_needToShow(voice.description)" class="btn-wrapper">
-              <v-btn :text="$t('voice.' + voice.name)" :playing="overlapShowList.includes(voice.name)" :progress="setting && setting.nowPlay && setting.nowPlay.name === voice.name ? progress : 0" @click="play(voice, item.categoryName)" />
-              <img class="pic" v-if="_needUsePicture(voice.usePicture)" :src="usePicture(item.categoryName, voice.usePicture)">
+            <div v-if="_needToShow(voice.translate)" class="btn-wrapper">
+              <v-btn :text="$t('voice.' + voice.name)" :playing="overlapShowList.includes(voice.name)" :progress="setting && setting.nowPlay && setting.nowPlay.name === voice.name ? progress : 0" @click="play(voice, item.name)" />
+              <img class="pic" v-if="_needUsePicture(voice.usePicture)" :src="usePicture(item.name, voice.usePicture)">
             </div>
           </div>
         </div>
@@ -37,7 +37,17 @@ export default {
 
     const setting = inject('setting')
 
-    const voices = VoiceList.voices
+    const voices = []
+    VoiceList.category.forEach(category => {
+      const temp = { ...category, voiceList: [] }
+      VoiceList.voices.forEach(voice => {
+        if (voice.category === category.name) {
+          temp.voiceList.push(voice)
+        }
+      })
+      voices.push(temp)
+    })
+
     const overlapPlayList = {}
     const overlapShowList = reactive([])
 

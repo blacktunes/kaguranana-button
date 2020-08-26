@@ -1,1733 +1,1891 @@
 {
-    "voices": [
-        {
-            "categoryName": "中文狗妈",
-            "categoryDescription": {
-                "zh-CN": "中文狗妈"
-            },
-            "voiceList": [
-                {
-                    "name": "AWSL",
-                    "path": "AWSL.mp3",
-                    "description": {
-                        "zh-CN": "AWSL"
-                    }
-                },
-                {
-                    "name": "我很可爱1",
-                    "path": "我很可爱1.mp3",
-                    "description": {
-                        "zh-CN": "我很可爱1"
-                    }
-                },
-                {
-                    "name": "我很可爱2",
-                    "path": "我很可爱2.mp3",
-                    "description": {
-                        "zh-CN": "我很可爱2"
-                    }
-                },
-                {
-                    "name": "我很可爱3",
-                    "path": "我很可爱3.mp3",
-                    "description": {
-                        "zh-CN": "我很可爱3"
-                    }
-                },
-                {
-                    "name": "我爱你1",
-                    "path": "我爱你1.mp3",
-                    "description": {
-                        "zh-CN": "我爱你1"
-                    }
-                },
-                {
-                    "name": "我爱你2",
-                    "path": "我爱你2.mp3",
-                    "description": {
-                        "zh-CN": "我爱你2"
-                    }
-                },
-                {
-                    "name": "我爱你3",
-                    "path": "我爱你3.mp3",
-                    "description": {
-                        "zh-CN": "我爱你3"
-                    }
-                },
-                {
-                    "name": "我爱你4",
-                    "path": "我爱你4.mp3",
-                    "description": {
-                        "zh-CN": "我爱你4"
-                    }
-                },
-                {
-                    "name": "我爱你5",
-                    "path": "我爱你5.mp3",
-                    "description": {
-                        "zh-CN": "我爱你5"
-                    }
-                },
-                {
-                    "name": "我爱你6",
-                    "path": "我爱你6.mp3",
-                    "description": {
-                        "zh-CN": "我爱你6"
-                    }
-                },
-                {
-                    "name": "我爱你7",
-                    "path": "我爱你7.mp3",
-                    "description": {
-                        "zh-CN": "我爱你7"
-                    }
-                },
-                {
-                    "name": "我爱你8",
-                    "path": "我爱你8.mp3",
-                    "description": {
-                        "zh-CN": "我爱你8"
-                    }
-                },
-                {
-                    "name": "窝,窝恨可爱,窝恨可爱,嗯,窝恨可爱！",
-                    "path": "窝,窝恨可爱,窝恨可爱,嗯,窝恨可爱！.mp3",
-                    "description": {
-                        "zh-CN": "窝,窝恨可爱,窝恨可爱,嗯,窝恨可爱!"
-                    }
-                },
-                {
-                    "name": "震撼狗妈",
-                    "path": "震撼狗妈.mp3",
-                    "description": {
-                        "zh-CN": "震撼狗妈"
-                    }
-                }
-            ]
-        },
-        {
-            "categoryName": "ななちゃん罵倒して",
-            "categoryDescription": {
-                "zh-CN": "狗妈再骂我一次",
-                "ja-JP": "ななちゃん罵倒して"
-            },
-            "voiceList": [
-                {
-                    "name": "DDキモ",
-                    "path": "DDキモ.mp3",
-                    "description": {
-                        "zh-CN": "DD就要斩首",
-                        "ja-JP": "DDキモ"
-                    }
-                },
-                {
-                    "name": "DD打ち首",
-                    "path": "DD打ち首.mp3",
-                    "description": {
-                        "zh-CN": "打爆你狗头哦",
-                        "ja-JP": "DD打ち首"
-                    }
-                },
-                {
-                    "name": "DD斬首１",
-                    "path": "DD斬首１.mp3",
-                    "description": {
-                        "zh-CN": "DD斩首1",
-                        "ja-JP": "DD斬首１"
-                    }
-                },
-                {
-                    "name": "DD斬首２",
-                    "path": "DD斬首２.mp3",
-                    "description": {
-                        "zh-CN": "DD斩首2",
-                        "ja-JP": "DD斬首２"
-                    }
-                },
-                {
-                    "name": "DD斬首３",
-                    "path": "DD斬首３.mp3",
-                    "description": {
-                        "zh-CN": "DD斩首3",
-                        "ja-JP": "DD斬首３"
-                    }
-                },
-                {
-                    "name": "DD斬首４",
-                    "path": "DD斬首４.mp3",
-                    "description": {
-                        "zh-CN": "DD斩首4",
-                        "ja-JP": "DD斬首4"
-                    }
-                },
-                {
-                    "name": "DD真恶心",
-                    "path": "DD真恶心.mp3",
-                    "description": {
-                        "zh-CN": "DD真恶心"
-                    }
-                },
-                {
-                    "name": "kimo_kimo_kimo",
-                    "path": "kimo_kimo_kimo.mp3",
-                    "description": {
-                        "zh-CN": "kimo kimo kimo",
-                        "ja-JP": "kimo kimo kimo"
-                    }
-                },
-                {
-                    "name": "うるさい",
-                    "path": "うるさい.mp3",
-                    "description": {
-                        "zh-CN": "吵死了",
-                        "ja-JP": "うるさい"
-                    }
-                },
-                {
-                    "name": "この変態バカ犬もう知らない",
-                    "path": "この変態バカ犬もう知らない.mp3",
-                    "description": {
-                        "zh-CN": "你这个变态笨蛋不管你了哼",
-                        "ja-JP": "この変態バカ犬もう知らない"
-                    }
-                },
-                {
-                    "name": "この変態１",
-                    "path": "この変態１.mp3",
-                    "description": {
-                        "zh-CN": "你这个变态1",
-                        "ja-JP": "この変態１"
-                    }
-                },
-                {
-                    "name": "この変態２",
-                    "path": "この変態２.mp3",
-                    "description": {
-                        "zh-CN": "你这个变态2",
-                        "ja-JP": "この変態２"
-                    }
-                },
-                {
-                    "name": "なんだっと？",
-                    "path": "なんだっと？.mp3",
-                    "description": {
-                        "zh-CN": "你说什么？",
-                        "ja-JP": "なんだっと？"
-                    }
-                },
-                {
-                    "name": "もう知らない",
-                    "path": "もう知らない.mp3",
-                    "description": {
-                        "zh-CN": "不管你了",
-                        "ja-JP": "もう知らない"
-                    }
-                },
-                {
-                    "name": "バカ",
-                    "path": "バカ.mp3",
-                    "description": {
-                        "zh-CN": "你这个笨蛋",
-                        "ja-JP": "バカ"
-                    }
-                },
-                {
-                    "name": "バカ犬",
-                    "path": "バカ犬.mp3",
-                    "description": {
-                        "zh-CN": "你这傻狗",
-                        "ja-JP": "バカ犬"
-                    }
-                },
-                {
-                    "name": "バカ犬１",
-                    "path": "バカ犬１.mp3",
-                    "description": {
-                        "zh-CN": "你这傻狗1",
-                        "ja-JP": "バカ犬１"
-                    }
-                },
-                {
-                    "name": "バカ犬２",
-                    "path": "バカ犬２.mp3",
-                    "description": {
-                        "zh-CN": "你这傻狗2",
-                        "ja-JP": "バカ犬２"
-                    }
-                },
-                {
-                    "name": "変態",
-                    "path": "変態.mp3",
-                    "description": {
-                        "zh-CN": "变态",
-                        "ja-JP": "変態"
-                    }
-                },
-                {
-                    "name": "変態変態…",
-                    "path": "変態変態….mp3",
-                    "description": {
-                        "zh-CN": "哇变态变态变态",
-                        "ja-JP": "変態変態…"
-                    }
-                },
-                {
-                    "name": "打ち首",
-                    "path": "打ち首.mp3",
-                    "description": {
-                        "zh-CN": "打爆你的头哦",
-                        "ja-JP": "打ち首"
-                    }
-                },
-                {
-                    "name": "早漏とも",
-                    "path": "早漏とも.mp3",
-                    "description": {
-                        "ja-JP": "早漏とも"
-                    }
-                },
-                {
-                    "name": "你这是早漏啊1",
-                    "path": "你这是早漏啊1.mp3",
-                    "description": {
-                        "zh-CN": "你这是早漏啊1"
-                    },
-                    "usePicture": {
-                        "zh-CN": "你这是早漏啊1.jpg"
-                    }
-                },
-                {
-                    "name": "你这是早漏啊2",
-                    "path": "你这是早漏啊2.mp3",
-                    "description": {
-                        "zh-CN": "你这是早漏啊2"
-                    }
-                },
-                {
-                    "name": "你这是早漏啊3",
-                    "path": "你这是早漏啊3.mp3",
-                    "description": {
-                        "zh-CN": "你这是早漏啊3"
-                    }
-                },
-                {
-                    "name": "你这是早漏啊4",
-                    "path": "你这是早漏啊4.mp3",
-                    "description": {
-                        "zh-CN": "你这是早漏啊4"
-                    }
-                }
-            ]
-        },
-        {
-            "categoryName": "ななのかわいい台詞！ハァハァ",
-            "categoryDescription": {
-                "zh-CN": "狗妈可爱台词斯哈斯哈",
-                "ja-JP": "ななのかわいい台詞！ハァハァ"
-            },
-            "voiceList": [
-                {
-                    "name": "怎么样1",
-                    "path": "怎么样1.mp3",
-                    "description": {
-                        "zh-CN": "怎么样1"
-                    }
-                },
-                {
-                    "name": "怎么样2",
-                    "path": "怎么样2.mp3",
-                    "description": {
-                        "zh-CN": "怎么样2"
-                    }
-                },
-                {
-                    "name": "chirito_chirito_chirichiri",
-                    "path": "chirito_chirito_chirichiri.mp3",
-                    "description": {
-                        "zh-CN": "chirito~chirito~chiri~chiri",
-                        "ja-JP": "chirito~chirito~chiri~chiri"
-                    }
-                },
-                {
-                    "name": "poyoto_poyoto_poyopoyoyo",
-                    "path": "poyoto_poyoto_poyopoyoyo.mp3",
-                    "description": {
-                        "zh-CN": "poyoto_poyoto_poyopoyoyo",
-                        "ja-JP": "poyoto_poyoto_poyopoyoyo"
-                    }
-                },
-                {
-                    "name": "おっさんが…",
-                    "path": "おっさんが….mp3",
-                    "description": {
-                        "zh-CN": "左边的大叔..做了可怕的事情",
-                        "ja-JP": "おっさんが…"
-                    }
-                },
-                {
-                    "name": "ばんしないで",
-                    "path": "ばんしないで.mp3",
-                    "description": {
-                        "zh-CN": "拜托了~不要ban我",
-                        "ja-JP": "ばんしないで"
-                    }
-                },
-                {
-                    "name": "もう_恥ずかしい",
-                    "path": "もう_恥ずかしい.mp3",
-                    "description": {
-                        "zh-CN": "真是的..好害羞",
-                        "ja-JP": "もう..恥ずかしい"
-                    }
-                },
-                {
-                    "name": "忘れろビーム",
-                    "path": "忘れろビーム.mp3",
-                    "description": {
-                        "zh-CN": "遗忘光线",
-                        "ja-JP": "忘れろビーム"
-                    }
-                },
-                {
-                    "name": "猫じゃないにゃ",
-                    "path": "猫じゃないにゃ.mp3",
-                    "description": {
-                        "zh-CN": "才不是猫呢",
-                        "ja-JP": "猫じゃないにゃ"
-                    }
-                },
-                {
-                    "name": "猫じゃないにゃ1",
-                    "path": "猫じゃないにゃ1.mp3",
-                    "description": {
-                        "zh-CN": "才不是猫啊喵1",
-                        "ja-JP": "猫じゃないにゃ1"
-                    }
-                },
-                {
-                    "name": "猫じゃないにゃ2",
-                    "path": "猫じゃないにゃ2.mp3",
-                    "description": {
-                        "zh-CN": "才不是猫啊喵2",
-                        "ja-JP": "猫じゃないにゃ2"
-                    }
-                },
-                {
-                    "name": "猫じゃないにゃ3",
-                    "path": "猫じゃないにゃ3.mp3",
-                    "description": {
-                        "zh-CN": "才不是猫啊喵3",
-                        "ja-JP": "猫じゃないにゃ3"
-                    }
-                },
-                {
-                    "name": "隙あり",
-                    "path": "隙あり.mp3",
-                    "description": {
-                        "zh-CN": "有机可乘",
-                        "ja-JP": "隙あり"
-                    }
-                }
-            ]
-        },
-        {
-            "categoryName": "ななのかわいい声！ハァハァ",
-            "categoryDescription": {
-                "zh-CN": "狗妈可爱声音斯哈斯哈",
-                "ja-JP": "ななのかわいい声！ハァハァ"
-            },
-            "voiceList": [
-                {
-                    "name": "fufufu↑",
-                    "path": "fufufu↑.mp3",
-                    "description": {
-                        "zh-CN": "fufufu↑",
-                        "ja-JP": "fufufu↑"
-                    }
-                },
-                {
-                    "name": "nico",
-                    "path": "nico.mp3",
-                    "description": {
-                        "zh-CN": "nico",
-                        "ja-JP": "nico"
-                    }
-                },
-                {
-                    "name": "nya！",
-                    "path": "nya！.mp3",
-                    "description": {
-                        "zh-CN": "nya！",
-                        "ja-JP": "nya！"
-                    }
-                },
-                {
-                    "name": "poi",
-                    "path": "poi.mp3",
-                    "description": {
-                        "zh-CN": "poi",
-                        "ja-JP": "poi"
-                    }
-                },
-                {
-                    "name": "sososo",
-                    "path": "sososo.mp3",
-                    "description": {
-                        "zh-CN": "sososo",
-                        "ja-JP": "sososo"
-                    }
-                },
-                {
-                    "name": "sosososo",
-                    "path": "sosososo.mp3",
-                    "description": {
-                        "zh-CN": "sosososo",
-                        "ja-JP": "sosososo"
-                    }
-                },
-                {
-                    "name": "sososososo",
-                    "path": "sososososo.mp3",
-                    "description": {
-                        "zh-CN": "sososososo",
-                        "ja-JP": "sososososo"
-                    }
-                },
-                {
-                    "name": "ye",
-                    "path": "ye.mp3",
-                    "description": {
-                        "zh-CN": "ye",
-                        "ja-JP": "ye"
-                    }
-                },
-                {
-                    "name": "ye~",
-                    "path": "ye~.mp3",
-                    "description": {
-                        "zh-CN": "ye~",
-                        "ja-JP": "ye~"
-                    }
-                },
-                {
-                    "name": "あ(どしょうもない)",
-                    "path": "あ(どしょうもない).mp3",
-                    "description": {
-                        "zh-CN": "啊(无奈)",
-                        "ja-JP": "あ(どしょうもない)"
-                    }
-                },
-                {
-                    "name": "あ(驚き)",
-                    "path": "あ(驚き).mp3",
-                    "description": {
-                        "zh-CN": "啊(惊讶)",
-                        "ja-JP": "あ(驚き)"
-                    }
-                },
-                {
-                    "name": "あ——",
-                    "path": "あ——.mp3",
-                    "description": {
-                        "zh-CN": "啊——",
-                        "ja-JP": "あ——"
-                    }
-                },
-                {
-                    "name": "お",
-                    "path": "お.mp3",
-                    "description": {
-                        "zh-CN": "哦",
-                        "ja-JP": "お"
-                    }
-                },
-                {
-                    "name": "おおお",
-                    "path": "おおお.mp3",
-                    "description": {
-                        "zh-CN": "哦哦哦",
-                        "ja-JP": "おおお"
-                    }
-                },
-                {
-                    "name": "おお！",
-                    "path": "おお！.mp3",
-                    "description": {
-                        "zh-CN": "哦哦！",
-                        "ja-JP": "おお！"
-                    }
-                },
-                {
-                    "name": "お願い_お願い",
-                    "path": "お願い_お願い.mp3",
-                    "description": {
-                        "zh-CN": "拜托了..拜托了(哭)",
-                        "ja-JP": "お願い..お願い.."
-                    }
-                },
-                {
-                    "name": "お願い1",
-                    "path": "お願い1.mp3",
-                    "description": {
-                        "zh-CN": "拜托了1",
-                        "ja-JP": "お願い1"
-                    }
-                },
-                {
-                    "name": "お願い2",
-                    "path": "お願い2.mp3",
-                    "description": {
-                        "zh-CN": "拜托了2",
-                        "ja-JP": "お願い2"
-                    }
-                },
-                {
-                    "name": "ちゃん",
-                    "path": "ちゃん.mp3",
-                    "description": {
-                        "zh-CN": "锵~",
-                        "ja-JP": "ちゃん"
-                    }
-                },
-                {
-                    "name": "ちょっと待てねx5",
-                    "path": "ちょっと待てねx5.mp3",
-                    "description": {
-                        "zh-CN": "稍等一下哦x5",
-                        "ja-JP": "ちょっと待てねx5"
-                    }
-                },
-                {
-                    "name": "にゃ1",
-                    "path": "にゃ1.mp3",
-                    "description": {
-                        "zh-CN": "喵1",
-                        "ja-JP": "にゃ1"
-                    }
-                },
-                {
-                    "name": "にゃ2",
-                    "path": "にゃ2.mp3",
-                    "description": {
-                        "zh-CN": "喵2",
-                        "ja-JP": "にゃ2"
-                    }
-                },
-                {
-                    "name": "にゃ3",
-                    "path": "にゃ3.mp3",
-                    "description": {
-                        "zh-CN": "喵3",
-                        "ja-JP": "にゃ3"
-                    }
-                },
-                {
-                    "name": "ねぇぇぇぇぇぇぇぇ",
-                    "path": "ねぇぇぇぇぇぇぇぇ.mp3",
-                    "description": {
-                        "zh-CN": "呐—————",
-                        "ja-JP": "ねぇぇぇぇぇぇぇぇ"
-                    }
-                },
-                {
-                    "name": "よかった_皆",
-                    "path": "よかった_皆.mp3",
-                    "description": {
-                        "zh-CN": "太好啦大家",
-                        "ja-JP": "よかった!皆"
-                    }
-                },
-                {
-                    "name": "よかった！",
-                    "path": "よかった！.mp3",
-                    "description": {
-                        "zh-CN": "太好啦！",
-                        "ja-JP": "よかった！"
-                    }
-                },
-                {
-                    "name": "コラコラ",
-                    "path": "コラコラ.mp3",
-                    "description": {
-                        "zh-CN": "喂喂",
-                        "ja-JP": "コラコラ"
-                    }
-                },
-                {
-                    "name": "チラ1",
-                    "path": "チラ1.mp3",
-                    "description": {
-                        "ja-JP": "チラ1"
-                    }
-                },
-                {
-                    "name": "チラ2",
-                    "path": "チラ2.mp3",
-                    "description": {
-                        "ja-JP": "チラ2"
-                    }
-                },
-                {
-                    "name": "ドン1",
-                    "path": "ドン1.mp3",
-                    "description": {
-                        "zh-CN": "咚1",
-                        "ja-JP": "ドン1"
-                    }
-                },
-                {
-                    "name": "ドン2",
-                    "path": "ドン2.mp3",
-                    "description": {
-                        "zh-CN": "咚2",
-                        "ja-JP": "ドン2"
-                    }
-                },
-                {
-                    "name": "ドン3",
-                    "path": "ドン3.mp3",
-                    "description": {
-                        "zh-CN": "咚3",
-                        "ja-JP": "ドン3"
-                    }
-                },
-                {
-                    "name": "ドン4",
-                    "path": "ドン4.mp3",
-                    "description": {
-                        "zh-CN": "咚4",
-                        "ja-JP": "ドン4"
-                    }
-                },
-                {
-                    "name": "ドン5",
-                    "path": "ドン5.mp3",
-                    "description": {
-                        "zh-CN": "咚5",
-                        "ja-JP": "ドン5"
-                    }
-                },
-                {
-                    "name": "呼吸",
-                    "path": "呼吸.mp3",
-                    "description": {
-                        "zh-CN": "高速呼吸スーハースーハー",
-                        "ja-JP": "呼吸"
-                    }
-                },
-                {
-                    "name": "呼吸×3",
-                    "path": "呼吸×3.mp3",
-                    "description": {
-                        "zh-CN": "战术换气×3",
-                        "ja-JP": "呼吸×3"
-                    }
-                },
-                {
-                    "name": "咳",
-                    "path": "咳.mp3",
-                    "description": {
-                        "zh-CN": "咳嗽",
-                        "ja-JP": "咳"
-                    }
-                },
-                {
-                    "name": "息を吸う",
-                    "path": "息を吸う.mp3",
-                    "description": {
-                        "zh-CN": "战术吸气",
-                        "ja-JP": "息を吸う"
-                    }
-                },
-                {
-                    "name": "悔しいよ",
-                    "path": "悔しいよ.mp3",
-                    "description": {
-                        "zh-CN": "好不甘心啊～",
-                        "ja-JP": "悔しいよ"
-                    }
-                },
-                {
-                    "name": "悔しい～",
-                    "path": "悔しい～.mp3",
-                    "description": {
-                        "zh-CN": "不甘心～",
-                        "ja-JP": "悔しい～"
-                    }
-                },
-                {
-                    "name": "泣き声1",
-                    "path": "泣き声1.mp3",
-                    "description": {
-                        "zh-CN": "哭声1",
-                        "ja-JP": "泣き声1"
-                    }
-                },
-                {
-                    "name": "泣き声２",
-                    "path": "泣き声２.mp3",
-                    "description": {
-                        "zh-CN": "哭声2",
-                        "ja-JP": "泣き声２"
-                    }
-                },
-                {
-                    "name": "泣き声３",
-                    "path": "泣き声３.mp3",
-                    "description": {
-                        "zh-CN": "哭声3",
-                        "ja-JP": "泣き声３"
-                    }
-                },
-                {
-                    "name": "泣き声４",
-                    "path": "泣き声４.mp3",
-                    "description": {
-                        "zh-CN": "哭声4",
-                        "ja-JP": "泣き声４"
-                    }
-                },
-                {
-                    "name": "泣き声５",
-                    "path": "泣き声５.mp3",
-                    "description": {
-                        "zh-CN": "哭声5",
-                        "ja-JP": "泣き声５"
-                    }
-                },
-                {
-                    "name": "泣き声６",
-                    "path": "泣き声６.mp3",
-                    "description": {
-                        "zh-CN": "哭声6",
-                        "ja-JP": "泣き声６"
-                    }
-                },
-                {
-                    "name": "泣き声７",
-                    "path": "泣き声７.mp3",
-                    "description": {
-                        "zh-CN": "哭声7",
-                        "ja-JP": "泣き声７"
-                    }
-                },
-                {
-                    "name": "笑声1",
-                    "path": "笑声1.mp3",
-                    "description": {
-                        "zh-CN": "笑声1",
-                        "ja-JP": "笑声1"
-                    }
-                },
-                {
-                    "name": "笑声2",
-                    "path": "笑声2.mp3",
-                    "description": {
-                        "zh-CN": "笑声2",
-                        "ja-JP": "笑声2"
-                    }
-                },
-                {
-                    "name": "笑声3",
-                    "path": "笑声3.mp3",
-                    "description": {
-                        "zh-CN": "笑声3",
-                        "ja-JP": "笑声3"
-                    }
-                },
-                {
-                    "name": "笑声4",
-                    "path": "笑声4.mp3",
-                    "description": {
-                        "zh-CN": "笑声4",
-                        "ja-JP": "笑声4"
-                    }
-                },
-                {
-                    "name": "笑声5",
-                    "path": "笑声5.mp3",
-                    "description": {
-                        "zh-CN": "笑声5",
-                        "ja-JP": "笑声5"
-                    }
-                },
-                {
-                    "name": "笑声6",
-                    "path": "笑声6.mp3",
-                    "description": {
-                        "zh-CN": "笑声6",
-                        "ja-JP": "笑声6"
-                    }
-                },
-                {
-                    "name": "笑声7",
-                    "path": "笑声7.mp3",
-                    "description": {
-                        "zh-CN": "笑声7",
-                        "ja-JP": "笑声7"
-                    }
-                },
-                {
-                    "name": "笑声8",
-                    "path": "笑声8.mp3",
-                    "description": {
-                        "zh-CN": "笑声8",
-                        "ja-JP": "笑声8"
-                    }
-                },
-                {
-                    "name": "笑声9",
-                    "path": "笑声9.mp3",
-                    "description": {
-                        "zh-CN": "笑声9",
-                        "ja-JP": "笑声9"
-                    }
-                },
-                {
-                    "name": "笑声10",
-                    "path": "笑声10.mp3",
-                    "description": {
-                        "zh-CN": "笑声10",
-                        "ja-JP": "笑声10"
-                    }
-                },
-                {
-                    "name": "笑声11",
-                    "path": "笑声11.mp3",
-                    "description": {
-                        "zh-CN": "笑声11",
-                        "ja-JP": "笑声11"
-                    }
-                },
-                {
-                    "name": "呜(伤心)1",
-                    "path": "呜(伤心)1.mp3",
-                    "description": {
-                        "zh-CN": "呜(伤心)1"
-                    }
-                },
-                {
-                    "name": "呜(伤心)2",
-                    "path": "呜(伤心)2.mp3",
-                    "description": {
-                        "zh-CN": "呜(伤心)2"
-                    }
-                },
-                {
-                    "name": "呜(伤心)3",
-                    "path": "呜(伤心)3.mp3",
-                    "description": {
-                        "zh-CN": "呜(伤心)3"
-                    }
-                },
-                {
-                    "name": "呜(伤心)4",
-                    "path": "呜(伤心)4.mp3",
-                    "description": {
-                        "zh-CN": "呜(伤心)4"
-                    }
-                },
-                {
-                    "name": "呜(委屈)",
-                    "path": "呜(委屈).mp3",
-                    "description": {
-                        "zh-CN": "呜(委屈)"
-                    }
-                },
-                {
-                    "name": "呜(无奈)",
-                    "path": "呜(无奈).mp3",
-                    "description": {
-                        "zh-CN": "呜(无奈)"
-                    }
-                },
-                {
-                    "name": "哼(不屑)",
-                    "path": "哼(不屑).mp3",
-                    "description": {
-                        "zh-CN": "哼(不屑)"
-                    }
-                },
-                {
-                    "name": "哼(哭)",
-                    "path": "哼(哭).mp3",
-                    "description": {
-                        "zh-CN": "哼(哭)"
-                    }
-                },
-                {
-                    "name": "嘿1",
-                    "path": "嘿1.mp3",
-                    "description": {
-                        "zh-CN": "嘿1"
-                    }
-                },
-                {
-                    "name": "嘿2",
-                    "path": "嘿2.mp3",
-                    "description": {
-                        "zh-CN": "嘿2"
-                    }
-                },
-                {
-                    "name": "嘿3",
-                    "path": "嘿3.mp3",
-                    "description": {
-                        "zh-CN": "嘿3"
-                    }
-                },
-                {
-                    "name": "嘿了个咻",
-                    "path": "嘿了个咻.mp3",
-                    "description": {
-                        "zh-CN": "嘿了个咻"
-                    }
-                },
-                {
-                    "name": "嘿咻1",
-                    "path": "嘿咻1.mp3",
-                    "description": {
-                        "zh-CN": "嘿咻1"
-                    }
-                },
-                {
-                    "name": "嘿咻2",
-                    "path": "嘿咻2.mp3",
-                    "description": {
-                        "zh-CN": "嘿咻2"
-                    }
-                },
-                {
-                    "name": "嘿咻3",
-                    "path": "嘿咻3.mp3",
-                    "description": {
-                        "zh-CN": "嘿咻3"
-                    }
-                },
-                {
-                    "name": "嘿咻4",
-                    "path": "嘿咻4.mp3",
-                    "description": {
-                        "zh-CN": "嘿咻4"
-                    }
-                },
-                {
-                    "name": "笑(2)",
-                    "path": "笑(2).mp3",
-                    "description": {
-                        "zh-CN": "笑"
-                    }
-                }
-            ]
-        },
-        {
-            "categoryName": "エロ漫画先生の問題発言",
-            "categoryDescription": {
-                "zh-CN": "工口漫画老师的问题发言",
-                "ja-JP": "エロ漫画先生の問題発言"
-            },
-            "voiceList": [
-                {
-                    "name": "いちごパンツ",
-                    "path": "いちごパンツ.mp3",
-                    "description": {
-                        "zh-CN": "胖次的话果然还是要草莓..草莓胖次呢",
-                        "ja-JP": "いちごパンツ"
-                    }
-                },
-                {
-                    "name": "おねショタ好き1",
-                    "path": "おねショタ好き1.mp3",
-                    "description": {
-                        "zh-CN": "我喜欢大姐姐和少年1",
-                        "ja-JP": "おねショタ好き1"
-                    }
-                },
-                {
-                    "name": "おねショタ好き2",
-                    "path": "おねショタ好き2.mp3",
-                    "description": {
-                        "zh-CN": "我喜欢大姐姐和少年2",
-                        "ja-JP": "おねショタ好き2"
-                    }
-                },
-                {
-                    "name": "ロリは…",
-                    "path": "ロリは….mp3",
-                    "description": {
-                        "zh-CN": "萝莉就是要头大一点,身体要轻柔一点",
-                        "ja-JP": "ロリは…"
-                    }
-                },
-                {
-                    "name": "ロリコン",
-                    "path": "ロリコン.mp3",
-                    "description": {
-                        "zh-CN": "不知什么时候就觉醒成萝莉控了呢",
-                        "ja-JP": "ロリコン"
-                    }
-                },
-                {
-                    "name": "ロリ最高",
-                    "path": "ロリ最高.mp3",
-                    "description": {
-                        "zh-CN": "果然萝莉最棒了",
-                        "ja-JP": "ロリ最高"
-                    }
-                },
-                {
-                    "name": "一緒に寝る",
-                    "path": "一緒に寝る.mp3",
-                    "description": {
-                        "zh-CN": "如果买了这个就可以每天都和神乐七奈一起睡了",
-                        "ja-JP": "一緒に寝る"
-                    }
-                },
-                {
-                    "name": "初めて",
-                    "path": "初めて.mp3",
-                    "description": {
-                        "zh-CN": "献上第一次",
-                        "ja-JP": "初めて"
-                    }
-                },
-                {
-                    "name": "小学生最高",
-                    "path": "小学生最高.mp3",
-                    "description": {
-                        "zh-CN": "对!果然小学生最棒了",
-                        "ja-JP": "小学生最高"
-                    }
-                },
-                {
-                    "name": "映ってないよ",
-                    "path": "映ってないよ.mp3",
-                    "description": {
-                        "zh-CN": "不能露的地方没有露哦",
-                        "ja-JP": "映ってないよ"
-                    }
-                },
-                {
-                    "name": "淫紋はダメ",
-                    "path": "淫紋はダメ.mp3",
-                    "description": {
-                        "zh-CN": "不能在这里画淫纹哦",
-                        "ja-JP": "淫紋はダメ"
-                    },
-                    "usePicture": {
-                        "zh-CN": "不能在这里画淫纹哦(示范).jpg",
-                        "ja-JP": "不能在这里画淫纹哦(日).jpg"
-                    }
-                }
-            ]
-        },
-        {
-            "categoryName": "ママだよ",
-            "categoryDescription": {
-                "zh-CN": "狗妈是我妈",
-                "ja-JP": "ママだよ"
-            },
-            "voiceList": [
-                {
-                    "name": "えらい",
-                    "path": "えらい.mp3",
-                    "description": {
-                        "zh-CN": "啊!了不起",
-                        "ja-JP": "えらい"
-                    }
-                },
-                {
-                    "name": "はい~よし",
-                    "path": "はい~よし.mp3",
-                    "description": {
-                        "zh-CN": "好~乖乖",
-                        "ja-JP": "はい~よし"
-                    }
-                },
-                {
-                    "name": "よし×4",
-                    "path": "よし×4.mp3",
-                    "description": {
-                        "zh-CN": "乖×4",
-                        "ja-JP": "よし×4"
-                    }
-                },
-                {
-                    "name": "パパ",
-                    "path": "パパ.mp3",
-                    "description": {
-                        "zh-CN": "爸爸",
-                        "ja-JP": "パパ"
-                    }
-                },
-                {
-                    "name": "ママ",
-                    "path": "ママ.mp3",
-                    "description": {
-                        "zh-CN": "妈妈",
-                        "ja-JP": "ママ"
-                    }
-                },
-                {
-                    "name": "ママだよ",
-                    "path": "ママだよ.mp3",
-                    "description": {
-                        "zh-CN": "是妈妈哦",
-                        "ja-JP": "ママだよ"
-                    }
-                }
-            ]
-        },
-        {
-            "categoryName": "ロシア語",
-            "categoryDescription": {
-                "zh-CN": "俄语狗妈",
-                "ja-JP": "ロシア語"
-            },
-            "voiceList": [
-                {
-                    "name": "こんにちは",
-                    "path": "こんにちは.mp3",
-                    "description": {
-                        "zh-CN": "你好",
-                        "ja-JP": "こんにちは"
-                    }
-                },
-                {
-                    "name": "最高1",
-                    "path": "最高1.mp3",
-                    "description": {
-                        "zh-CN": "太棒了1",
-                        "ja-JP": "最高1"
-                    }
-                },
-                {
-                    "name": "最高２",
-                    "path": "最高２.mp3",
-                    "description": {
-                        "zh-CN": "太棒了2",
-                        "ja-JP": "最高２"
-                    }
-                },
-                {
-                    "name": "最高３",
-                    "path": "最高３.mp3",
-                    "description": {
-                        "zh-CN": "太棒了3",
-                        "ja-JP": "最高３"
-                    }
-                }
-            ]
-        },
-        {
-            "categoryName": "名言",
-            "categoryDescription": {
-                "zh-CN": "狗妈名言",
-                "ja-JP": "名言"
-            },
-            "voiceList": [
-                {
-                    "name": "DDとは結婚しない",
-                    "path": "DDとは結婚しない.mp3",
-                    "description": {
-                        "zh-CN": "是不可能和DD结婚的",
-                        "ja-JP": "DDとは結婚しない"
-                    }
-                },
-                {
-                    "name": "ご名答",
-                    "path": "ご名答.mp3",
-                    "description": {
-                        "zh-CN": "答得好",
-                        "ja-JP": "ご名答"
-                    }
-                },
-                {
-                    "name": "そういう時もあるだよ",
-                    "path": "そういう時もあるだよ.mp3",
-                    "description": {
-                        "zh-CN": "这种事也是会有的呢",
-                        "ja-JP": "そういう時もあるだよ"
-                    }
-                },
-                {
-                    "name": "テンション上がるなぁ1",
-                    "path": "テンション上がるなぁ1.mp3",
-                    "description": {
-                        "zh-CN": "真让人兴奋啊1",
-                        "ja-JP": "テンション上がるなぁ1"
-                    }
-                },
-                {
-                    "name": "テンション上がるなぁ2",
-                    "path": "テンション上がるなぁ2.mp3",
-                    "description": {
-                        "zh-CN": "真让人兴奋啊2",
-                        "ja-JP": "テンション上がるなぁ2"
-                    }
-                },
-                {
-                    "name": "便座カーバー",
-                    "path": "便座カーバー.mp3",
-                    "description": {
-                        "zh-CN": "还有马桶盖子！",
-                        "ja-JP": "便座カーバー"
-                    }
-                },
-                {
-                    "name": "全員ロリコン",
-                    "path": "全員ロリコン.mp3",
-                    "description": {
-                        "zh-CN": "你们全员都是loli控",
-                        "ja-JP": "全員ロリコン"
-                    }
-                },
-                {
-                    "name": "唐辛子星人",
-                    "path": "唐辛子星人.mp3",
-                    "description": {
-                        "zh-CN": "我不是狐狸也不是猫,是唐辛子星人",
-                        "ja-JP": "唐辛子星人"
-                    }
-                },
-                {
-                    "name": "敏感",
-                    "path": "敏感.mp3",
-                    "description": {
-                        "zh-CN": "我很敏感的",
-                        "ja-JP": "敏感"
-                    }
-                },
-                {
-                    "name": "来~peach",
-                    "path": "来~peach.mp3",
-                    "description": {
-                        "zh-CN": "来~peach"
-                    },
-                    "usePicture": {
-                        "zh-CN": "来 peach.jpg"
-                    }
-                },
-                {
-                    "name": "水着だから",
-                    "path": "水着だから.mp3",
-                    "description": {
-                        "zh-CN": "对,因为是泳衣所以不会害羞",
-                        "ja-JP": "水着だから"
-                    }
-                },
-                {
-                    "name": "水着だからHじゃない",
-                    "path": "水着だからHじゃない.mp3",
-                    "description": {
-                        "zh-CN": "因为是泳装才不H",
-                        "ja-JP": "水着だからHじゃない"
-                    }
-                }
-            ]
-        },
-        {
-            "categoryName": "声真似上手",
-            "categoryDescription": {
-                "zh-CN": "狗妈声音模仿上手",
-                "ja-JP": "声真似上手"
-            },
-            "voiceList": [
-                {
-                    "name": "働きたくない",
-                    "path": "働きたくない.mp3",
-                    "description": {
-                        "zh-CN": "不想工作~",
-                        "ja-JP": "働きたくない"
-                    }
-                },
-                {
-                    "name": "印税生活~",
-                    "path": "印税生活~.mp3",
-                    "description": {
-                        "zh-CN": "印税生活~",
-                        "ja-JP": "印税生活~"
-                    }
-                },
-                {
-                    "name": "行け!berserker1",
-                    "path": "行け!berserker1.mp3",
-                    "description": {
-                        "zh-CN": "上啊!berserker1",
-                        "ja-JP": "行け!berserker1"
-                    }
-                },
-                {
-                    "name": "行け!berserker2",
-                    "path": "行け!berserker2.mp3",
-                    "description": {
-                        "zh-CN": "上啊!berserker2",
-                        "ja-JP": "行け!berserker2"
-                    }
-                }
-            ]
-        },
-        {
-            "categoryName": "日常会話",
-            "categoryDescription": {
-                "zh-CN": "我家妈妈的日常用语",
-                "ja-JP": "日常会話"
-            },
-            "voiceList": [
-                {
-                    "name": "ok",
-                    "path": "ok.mp3",
-                    "description": {
-                        "zh-CN": "ok",
-                        "ja-JP": "ok"
-                    }
-                },
-                {
-                    "name": "あのう",
-                    "path": "あのう.mp3",
-                    "description": {
-                        "zh-CN": "那个",
-                        "ja-JP": "あのう"
-                    }
-                },
-                {
-                    "name": "ありがとうございます",
-                    "path": "ありがとうございます.mp3",
-                    "description": {
-                        "zh-CN": "谢谢",
-                        "ja-JP": "ありがとうございます"
-                    }
-                },
-                {
-                    "name": "あれ",
-                    "path": "あれ.mp3",
-                    "description": {
-                        "zh-CN": "咦",
-                        "ja-JP": "あれ"
-                    }
-                },
-                {
-                    "name": "いや~",
-                    "path": "いや~.mp3",
-                    "description": {
-                        "zh-CN": "不要~",
-                        "ja-JP": "いや~"
-                    }
-                },
-                {
-                    "name": "いらない",
-                    "path": "いらない.mp3",
-                    "description": {
-                        "zh-CN": "不需要",
-                        "ja-JP": "いらない"
-                    }
-                },
-                {
-                    "name": "おつかぐら1",
-                    "path": "おつかぐら1.mp3",
-                    "description": {
-                        "zh-CN": "辛苦辣1",
-                        "ja-JP": "おつかぐら1"
-                    }
-                },
-                {
-                    "name": "おつかぐら2",
-                    "path": "おつかぐら2.mp3",
-                    "description": {
-                        "zh-CN": "辛苦辣2",
-                        "ja-JP": "おつかぐら2"
-                    }
-                },
-                {
-                    "name": "おつかぐら3",
-                    "path": "おつかぐら3.mp3",
-                    "description": {
-                        "zh-CN": "辛苦辣3",
-                        "ja-JP": "おつかぐら3"
-                    }
-                },
-                {
-                    "name": "おつかぐら4",
-                    "path": "おつかぐら4.mp3",
-                    "description": {
-                        "zh-CN": "辛苦辣4",
-                        "ja-JP": "おつかぐら4"
-                    }
-                },
-                {
-                    "name": "お疲れ敏感でした",
-                    "path": "お疲れ敏感でした.mp3",
-                    "description": {
-                        "zh-CN": "辛苦敏感的你了——",
-                        "ja-JP": "お疲れ敏感でした"
-                    }
-                },
-                {
-                    "name": "お願い",
-                    "path": "お願い.mp3",
-                    "description": {
-                        "zh-CN": "求你了",
-                        "ja-JP": "お願い"
-                    }
-                },
-                {
-                    "name": "こわいな",
-                    "path": "こわいな.mp3",
-                    "description": {
-                        "zh-CN": "真可怕",
-                        "ja-JP": "こわいな"
-                    }
-                },
-                {
-                    "name": "こんばんは",
-                    "path": "こんばんは.mp3",
-                    "description": {
-                        "zh-CN": "晚上好",
-                        "ja-JP": "こんばんは"
-                    }
-                },
-                {
-                    "name": "晚上好(中文)",
-                    "path": "晚上好(中文).mp3",
-                    "description": {
-                        "zh-CN": "晚上好(中文)"
-                    }
-                },
-                {
-                    "name": "晚安1(中)",
-                    "path": "晚安1(中).mp3",
-                    "description": {
-                        "zh-CN": "晚安1(中)"
-                    }
-                },
-                {
-                    "name": "晚安2(中)",
-                    "path": "晚安2(中).mp3",
-                    "description": {
-                        "zh-CN": "晚安2(中)"
-                    }
-                },
-                {
-                    "name": "谢谢1(中)",
-                    "path": "谢谢1(中).mp3",
-                    "description": {
-                        "zh-CN": "谢谢1(中)"
-                    }
-                },
-                {
-                    "name": "谢谢2(中)",
-                    "path": "谢谢2(中).mp3",
-                    "description": {
-                        "zh-CN": "谢谢2(中)"
-                    }
-                },
-                {
-                    "name": "谢谢茄子(中日)",
-                    "path": "谢谢茄子(中日).mp3",
-                    "description": {
-                        "zh-CN": "谢谢茄子(中日)"
-                    }
-                },
-                {
-                    "name": "すごい1",
-                    "path": "すごい1.mp3",
-                    "description": {
-                        "zh-CN": "好厉害1",
-                        "ja-JP": "すごい1"
-                    }
-                },
-                {
-                    "name": "すごい2",
-                    "path": "すごい2.mp3",
-                    "description": {
-                        "zh-CN": "好厉害2",
-                        "ja-JP": "すごい2"
-                    }
-                },
-                {
-                    "name": "どうしよう",
-                    "path": "どうしよう.mp3",
-                    "description": {
-                        "zh-CN": "啊啊啊诶?怎么办",
-                        "ja-JP": "どうしよう"
-                    }
-                },
-                {
-                    "name": "どうですか1",
-                    "path": "どうですか1.mp3",
-                    "description": {
-                        "zh-CN": "怎么样？",
-                        "ja-JP": "どうですか1"
-                    }
-                },
-                {
-                    "name": "どうですか2",
-                    "path": "どうですか2.mp3",
-                    "description": {
-                        "zh-CN": "怎么样呀？",
-                        "ja-JP": "どうですか2"
-                    }
-                },
-                {
-                    "name": "ねえ",
-                    "path": "ねえ.mp3",
-                    "description": {
-                        "zh-CN": "是吧",
-                        "ja-JP": "ねえ"
-                    }
-                },
-                {
-                    "name": "はい1",
-                    "path": "はい1.mp3",
-                    "description": {
-                        "zh-CN": "好的1",
-                        "ja-JP": "はい1"
-                    }
-                },
-                {
-                    "name": "はい2",
-                    "path": "はい2.mp3",
-                    "description": {
-                        "zh-CN": "好的2",
-                        "ja-JP": "はい2"
-                    }
-                },
-                {
-                    "name": "やだやだやだ",
-                    "path": "やだやだやだ.mp3",
-                    "description": {
-                        "zh-CN": "不要不要不要",
-                        "ja-JP": "やだやだやだ"
-                    }
-                },
-                {
-                    "name": "やっほう",
-                    "path": "やっほう.mp3",
-                    "description": {
-                        "zh-CN": "你好",
-                        "ja-JP": "やっほう"
-                    }
-                },
-                {
-                    "name": "やめてお1",
-                    "path": "やめてお1.mp3",
-                    "description": {
-                        "zh-CN": "不要啊1",
-                        "ja-JP": "やめてお1"
-                    }
-                },
-                {
-                    "name": "やめてお2",
-                    "path": "やめてお2.mp3",
-                    "description": {
-                        "zh-CN": "不要啊2",
-                        "ja-JP": "やめてお2"
-                    }
-                }
-            ]
-        },
-        {
-            "categoryName": "淫夢民だが",
-            "categoryDescription": {
-                "zh-CN": "虽然是淫梦厨",
-                "ja-JP": "淫夢民だが"
-            },
-            "voiceList": [
-                {
-                    "name": "1145141919野兽",
-                    "path": "1145141919野兽.mp3",
-                    "description": {
-                        "zh-CN": "1145141919野兽",
-                        "ja-JP": "1145141919野兽"
-                    }
-                },
-                {
-                    "name": "114514",
-                    "path": "114514.mp3",
-                    "description": {
-                        "zh-CN": "114514",
-                        "ja-JP": "114514"
-                    }
-                },
-                {
-                    "name": "1919",
-                    "path": "1919.mp3",
-                    "description": {
-                        "zh-CN": "1919",
-                        "ja-JP": "1919"
-                    },
-                    "usePicture": {
-                        "zh-CN": "1919.jpg",
-                        "ja-JP": "1919.jpg"
-                    }
-                },
-                {
-                    "name": "そうだよ1",
-                    "path": "そうだよ1.mp3",
-                    "description": {
-                        "zh-CN": "救世啊1",
-                        "ja-JP": "そうだよ1"
-                    }
-                },
-                {
-                    "name": "そうだよ2",
-                    "path": "そうだよ2.mp3",
-                    "description": {
-                        "zh-CN": "救世啊2",
-                        "ja-JP": "そうだよ2"
-                    }
-                },
-                {
-                    "name": "やりますねぇ",
-                    "path": "やりますねぇ.mp3",
-                    "description": {
-                        "zh-CN": "压力马斯内(赞赏)",
-                        "ja-JP": "やりますねぇ"
-                    }
-                },
-                {
-                    "name": "ん？",
-                    "path": "ん？.mp3",
-                    "description": {
-                        "zh-CN": "嗯？(察觉)",
-                        "ja-JP": "ん？"
-                    }
-                }
-            ]
-        },
-        {
-            "categoryName": "清楚だよ",
-            "categoryDescription": {
-                "zh-CN": "但还是清楚的",
-                "ja-JP": "清楚だよ"
-            },
-            "voiceList": [
-                {
-                    "name": "いぬまままじ天使",
-                    "path": "いぬまままじ天使.mp3",
-                    "description": {
-                        "zh-CN": "狗妈真是天使",
-                        "ja-JP": "いぬまままじ天使"
-                    }
-                },
-                {
-                    "name": "エロ画像がダメ",
-                    "path": "エロ画像がダメ.mp3",
-                    "description": {
-                        "zh-CN": "エロ图不准",
-                        "ja-JP": "エロ画像がダメ"
-                    }
-                },
-                {
-                    "name": "奉仕",
-                    "path": "奉仕.mp3",
-                    "description": {
-                        "zh-CN": "让神楽来伺候您吧",
-                        "ja-JP": "奉仕"
-                    }
-                }
-            ]
-        }
-    ]
+  "category": [
+    {
+      "name": "中文狗妈",
+      "translate": {
+        "zh-CN": "中文狗妈"
+      }
+    },
+    {
+      "name": "ななちゃん罵倒して",
+      "translate": {
+        "zh-CN": "狗妈再骂我一次",
+        "ja-JP": "ななちゃん罵倒して"
+      }
+    },
+    {
+      "name": "ななのかわいい台詞！ハァハァ",
+      "translate": {
+        "zh-CN": "狗妈可爱台词斯哈斯哈",
+        "ja-JP": "ななのかわいい台詞！ハァハァ"
+      }
+    },
+    {
+      "name": "ななのかわいい声！ハァハァ",
+      "translate": {
+        "zh-CN": "狗妈可爱声音斯哈斯哈",
+        "ja-JP": "ななのかわいい声！ハァハァ"
+      }
+    },
+    {
+      "name": "エロ漫画先生の問題発言",
+      "translate": {
+        "zh-CN": "工口漫画老师的问题发言",
+        "ja-JP": "エロ漫画先生の問題発言"
+      }
+    },
+    {
+      "name": "ママだよ",
+      "translate": {
+        "zh-CN": "狗妈是我妈",
+        "ja-JP": "ママだよ"
+      }
+    },
+    {
+      "name": "ロシア語",
+      "translate": {
+        "zh-CN": "俄语狗妈",
+        "ja-JP": "ロシア語"
+      }
+    },
+    {
+      "name": "名言",
+      "translate": {
+        "zh-CN": "狗妈名言",
+        "ja-JP": "名言"
+      }
+    },
+    {
+      "name": "声真似上手",
+      "translate": {
+        "zh-CN": "狗妈声音模仿上手",
+        "ja-JP": "声真似上手"
+      }
+    },
+    {
+      "name": "日常会話",
+      "translate": {
+        "zh-CN": "我家妈妈的日常用语",
+        "ja-JP": "日常会話"
+      }
+    },
+    {
+      "name": "淫夢民だが",
+      "translate": {
+        "zh-CN": "虽然是淫梦厨",
+        "ja-JP": "淫夢民だが"
+      }
+    },
+    {
+      "name": "清楚だよ",
+      "translate": {
+        "zh-CN": "但还是清楚的",
+        "ja-JP": "清楚だよ"
+      }
+    }
+  ],
+  "voices": [
+    {
+      "name": "AWSL",
+      "path": "AWSL.mp3",
+      "translate": {
+        "zh-CN": "AWSL"
+      },
+      "category": "中文狗妈"
+    },
+    {
+      "name": "我很可爱1",
+      "path": "我很可爱1.mp3",
+      "translate": {
+        "zh-CN": "我很可爱1"
+      },
+      "category": "中文狗妈"
+    },
+    {
+      "name": "我很可爱2",
+      "path": "我很可爱2.mp3",
+      "translate": {
+        "zh-CN": "我很可爱2"
+      },
+      "category": "中文狗妈"
+    },
+    {
+      "name": "我很可爱3",
+      "path": "我很可爱3.mp3",
+      "translate": {
+        "zh-CN": "我很可爱3"
+      },
+      "category": "中文狗妈"
+    },
+    {
+      "name": "我爱你1",
+      "path": "我爱你1.mp3",
+      "translate": {
+        "zh-CN": "我爱你1"
+      },
+      "category": "中文狗妈"
+    },
+    {
+      "name": "我爱你2",
+      "path": "我爱你2.mp3",
+      "translate": {
+        "zh-CN": "我爱你2"
+      },
+      "category": "中文狗妈"
+    },
+    {
+      "name": "我爱你3",
+      "path": "我爱你3.mp3",
+      "translate": {
+        "zh-CN": "我爱你3"
+      },
+      "category": "中文狗妈"
+    },
+    {
+      "name": "我爱你4",
+      "path": "我爱你4.mp3",
+      "translate": {
+        "zh-CN": "我爱你4"
+      },
+      "category": "中文狗妈"
+    },
+    {
+      "name": "我爱你5",
+      "path": "我爱你5.mp3",
+      "translate": {
+        "zh-CN": "我爱你5"
+      },
+      "category": "中文狗妈"
+    },
+    {
+      "name": "我爱你6",
+      "path": "我爱你6.mp3",
+      "translate": {
+        "zh-CN": "我爱你6"
+      },
+      "category": "中文狗妈"
+    },
+    {
+      "name": "我爱你7",
+      "path": "我爱你7.mp3",
+      "translate": {
+        "zh-CN": "我爱你7"
+      },
+      "category": "中文狗妈"
+    },
+    {
+      "name": "我爱你8",
+      "path": "我爱你8.mp3",
+      "translate": {
+        "zh-CN": "我爱你8"
+      },
+      "category": "中文狗妈"
+    },
+    {
+      "name": "窝,窝恨可爱,窝恨可爱,嗯,窝恨可爱！",
+      "path": "窝,窝恨可爱,窝恨可爱,嗯,窝恨可爱！.mp3",
+      "translate": {
+        "zh-CN": "窝,窝恨可爱,窝恨可爱,嗯,窝恨可爱!"
+      },
+      "category": "中文狗妈"
+    },
+    {
+      "name": "震撼狗妈",
+      "path": "震撼狗妈.mp3",
+      "translate": {
+        "zh-CN": "震撼狗妈"
+      },
+      "category": "中文狗妈"
+    },
+    {
+      "name": "DD打ち首",
+      "path": "DD打ち首.mp3",
+      "translate": {
+        "zh-CN": "打爆你狗头哦",
+        "ja-JP": "DD打ち首"
+      },
+      "category": "ななちゃん罵倒して"
+    },
+    {
+      "name": "DD斬首１",
+      "path": "DD斬首１.mp3",
+      "translate": {
+        "zh-CN": "DD斩首1",
+        "ja-JP": "DD斬首１"
+      },
+      "category": "ななちゃん罵倒して"
+    },
+    {
+      "name": "DD斬首２",
+      "path": "DD斬首２.mp3",
+      "translate": {
+        "zh-CN": "DD斩首2",
+        "ja-JP": "DD斬首２"
+      },
+      "category": "ななちゃん罵倒して"
+    },
+    {
+      "name": "DD斬首３",
+      "path": "DD斬首３.mp3",
+      "translate": {
+        "zh-CN": "DD斩首3",
+        "ja-JP": "DD斬首３"
+      },
+      "category": "ななちゃん罵倒して"
+    },
+    {
+      "name": "DD斬首４",
+      "path": "DD斬首４.mp3",
+      "translate": {
+        "zh-CN": "DD斩首4",
+        "ja-JP": "DD斬首4"
+      },
+      "category": "ななちゃん罵倒して"
+    },
+    {
+      "name": "DD真恶心",
+      "path": "DD真恶心.mp3",
+      "translate": {
+        "zh-CN": "DD真恶心"
+      },
+      "category": "ななちゃん罵倒して"
+    },
+    {
+      "name": "kimo_kimo_kimo",
+      "path": "kimo_kimo_kimo.mp3",
+      "translate": {
+        "zh-CN": "kimo kimo kimo",
+        "ja-JP": "kimo kimo kimo"
+      },
+      "category": "ななちゃん罵倒して"
+    },
+    {
+      "name": "うるさい",
+      "path": "うるさい.mp3",
+      "translate": {
+        "zh-CN": "吵死了",
+        "ja-JP": "うるさい"
+      },
+      "category": "ななちゃん罵倒して"
+    },
+    {
+      "name": "この変態バカ犬もう知らない",
+      "path": "この変態バカ犬もう知らない.mp3",
+      "translate": {
+        "zh-CN": "你这个变态笨蛋不管你了哼",
+        "ja-JP": "この変態バカ犬もう知らない"
+      },
+      "category": "ななちゃん罵倒して"
+    },
+    {
+      "name": "この変態１",
+      "path": "この変態１.mp3",
+      "translate": {
+        "zh-CN": "你这个变态",
+        "ja-JP": "この変態"
+      },
+      "category": "ななちゃん罵倒して"
+    },
+    {
+      "name": "なんだっと？",
+      "path": "なんだっと？.mp3",
+      "translate": {
+        "zh-CN": "你说什么？",
+        "ja-JP": "なんだっと？"
+      },
+      "category": "ななちゃん罵倒して"
+    },
+    {
+      "name": "バカ",
+      "path": "バカ.mp3",
+      "translate": {
+        "zh-CN": "你这个笨蛋",
+        "ja-JP": "バカ"
+      },
+      "category": "ななちゃん罵倒して"
+    },
+    {
+      "name": "バカ犬",
+      "path": "バカ犬.mp3",
+      "translate": {
+        "zh-CN": "你这傻狗",
+        "ja-JP": "バカ犬"
+      },
+      "category": "ななちゃん罵倒して"
+    },
+    {
+      "name": "バカ犬１",
+      "path": "バカ犬１.mp3",
+      "translate": {
+        "zh-CN": "你这傻狗1",
+        "ja-JP": "バカ犬１"
+      },
+      "category": "ななちゃん罵倒して"
+    },
+    {
+      "name": "バカ犬２",
+      "path": "バカ犬２.mp3",
+      "translate": {
+        "zh-CN": "你这傻狗2",
+        "ja-JP": "バカ犬２"
+      },
+      "category": "ななちゃん罵倒して"
+    },
+    {
+      "name": "変態",
+      "path": "変態.mp3",
+      "translate": {
+        "zh-CN": "变态",
+        "ja-JP": "変態"
+      },
+      "category": "ななちゃん罵倒して"
+    },
+    {
+      "name": "変態変態…",
+      "path": "変態変態….mp3",
+      "translate": {
+        "zh-CN": "哇变态变态变态",
+        "ja-JP": "変態変態…"
+      },
+      "category": "ななちゃん罵倒して"
+    },
+    {
+      "name": "打ち首",
+      "path": "打ち首.mp3",
+      "translate": {
+        "zh-CN": "打爆你的头哦",
+        "ja-JP": "打ち首"
+      },
+      "category": "ななちゃん罵倒して"
+    },
+    {
+      "name": "早漏とも",
+      "path": "早漏とも.mp3",
+      "translate": {
+        "ja-JP": "早漏とも"
+      },
+      "category": "ななちゃん罵倒して"
+    },
+    {
+      "name": "你这是早漏啊1",
+      "path": "你这是早漏啊1.mp3",
+      "translate": {
+        "zh-CN": "你这是早漏啊1"
+      },
+      "usePicture": {
+        "zh-CN": "你这是早漏啊1.jpg"
+      },
+      "category": "ななちゃん罵倒して"
+    },
+    {
+      "name": "你这是早漏啊2",
+      "path": "你这是早漏啊2.mp3",
+      "translate": {
+        "zh-CN": "你这是早漏啊2"
+      },
+      "category": "ななちゃん罵倒して"
+    },
+    {
+      "name": "你这是早漏啊3",
+      "path": "你这是早漏啊3.mp3",
+      "translate": {
+        "zh-CN": "你这是早漏啊3"
+      },
+      "category": "ななちゃん罵倒して"
+    },
+    {
+      "name": "你这是早漏啊4",
+      "path": "你这是早漏啊4.mp3",
+      "translate": {
+        "zh-CN": "你这是早漏啊4"
+      },
+      "category": "ななちゃん罵倒して"
+    },
+    {
+      "name": "怎么样1",
+      "path": "怎么样1.mp3",
+      "translate": {
+        "zh-CN": "怎么样1"
+      },
+      "category": "ななのかわいい台詞！ハァハァ"
+    },
+    {
+      "name": "怎么样2",
+      "path": "怎么样2.mp3",
+      "translate": {
+        "zh-CN": "怎么样2"
+      },
+      "category": "ななのかわいい台詞！ハァハァ"
+    },
+    {
+      "name": "chirito_chirito_chirichiri",
+      "path": "chirito_chirito_chirichiri.mp3",
+      "translate": {
+        "zh-CN": "chirito~chirito~chiri~chiri",
+        "ja-JP": "chirito~chirito~chiri~chiri"
+      },
+      "category": "ななのかわいい台詞！ハァハァ"
+    },
+    {
+      "name": "poyoto_poyoto_poyopoyoyo",
+      "path": "poyoto_poyoto_poyopoyoyo.mp3",
+      "translate": {
+        "zh-CN": "poyoto_poyoto_poyopoyoyo",
+        "ja-JP": "poyoto_poyoto_poyopoyoyo"
+      },
+      "category": "ななのかわいい台詞！ハァハァ"
+    },
+    {
+      "name": "おっさんが…",
+      "path": "おっさんが….mp3",
+      "translate": {
+        "zh-CN": "左边的大叔..做了可怕的事情",
+        "ja-JP": "おっさんが…"
+      },
+      "category": "ななのかわいい台詞！ハァハァ"
+    },
+    {
+      "name": "ばんしないで",
+      "path": "ばんしないで.mp3",
+      "translate": {
+        "zh-CN": "拜托了~不要ban我",
+        "ja-JP": "ばんしないで"
+      },
+      "category": "ななのかわいい台詞！ハァハァ"
+    },
+    {
+      "name": "もう_恥ずかしい",
+      "path": "もう_恥ずかしい.mp3",
+      "translate": {
+        "zh-CN": "真是的..好害羞",
+        "ja-JP": "もう..恥ずかしい"
+      },
+      "category": "ななのかわいい台詞！ハァハァ"
+    },
+    {
+      "name": "忘れろビーム",
+      "path": "忘れろビーム.mp3",
+      "translate": {
+        "zh-CN": "遗忘光线",
+        "ja-JP": "忘れろビーム"
+      },
+      "category": "ななのかわいい台詞！ハァハァ"
+    },
+    {
+      "name": "猫じゃないにゃ",
+      "path": "猫じゃないにゃ.mp3",
+      "translate": {
+        "zh-CN": "才不是猫呢",
+        "ja-JP": "猫じゃないにゃ"
+      },
+      "category": "ななのかわいい台詞！ハァハァ"
+    },
+    {
+      "name": "猫じゃないにゃ1",
+      "path": "猫じゃないにゃ1.mp3",
+      "translate": {
+        "zh-CN": "才不是猫啊喵1",
+        "ja-JP": "猫じゃないにゃ1"
+      },
+      "category": "ななのかわいい台詞！ハァハァ"
+    },
+    {
+      "name": "猫じゃないにゃ2",
+      "path": "猫じゃないにゃ2.mp3",
+      "translate": {
+        "zh-CN": "才不是猫啊喵2",
+        "ja-JP": "猫じゃないにゃ2"
+      },
+      "category": "ななのかわいい台詞！ハァハァ"
+    },
+    {
+      "name": "猫じゃないにゃ3",
+      "path": "猫じゃないにゃ3.mp3",
+      "translate": {
+        "zh-CN": "才不是猫啊喵3",
+        "ja-JP": "猫じゃないにゃ3"
+      },
+      "category": "ななのかわいい台詞！ハァハァ"
+    },
+    {
+      "name": "隙あり",
+      "path": "隙あり.mp3",
+      "translate": {
+        "zh-CN": "有机可乘",
+        "ja-JP": "隙あり"
+      },
+      "category": "ななのかわいい台詞！ハァハァ"
+    },
+    {
+      "name": "fufufu↑",
+      "path": "fufufu↑.mp3",
+      "translate": {
+        "zh-CN": "fufufu↑",
+        "ja-JP": "fufufu↑"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "nico",
+      "path": "nico.mp3",
+      "translate": {
+        "zh-CN": "nico",
+        "ja-JP": "nico"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "nya！",
+      "path": "nya！.mp3",
+      "translate": {
+        "zh-CN": "nya！",
+        "ja-JP": "nya！"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "poi",
+      "path": "poi.mp3",
+      "translate": {
+        "zh-CN": "poi",
+        "ja-JP": "poi"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "sososo",
+      "path": "sososo.mp3",
+      "translate": {
+        "zh-CN": "sososo",
+        "ja-JP": "sososo"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "sosososo",
+      "path": "sosososo.mp3",
+      "translate": {
+        "zh-CN": "sosososo",
+        "ja-JP": "sosososo"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "sososososo",
+      "path": "sososososo.mp3",
+      "translate": {
+        "zh-CN": "sososososo",
+        "ja-JP": "sososososo"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "ye",
+      "path": "ye.mp3",
+      "translate": {
+        "zh-CN": "ye",
+        "ja-JP": "ye"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "ye~",
+      "path": "ye~.mp3",
+      "translate": {
+        "zh-CN": "ye~",
+        "ja-JP": "ye~"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "あ(どしょうもない)",
+      "path": "あ(どしょうもない).mp3",
+      "translate": {
+        "zh-CN": "啊(无奈)",
+        "ja-JP": "あ(どしょうもない)"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "あ(驚き)",
+      "path": "あ(驚き).mp3",
+      "translate": {
+        "zh-CN": "啊(惊讶)",
+        "ja-JP": "あ(驚き)"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "あ——",
+      "path": "あ——.mp3",
+      "translate": {
+        "zh-CN": "啊——",
+        "ja-JP": "あ——"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "お",
+      "path": "お.mp3",
+      "translate": {
+        "zh-CN": "哦",
+        "ja-JP": "お"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "おおお",
+      "path": "おおお.mp3",
+      "translate": {
+        "zh-CN": "哦哦哦",
+        "ja-JP": "おおお"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "おお！",
+      "path": "おお！.mp3",
+      "translate": {
+        "zh-CN": "哦哦！",
+        "ja-JP": "おお！"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "お願い_お願い",
+      "path": "お願い_お願い.mp3",
+      "translate": {
+        "zh-CN": "拜托了..拜托了(哭)",
+        "ja-JP": "お願い..お願い.."
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "お願い1",
+      "path": "お願い1.mp3",
+      "translate": {
+        "zh-CN": "拜托了1",
+        "ja-JP": "お願い1"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "お願い2",
+      "path": "お願い2.mp3",
+      "translate": {
+        "zh-CN": "拜托了2",
+        "ja-JP": "お願い2"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "ちゃん",
+      "path": "ちゃん.mp3",
+      "translate": {
+        "zh-CN": "锵~",
+        "ja-JP": "ちゃん"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "ちょっと待てねx5",
+      "path": "ちょっと待てねx5.mp3",
+      "translate": {
+        "zh-CN": "稍等一下哦x5",
+        "ja-JP": "ちょっと待てねx5"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "にゃ1",
+      "path": "にゃ1.mp3",
+      "translate": {
+        "zh-CN": "喵1",
+        "ja-JP": "にゃ1"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "にゃ2",
+      "path": "にゃ2.mp3",
+      "translate": {
+        "zh-CN": "喵2",
+        "ja-JP": "にゃ2"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "にゃ3",
+      "path": "にゃ3.mp3",
+      "translate": {
+        "zh-CN": "喵3",
+        "ja-JP": "にゃ3"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "ねぇぇぇぇぇぇぇぇ",
+      "path": "ねぇぇぇぇぇぇぇぇ.mp3",
+      "translate": {
+        "zh-CN": "呐—————",
+        "ja-JP": "ねぇぇぇぇぇぇぇぇ"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "よかった_皆",
+      "path": "よかった_皆.mp3",
+      "translate": {
+        "zh-CN": "太好啦大家",
+        "ja-JP": "よかった!皆"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "よかった！",
+      "path": "よかった！.mp3",
+      "translate": {
+        "zh-CN": "太好啦！",
+        "ja-JP": "よかった！"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "コラコラ",
+      "path": "コラコラ.mp3",
+      "translate": {
+        "zh-CN": "喂喂",
+        "ja-JP": "コラコラ"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "チラ1",
+      "path": "チラ1.mp3",
+      "translate": {
+        "ja-JP": "チラ1"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "チラ2",
+      "path": "チラ2.mp3",
+      "translate": {
+        "ja-JP": "チラ2"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "ドン1",
+      "path": "ドン1.mp3",
+      "translate": {
+        "zh-CN": "咚1",
+        "ja-JP": "ドン1"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "ドン2",
+      "path": "ドン2.mp3",
+      "translate": {
+        "zh-CN": "咚2",
+        "ja-JP": "ドン2"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "ドン3",
+      "path": "ドン3.mp3",
+      "translate": {
+        "zh-CN": "咚3",
+        "ja-JP": "ドン3"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "ドン4",
+      "path": "ドン4.mp3",
+      "translate": {
+        "zh-CN": "咚4",
+        "ja-JP": "ドン4"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "ドン5",
+      "path": "ドン5.mp3",
+      "translate": {
+        "zh-CN": "咚5",
+        "ja-JP": "ドン5"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "呼吸",
+      "path": "呼吸.mp3",
+      "translate": {
+        "zh-CN": "高速呼吸スーハースーハー",
+        "ja-JP": "呼吸"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "呼吸×3",
+      "path": "呼吸×3.mp3",
+      "translate": {
+        "zh-CN": "战术换气×3",
+        "ja-JP": "呼吸×3"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "咳",
+      "path": "咳.mp3",
+      "translate": {
+        "zh-CN": "咳嗽",
+        "ja-JP": "咳"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "息を吸う",
+      "path": "息を吸う.mp3",
+      "translate": {
+        "zh-CN": "战术吸气",
+        "ja-JP": "息を吸う"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "悔しいよ",
+      "path": "悔しいよ.mp3",
+      "translate": {
+        "zh-CN": "好不甘心啊～",
+        "ja-JP": "悔しいよ"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "悔しい～",
+      "path": "悔しい～.mp3",
+      "translate": {
+        "zh-CN": "不甘心～",
+        "ja-JP": "悔しい～"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "泣き声1",
+      "path": "泣き声1.mp3",
+      "translate": {
+        "zh-CN": "哭声1",
+        "ja-JP": "泣き声1"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "泣き声２",
+      "path": "泣き声２.mp3",
+      "translate": {
+        "zh-CN": "哭声2",
+        "ja-JP": "泣き声２"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "泣き声３",
+      "path": "泣き声３.mp3",
+      "translate": {
+        "zh-CN": "哭声3",
+        "ja-JP": "泣き声３"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "泣き声４",
+      "path": "泣き声４.mp3",
+      "translate": {
+        "zh-CN": "哭声4",
+        "ja-JP": "泣き声４"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "泣き声５",
+      "path": "泣き声５.mp3",
+      "translate": {
+        "zh-CN": "哭声5",
+        "ja-JP": "泣き声５"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "泣き声６",
+      "path": "泣き声６.mp3",
+      "translate": {
+        "zh-CN": "哭声6",
+        "ja-JP": "泣き声６"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "泣き声７",
+      "path": "泣き声７.mp3",
+      "translate": {
+        "zh-CN": "哭声7",
+        "ja-JP": "泣き声７"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "笑声1",
+      "path": "笑声1.mp3",
+      "translate": {
+        "zh-CN": "笑声1",
+        "ja-JP": "笑声1"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "笑声2",
+      "path": "笑声2.mp3",
+      "translate": {
+        "zh-CN": "笑声2",
+        "ja-JP": "笑声2"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "笑声3",
+      "path": "笑声3.mp3",
+      "translate": {
+        "zh-CN": "笑声3",
+        "ja-JP": "笑声3"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "笑声4",
+      "path": "笑声4.mp3",
+      "translate": {
+        "zh-CN": "笑声4",
+        "ja-JP": "笑声4"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "笑声5",
+      "path": "笑声5.mp3",
+      "translate": {
+        "zh-CN": "笑声5",
+        "ja-JP": "笑声5"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "笑声6",
+      "path": "笑声6.mp3",
+      "translate": {
+        "zh-CN": "笑声6",
+        "ja-JP": "笑声6"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "笑声7",
+      "path": "笑声7.mp3",
+      "translate": {
+        "zh-CN": "笑声7",
+        "ja-JP": "笑声7"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "笑声8",
+      "path": "笑声8.mp3",
+      "translate": {
+        "zh-CN": "笑声8",
+        "ja-JP": "笑声8"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "笑声9",
+      "path": "笑声9.mp3",
+      "translate": {
+        "zh-CN": "笑声9",
+        "ja-JP": "笑声9"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "笑声10",
+      "path": "笑声10.mp3",
+      "translate": {
+        "zh-CN": "笑声10",
+        "ja-JP": "笑声10"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "笑声11",
+      "path": "笑声11.mp3",
+      "translate": {
+        "zh-CN": "笑声11",
+        "ja-JP": "笑声11"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "呜(伤心)1",
+      "path": "呜(伤心)1.mp3",
+      "translate": {
+        "zh-CN": "呜(伤心)1"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "呜(伤心)2",
+      "path": "呜(伤心)2.mp3",
+      "translate": {
+        "zh-CN": "呜(伤心)2"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "呜(伤心)3",
+      "path": "呜(伤心)3.mp3",
+      "translate": {
+        "zh-CN": "呜(伤心)3"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "呜(伤心)4",
+      "path": "呜(伤心)4.mp3",
+      "translate": {
+        "zh-CN": "呜(伤心)4"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "呜(委屈)",
+      "path": "呜(委屈).mp3",
+      "translate": {
+        "zh-CN": "呜(委屈)"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "呜(无奈)",
+      "path": "呜(无奈).mp3",
+      "translate": {
+        "zh-CN": "呜(无奈)"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "哼(不屑)",
+      "path": "哼(不屑).mp3",
+      "translate": {
+        "zh-CN": "哼(不屑)"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "哼(哭)",
+      "path": "哼(哭).mp3",
+      "translate": {
+        "zh-CN": "哼(哭)"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "嘿1",
+      "path": "嘿1.mp3",
+      "translate": {
+        "zh-CN": "嘿1"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "嘿2",
+      "path": "嘿2.mp3",
+      "translate": {
+        "zh-CN": "嘿2"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "嘿3",
+      "path": "嘿3.mp3",
+      "translate": {
+        "zh-CN": "嘿3"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "嘿了个咻",
+      "path": "嘿了个咻.mp3",
+      "translate": {
+        "zh-CN": "嘿了个咻"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "嘿咻1",
+      "path": "嘿咻1.mp3",
+      "translate": {
+        "zh-CN": "嘿咻1"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "嘿咻2",
+      "path": "嘿咻2.mp3",
+      "translate": {
+        "zh-CN": "嘿咻2"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "嘿咻3",
+      "path": "嘿咻3.mp3",
+      "translate": {
+        "zh-CN": "嘿咻3"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "嘿咻4",
+      "path": "嘿咻4.mp3",
+      "translate": {
+        "zh-CN": "嘿咻4"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "笑(2)",
+      "path": "笑(2).mp3",
+      "translate": {
+        "zh-CN": "笑"
+      },
+      "category": "ななのかわいい声！ハァハァ"
+    },
+    {
+      "name": "いちごパンツ",
+      "path": "いちごパンツ.mp3",
+      "translate": {
+        "zh-CN": "胖次的话果然还是要草莓..草莓胖次呢",
+        "ja-JP": "いちごパンツ"
+      },
+      "category": "エロ漫画先生の問題発言"
+    },
+    {
+      "name": "おねショタ好き1",
+      "path": "おねショタ好き1.mp3",
+      "translate": {
+        "zh-CN": "我喜欢大姐姐和少年1",
+        "ja-JP": "おねショタ好き1"
+      },
+      "category": "エロ漫画先生の問題発言"
+    },
+    {
+      "name": "おねショタ好き2",
+      "path": "おねショタ好き2.mp3",
+      "translate": {
+        "zh-CN": "我喜欢大姐姐和少年2",
+        "ja-JP": "おねショタ好き2"
+      },
+      "category": "エロ漫画先生の問題発言"
+    },
+    {
+      "name": "ロリは…",
+      "path": "ロリは….mp3",
+      "translate": {
+        "zh-CN": "萝莉就是要头大一点,身体要轻柔一点",
+        "ja-JP": "ロリは…"
+      },
+      "category": "エロ漫画先生の問題発言"
+    },
+    {
+      "name": "ロリコン",
+      "path": "ロリコン.mp3",
+      "translate": {
+        "zh-CN": "不知什么时候就觉醒成萝莉控了呢",
+        "ja-JP": "ロリコン"
+      },
+      "category": "エロ漫画先生の問題発言"
+    },
+    {
+      "name": "ロリ最高",
+      "path": "ロリ最高.mp3",
+      "translate": {
+        "zh-CN": "果然萝莉最棒了",
+        "ja-JP": "ロリ最高"
+      },
+      "category": "エロ漫画先生の問題発言"
+    },
+    {
+      "name": "一緒に寝る",
+      "path": "一緒に寝る.mp3",
+      "translate": {
+        "zh-CN": "如果买了这个就可以每天都和神乐七奈一起睡了",
+        "ja-JP": "一緒に寝る"
+      },
+      "category": "エロ漫画先生の問題発言"
+    },
+    {
+      "name": "初めて",
+      "path": "初めて.mp3",
+      "translate": {
+        "zh-CN": "献上第一次",
+        "ja-JP": "初めて"
+      },
+      "category": "エロ漫画先生の問題発言"
+    },
+    {
+      "name": "小学生最高",
+      "path": "小学生最高.mp3",
+      "translate": {
+        "zh-CN": "对!果然小学生最棒了",
+        "ja-JP": "小学生最高"
+      },
+      "category": "エロ漫画先生の問題発言"
+    },
+    {
+      "name": "映ってないよ",
+      "path": "映ってないよ.mp3",
+      "translate": {
+        "zh-CN": "不能露的地方没有露哦",
+        "ja-JP": "映ってないよ"
+      },
+      "category": "エロ漫画先生の問題発言"
+    },
+    {
+      "name": "淫紋はダメ",
+      "path": "淫紋はダメ.mp3",
+      "translate": {
+        "zh-CN": "不能在这里画淫纹哦",
+        "ja-JP": "淫紋はダメ"
+      },
+      "usePicture": {
+        "zh-CN": "不能在这里画淫纹哦(示范).jpg",
+        "ja-JP": "不能在这里画淫纹哦(日).jpg"
+      },
+      "category": "エロ漫画先生の問題発言"
+    },
+    {
+      "name": "えらい",
+      "path": "えらい.mp3",
+      "translate": {
+        "zh-CN": "啊!了不起",
+        "ja-JP": "えらい"
+      },
+      "category": "ママだよ"
+    },
+    {
+      "name": "はい~よし",
+      "path": "はい~よし.mp3",
+      "translate": {
+        "zh-CN": "好~乖乖",
+        "ja-JP": "はい~よし"
+      },
+      "category": "ママだよ"
+    },
+    {
+      "name": "よし×4",
+      "path": "よし×4.mp3",
+      "translate": {
+        "zh-CN": "乖×4",
+        "ja-JP": "よし×4"
+      },
+      "category": "ママだよ"
+    },
+    {
+      "name": "パパ",
+      "path": "パパ.mp3",
+      "translate": {
+        "zh-CN": "爸爸",
+        "ja-JP": "パパ"
+      },
+      "category": "ママだよ"
+    },
+    {
+      "name": "ママ",
+      "path": "ママ.mp3",
+      "translate": {
+        "zh-CN": "妈妈",
+        "ja-JP": "ママ"
+      },
+      "category": "ママだよ"
+    },
+    {
+      "name": "ママだよ",
+      "path": "ママだよ.mp3",
+      "translate": {
+        "zh-CN": "是妈妈哦",
+        "ja-JP": "ママだよ"
+      },
+      "category": "ママだよ"
+    },
+    {
+      "name": "こんにちは",
+      "path": "こんにちは.mp3",
+      "translate": {
+        "zh-CN": "你好",
+        "ja-JP": "こんにちは"
+      },
+      "category": "ロシア語"
+    },
+    {
+      "name": "最高1",
+      "path": "最高1.mp3",
+      "translate": {
+        "zh-CN": "太棒了1",
+        "ja-JP": "最高1"
+      },
+      "category": "ロシア語"
+    },
+    {
+      "name": "最高２",
+      "path": "最高２.mp3",
+      "translate": {
+        "zh-CN": "太棒了2",
+        "ja-JP": "最高２"
+      },
+      "category": "ロシア語"
+    },
+    {
+      "name": "最高３",
+      "path": "最高３.mp3",
+      "translate": {
+        "zh-CN": "太棒了3",
+        "ja-JP": "最高３"
+      },
+      "category": "ロシア語"
+    },
+    {
+      "name": "DDとは結婚しない",
+      "path": "DDとは結婚しない.mp3",
+      "translate": {
+        "zh-CN": "是不可能和DD结婚的",
+        "ja-JP": "DDとは結婚しない"
+      },
+      "category": "名言"
+    },
+    {
+      "name": "ご名答",
+      "path": "ご名答.mp3",
+      "translate": {
+        "zh-CN": "答得好",
+        "ja-JP": "ご名答"
+      },
+      "category": "名言"
+    },
+    {
+      "name": "そういう時もあるだよ",
+      "path": "そういう時もあるだよ.mp3",
+      "translate": {
+        "zh-CN": "这种事也是会有的呢",
+        "ja-JP": "そういう時もあるだよ"
+      },
+      "category": "名言"
+    },
+    {
+      "name": "テンション上がるなぁ1",
+      "path": "テンション上がるなぁ1.mp3",
+      "translate": {
+        "zh-CN": "真让人兴奋啊1",
+        "ja-JP": "テンション上がるなぁ1"
+      },
+      "category": "名言"
+    },
+    {
+      "name": "テンション上がるなぁ2",
+      "path": "テンション上がるなぁ2.mp3",
+      "translate": {
+        "zh-CN": "真让人兴奋啊2",
+        "ja-JP": "テンション上がるなぁ2"
+      },
+      "category": "名言"
+    },
+    {
+      "name": "便座カーバー",
+      "path": "便座カーバー.mp3",
+      "translate": {
+        "zh-CN": "还有马桶盖子！",
+        "ja-JP": "便座カーバー"
+      },
+      "category": "名言"
+    },
+    {
+      "name": "全員ロリコン",
+      "path": "全員ロリコン.mp3",
+      "translate": {
+        "zh-CN": "你们全员都是loli控",
+        "ja-JP": "全員ロリコン"
+      },
+      "category": "名言"
+    },
+    {
+      "name": "唐辛子星人",
+      "path": "唐辛子星人.mp3",
+      "translate": {
+        "zh-CN": "我不是狐狸也不是猫,是唐辛子星人",
+        "ja-JP": "唐辛子星人"
+      },
+      "category": "名言"
+    },
+    {
+      "name": "敏感",
+      "path": "敏感.mp3",
+      "translate": {
+        "zh-CN": "我很敏感的",
+        "ja-JP": "敏感"
+      },
+      "category": "名言"
+    },
+    {
+      "name": "来~peach",
+      "path": "来~peach.mp3",
+      "translate": {
+        "zh-CN": "来~peach"
+      },
+      "usePicture": {
+        "zh-CN": "来 peach.jpg"
+      },
+      "category": "名言"
+    },
+    {
+      "name": "水着だから",
+      "path": "水着だから.mp3",
+      "translate": {
+        "zh-CN": "对,因为是泳衣所以不会害羞",
+        "ja-JP": "水着だから"
+      },
+      "category": "名言"
+    },
+    {
+      "name": "水着だからHじゃない",
+      "path": "水着だからHじゃない.mp3",
+      "translate": {
+        "zh-CN": "因为是泳装才不H",
+        "ja-JP": "水着だからHじゃない"
+      },
+      "category": "名言"
+    },
+    {
+      "name": "働きたくない",
+      "path": "働きたくない.mp3",
+      "translate": {
+        "zh-CN": "不想工作~",
+        "ja-JP": "働きたくない"
+      },
+      "category": "声真似上手"
+    },
+    {
+      "name": "印税生活~",
+      "path": "印税生活~.mp3",
+      "translate": {
+        "zh-CN": "印税生活~",
+        "ja-JP": "印税生活~"
+      },
+      "category": "声真似上手"
+    },
+    {
+      "name": "行け!berserker1",
+      "path": "行け!berserker1.mp3",
+      "translate": {
+        "zh-CN": "上啊!berserker1",
+        "ja-JP": "行け!berserker1"
+      },
+      "category": "声真似上手"
+    },
+    {
+      "name": "行け!berserker2",
+      "path": "行け!berserker2.mp3",
+      "translate": {
+        "zh-CN": "上啊!berserker2",
+        "ja-JP": "行け!berserker2"
+      },
+      "category": "声真似上手"
+    },
+    {
+      "name": "ok",
+      "path": "ok.mp3",
+      "translate": {
+        "zh-CN": "ok",
+        "ja-JP": "ok"
+      },
+      "category": "日常会話"
+    },
+    {
+      "name": "あのう",
+      "path": "あのう.mp3",
+      "translate": {
+        "zh-CN": "那个",
+        "ja-JP": "あのう"
+      },
+      "category": "日常会話"
+    },
+    {
+      "name": "ありがとうございます",
+      "path": "ありがとうございます.mp3",
+      "translate": {
+        "zh-CN": "谢谢",
+        "ja-JP": "ありがとうございます"
+      },
+      "category": "日常会話"
+    },
+    {
+      "name": "あれ",
+      "path": "あれ.mp3",
+      "translate": {
+        "zh-CN": "咦",
+        "ja-JP": "あれ"
+      },
+      "category": "日常会話"
+    },
+    {
+      "name": "いや~",
+      "path": "いや~.mp3",
+      "translate": {
+        "zh-CN": "不要~",
+        "ja-JP": "いや~"
+      },
+      "category": "日常会話"
+    },
+    {
+      "name": "いらない",
+      "path": "いらない.mp3",
+      "translate": {
+        "zh-CN": "不需要",
+        "ja-JP": "いらない"
+      },
+      "category": "日常会話"
+    },
+    {
+      "name": "おつかぐら1",
+      "path": "おつかぐら1.mp3",
+      "translate": {
+        "zh-CN": "辛苦辣1",
+        "ja-JP": "おつかぐら1"
+      },
+      "category": "日常会話"
+    },
+    {
+      "name": "おつかぐら2",
+      "path": "おつかぐら2.mp3",
+      "translate": {
+        "zh-CN": "辛苦辣2",
+        "ja-JP": "おつかぐら2"
+      },
+      "category": "日常会話"
+    },
+    {
+      "name": "おつかぐら3",
+      "path": "おつかぐら3.mp3",
+      "translate": {
+        "zh-CN": "辛苦辣3",
+        "ja-JP": "おつかぐら3"
+      },
+      "category": "日常会話"
+    },
+    {
+      "name": "おつかぐら4",
+      "path": "おつかぐら4.mp3",
+      "translate": {
+        "zh-CN": "辛苦辣4",
+        "ja-JP": "おつかぐら4"
+      },
+      "category": "日常会話"
+    },
+    {
+      "name": "お疲れ敏感でした",
+      "path": "お疲れ敏感でした.mp3",
+      "translate": {
+        "zh-CN": "辛苦敏感的你了——",
+        "ja-JP": "お疲れ敏感でした"
+      },
+      "category": "日常会話"
+    },
+    {
+      "name": "お願い",
+      "path": "お願い.mp3",
+      "translate": {
+        "zh-CN": "求你了",
+        "ja-JP": "お願い"
+      },
+      "category": "日常会話"
+    },
+    {
+      "name": "こわいな",
+      "path": "こわいな.mp3",
+      "translate": {
+        "zh-CN": "真可怕",
+        "ja-JP": "こわいな"
+      },
+      "category": "日常会話"
+    },
+    {
+      "name": "こんばんは",
+      "path": "こんばんは.mp3",
+      "translate": {
+        "zh-CN": "晚上好",
+        "ja-JP": "こんばんは"
+      },
+      "category": "日常会話"
+    },
+    {
+      "name": "晚上好(中文)",
+      "path": "晚上好(中文).mp3",
+      "translate": {
+        "zh-CN": "晚上好(中文)"
+      },
+      "category": "日常会話"
+    },
+    {
+      "name": "晚安1(中)",
+      "path": "晚安1(中).mp3",
+      "translate": {
+        "zh-CN": "晚安1(中)"
+      },
+      "category": "日常会話"
+    },
+    {
+      "name": "晚安2(中)",
+      "path": "晚安2(中).mp3",
+      "translate": {
+        "zh-CN": "晚安2(中)"
+      },
+      "category": "日常会話"
+    },
+    {
+      "name": "谢谢1(中)",
+      "path": "谢谢1(中).mp3",
+      "translate": {
+        "zh-CN": "谢谢1(中)"
+      },
+      "category": "日常会話"
+    },
+    {
+      "name": "谢谢2(中)",
+      "path": "谢谢2(中).mp3",
+      "translate": {
+        "zh-CN": "谢谢2(中)"
+      },
+      "category": "日常会話"
+    },
+    {
+      "name": "谢谢茄子(中日)",
+      "path": "谢谢茄子(中日).mp3",
+      "translate": {
+        "zh-CN": "谢谢茄子(中日)"
+      },
+      "category": "日常会話"
+    },
+    {
+      "name": "すごい1",
+      "path": "すごい1.mp3",
+      "translate": {
+        "zh-CN": "好厉害1",
+        "ja-JP": "すごい1"
+      },
+      "category": "日常会話"
+    },
+    {
+      "name": "すごい2",
+      "path": "すごい2.mp3",
+      "translate": {
+        "zh-CN": "好厉害2",
+        "ja-JP": "すごい2"
+      },
+      "category": "日常会話"
+    },
+    {
+      "name": "どうしよう",
+      "path": "どうしよう.mp3",
+      "translate": {
+        "zh-CN": "啊啊啊诶?怎么办",
+        "ja-JP": "どうしよう"
+      },
+      "category": "日常会話"
+    },
+    {
+      "name": "どうですか1",
+      "path": "どうですか1.mp3",
+      "translate": {
+        "zh-CN": "怎么样？",
+        "ja-JP": "どうですか1"
+      },
+      "category": "日常会話"
+    },
+    {
+      "name": "どうですか2",
+      "path": "どうですか2.mp3",
+      "translate": {
+        "zh-CN": "怎么样呀？",
+        "ja-JP": "どうですか2"
+      },
+      "category": "日常会話"
+    },
+    {
+      "name": "ねえ",
+      "path": "ねえ.mp3",
+      "translate": {
+        "zh-CN": "是吧",
+        "ja-JP": "ねえ"
+      },
+      "category": "日常会話"
+    },
+    {
+      "name": "はい1",
+      "path": "はい1.mp3",
+      "translate": {
+        "zh-CN": "好的1",
+        "ja-JP": "はい1"
+      },
+      "category": "日常会話"
+    },
+    {
+      "name": "はい2",
+      "path": "はい2.mp3",
+      "translate": {
+        "zh-CN": "好的2",
+        "ja-JP": "はい2"
+      },
+      "category": "日常会話"
+    },
+    {
+      "name": "やだやだやだ",
+      "path": "やだやだやだ.mp3",
+      "translate": {
+        "zh-CN": "不要不要不要",
+        "ja-JP": "やだやだやだ"
+      },
+      "category": "日常会話"
+    },
+    {
+      "name": "やっほう",
+      "path": "やっほう.mp3",
+      "translate": {
+        "zh-CN": "你好",
+        "ja-JP": "やっほう"
+      },
+      "category": "日常会話"
+    },
+    {
+      "name": "やめてお1",
+      "path": "やめてお1.mp3",
+      "translate": {
+        "zh-CN": "不要啊1",
+        "ja-JP": "やめてお1"
+      },
+      "category": "日常会話"
+    },
+    {
+      "name": "やめてお2",
+      "path": "やめてお2.mp3",
+      "translate": {
+        "zh-CN": "不要啊2",
+        "ja-JP": "やめてお2"
+      },
+      "category": "日常会話"
+    },
+    {
+      "name": "1145141919野兽",
+      "path": "1145141919野兽.mp3",
+      "translate": {
+        "zh-CN": "1145141919野兽",
+        "ja-JP": "1145141919野兽"
+      },
+      "category": "淫夢民だが"
+    },
+    {
+      "name": "114514",
+      "path": "114514.mp3",
+      "translate": {
+        "zh-CN": "114514",
+        "ja-JP": "114514"
+      },
+      "category": "淫夢民だが"
+    },
+    {
+      "name": "1919",
+      "path": "1919.mp3",
+      "translate": {
+        "zh-CN": "1919",
+        "ja-JP": "1919"
+      },
+      "usePicture": {
+        "zh-CN": "1919.jpg",
+        "ja-JP": "1919.jpg"
+      },
+      "category": "淫夢民だが"
+    },
+    {
+      "name": "そうだよ1",
+      "path": "そうだよ1.mp3",
+      "translate": {
+        "zh-CN": "救世啊1",
+        "ja-JP": "そうだよ1"
+      },
+      "category": "淫夢民だが"
+    },
+    {
+      "name": "そうだよ2",
+      "path": "そうだよ2.mp3",
+      "translate": {
+        "zh-CN": "救世啊2",
+        "ja-JP": "そうだよ2"
+      },
+      "category": "淫夢民だが"
+    },
+    {
+      "name": "やりますねぇ",
+      "path": "やりますねぇ.mp3",
+      "translate": {
+        "zh-CN": "压力马斯内(赞赏)",
+        "ja-JP": "やりますねぇ"
+      },
+      "category": "淫夢民だが"
+    },
+    {
+      "name": "ん？",
+      "path": "ん？.mp3",
+      "translate": {
+        "zh-CN": "嗯？(察觉)",
+        "ja-JP": "ん？"
+      },
+      "category": "淫夢民だが"
+    },
+    {
+      "name": "いぬまままじ天使",
+      "path": "いぬまままじ天使.mp3",
+      "translate": {
+        "zh-CN": "狗妈真是天使",
+        "ja-JP": "いぬまままじ天使"
+      },
+      "category": "清楚だよ"
+    },
+    {
+      "name": "エロ画像がダメ",
+      "path": "エロ画像がダメ.mp3",
+      "translate": {
+        "zh-CN": "エロ图不准",
+        "ja-JP": "エロ画像がダメ"
+      },
+      "category": "清楚だよ"
+    },
+    {
+      "name": "奉仕",
+      "path": "奉仕.mp3",
+      "translate": {
+        "zh-CN": "让神楽来伺候您吧",
+        "ja-JP": "奉仕"
+      },
+      "category": "清楚だよ"
+    }
+  ]
 }

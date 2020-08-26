@@ -83,6 +83,13 @@ export default {
     }
 
     const play = (data, category) => {
+      /* eslint-disable */
+      gtag('event', '播放语音', {
+        event_category: data.name,
+        event_label: category,
+        value: 1
+      })
+      /* eslint-enable */
       if (!setting.overlap) {
         player.value.pause()
         resetInterval()

@@ -28,6 +28,7 @@
 <script>
 import { reactive, inject, ref, getCurrentInstance, computed } from 'vue'
 import VoiceList from '../../public/translate/voices.json'
+import { other } from '../../public/translate/locales'
 import Card from './common/Card'
 import VBtn from './common/VoiveBtn'
 import mitt from '../assets/js/mitt'
@@ -57,6 +58,19 @@ export default {
 
     const overlapPlayList = {}
     const overlapShowList = reactive([])
+
+    if ('mediaSession' in navigator) {
+      navigator.mediaSession.setActionHandler('nexttrack', () => {
+        randomPlay()
+      })
+      navigator.mediaSession.setActionHandler('previoustrack', () => {
+        randomPlay()
+      })
+      navigator.mediaSession.setActionHandler('pause', () => {
+        player.value.pause()
+        navigator.mediaSession.playbackState = 'paused'
+      })
+    }
 
     const player = ref(null)
 
@@ -110,6 +124,17 @@ export default {
           player.value.src = `voices/${category}/${data.path}`
           setting.nowPlay = data
           player.value.play()
+
+          if ('mediaSession' in navigator) {
+            const meta = {
+              title: ctx.$t('voice.' + data.name),
+              artist: ctx.$t('info.fullName'),
+              album: ctx.$t('info.title'),
+              artwork: [{ src: `/image/${other.artwork}`, sizes: '128x128' }]
+            }
+            navigator.mediaSession.metadata = new window.MediaMetadata(meta)
+            navigator.mediaSession.playbackState = 'playing'
+          }
         }
       } else {
         const key = new Date().getTime()
@@ -182,9 +207,9 @@ export default {
     const randomPlay = () => {
       const randomList = voices[_getrRandomInt(voices.length - 1)]
       const randomVoice = randomList.voiceList[_getrRandomInt(randomList.voiceList.length - 1)]
-      if (_needToShow(randomList.categoryDescription) && _needToShow(randomVoice.description)) {
+      if (_needToShow(randomList.translate) && _needToShow(randomVoice.translate)) {
         errTimes = 0
-        play(randomVoice, randomList.categoryName)
+        play(randomVoice, randomList.name)
       } else if (errTimes >= 5) {
         // 连续五次不存在停止随机
       } else {
@@ -215,7 +240,7 @@ export default {
     const _needUsePicture = (usePicture) => {
       if (usePicture) {
         const locale = ctx.$i18n.locale
-        return usePicture[locale] !== undefined
+        return locale in usePicture
       } else {
         return false
       }
@@ -227,7 +252,7 @@ export default {
 
     const _needToShow = (description) => {
       const locale = ctx.$i18n.locale
-      return description[locale] !== undefined
+      return locale in description
     }
 
     return {
@@ -266,6 +291,7 @@ export default {
       bottom calc(100% + 10px)
       left 50%
       width 120%
+      min-width 100px
       max-width 200px
       opacity 0
       transform translateX(-50%)
@@ -289,5 +315,4 @@ export default {
         opacity 1
         transition opacity 0s
         transition-delay 0s
-
 </style>

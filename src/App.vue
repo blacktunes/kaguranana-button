@@ -11,6 +11,7 @@
 import VHeader from './views/Header'
 import Control from './views/Control'
 import VFooter from './views/Footer'
+import { other } from '../public/translate/locales'
 import { provide, reactive } from 'vue'
 
 export default {
@@ -32,7 +33,7 @@ export default {
 
     provide('setting', setting)
 
-    console.log('%c❤神楽七奈%c ', 'font-size: 20px;color: pink', 'padding-right:100%;padding-top:84%;background:url(\'https://img.moegirl.org.cn/common/e/e1/%E7%8B%97%E5%A6%88%E8%80%B3%E6%9C%B5.png\') no-repeat;background-size:100% 100%')
+    console.log(`%c${other.consoleTip}%c `, `font-size:20px;color:${other.consoleTipColor}`, `padding-right:${other.consoleImgWidth};padding-top:${other.consoleImgHeight};background:url('${location.origin}/image/${other.consoleImg}') no-repeat;background-size:100% 100%`)
   }
 }
 </script>

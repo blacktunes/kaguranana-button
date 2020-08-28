@@ -3,7 +3,8 @@ const local = {
     info: {
       title: '妈按钮',
       toGithub: '请在Github参与翻译、增补音频或提出建议',
-      notOfficial: '本站为爱好者作品，和官方没有关联'
+      notOfficial: '本站为爱好者作品，和官方没有关联',
+      fullName: '神楽七奈'
     },
     action: {
       randomplay: '帮我选一个',
@@ -31,7 +32,8 @@ const local = {
     info: {
       title: 'ななボタン',
       toGithub: 'Githubで翻訳に参加、音声を追加および提案をしてください。',
-      notOfficial: 'このサイトはファン作品であり、公式とは関係ありません。'
+      notOfficial: 'このサイトはファン作品であり、公式とは関係ありません。',
+      fullName: '神楽七奈'
     },
     action: {
       randomplay: 'ランダム',
@@ -56,4 +58,15 @@ const local = {
     lang: '切换至简体中文'
   }
 }
+
+const other = {
+  consoleTip: '❤神楽七奈',
+  consoleTipColor: 'pink',
+  consoleImg: 'nana.png',
+  consoleImgWidth: '100%',
+  consoleImgHeight: '84%',
+  artwork: 'nana_avatar.jpg'
+}
+
 export default local
+export { other }

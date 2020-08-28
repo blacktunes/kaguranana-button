@@ -31,6 +31,7 @@ import VoiceList from '../../public/translate/voices.json'
 import Card from './common/Card'
 import VBtn from './common/VoiveBtn'
 import mitt from '../assets/js/mitt'
+import { gtag } from '../assets/js/gtag'
 
 export default {
   components: {
@@ -83,13 +84,13 @@ export default {
     }
 
     const play = (data, category) => {
-      /* eslint-disable */
-      gtag('event', '播放语音', {
-        event_category: data.name,
-        event_label: category,
-        value: 1
-      })
-      /* eslint-enable */
+      if (process.env.NODE_ENV === 'production') {
+        gtag('event', '播放语音', {
+          event_category: data.name,
+          event_label: category,
+          value: 1
+        })
+      }
       if (!setting.overlap) {
         player.value.pause()
         resetInterval()

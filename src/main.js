@@ -8,6 +8,14 @@ import Locales from '../public/translate/locales'
 
 import './assets/style/transition.styl'
 
+import { gtag } from './assets/js/gtag'
+
+if (process.env.NODE_ENV === 'production') {
+  window.dataLayer = window.dataLayer || []
+  gtag('js', new Date())
+  gtag('config', 'UA-176441751-1')
+}
+
 const CN = { ...Locales['zh-CN'], voice: {}, voicecategory: {} }
 const JP = { ...Locales['ja-JP'], voice: {}, voicecategory: {} }
 

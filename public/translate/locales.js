@@ -1,7 +1,7 @@
 const local = {
   'zh-CN': {
     info: {
-      title: '妈按钮',
+      title: '七奈按钮',
       toGithub: '请在Github参与翻译、增补音频或提出建议',
       notOfficial: '本站为爱好者作品，和官方没有关联',
       fullName: '神楽七奈'

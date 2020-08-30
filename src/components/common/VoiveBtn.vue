@@ -1,12 +1,12 @@
 <template>
-  <div class="btn" :class="{'playing': playing}">
+  <div class="btn">
     <div class="bg" ref="btnBg"></div>
-    <span :class="{'shake': progress && progress !== 0}">{{text}}</span>
+    <span :class="{'shake': playing}">{{text}}</span>
   </div>
 </template>
 
 <script>
-import { ref, watch } from 'vue'
+import { inject, ref, watch } from 'vue'
 
 export default {
   props: {
@@ -14,37 +14,45 @@ export default {
       type: String,
       default: ''
     },
-    playing: {
-      type: Boolean,
-      default: false
-    },
-    progress: {
-      type: Number,
-      default: 0
+    name: {
+      type: String,
+      default: ''
     }
   },
   setup (props) {
     const btnBg = ref(null)
     let timer = null
 
+    const data = inject('data')
+    const playing = ref(false)
+
     watch(() => {
-      return props.progress
-    }, () => {
-      if (props.progress === 0) {
+      for (const i in data) {
+        for (const j in data[i].voiceList) {
+          if (data[i].voiceList[j].name === props.name) {
+            return data[i].voiceList[j].progress
+          }
+        }
+      }
+    }, (val) => {
+      if (val === 0) {
+        playing.value = false
         timer = setTimeout(() => {
           btnBg.value.style.transition = 'width 0.2s linear'
           btnBg.value.style.width = '0'
-        }, 100)
+        }, 200)
       } else {
+        playing.value = true
         clearTimeout(timer)
         timer = null
         btnBg.value.style.transition = 'width 0.25s linear'
-        btnBg.value.style.width = props.progress + 5 + '%'
+        btnBg.value.style.width = val + 5 + '%'
       }
     })
 
     return {
-      btnBg
+      btnBg,
+      playing
     }
   }
 }
@@ -72,7 +80,7 @@ export default {
     width 0
     min-height 34px
     height 100%
-    background $sub-color
+    background linear-gradient(to right, $sub-color 90%, transparent 100%)
   span
     display block
     position relative
@@ -81,6 +89,20 @@ export default {
     line-height 34px
     padding 0 15px
     word-break break-all
+  &:before
+    content ''
+    display block
+    position absolute
+    width 100%
+    height 100%
+    top 0
+    left 0
+    pointer-events none
+    background-image radial-gradient(circle, $main-color 99%, transparent 100%)
+    background-repeat no-repeat
+    background-position 50%
+    transform scale(0, 1)
+    opacity 0
   &:hover
     background $hover-color
     box-shadow 0px 2px 10px 0px $main-color
@@ -88,11 +110,11 @@ export default {
       animation shake 3s linear infinite
   &:active
     background $active-color
-
-.playing
-  background $sub-color !important
-  span
-    animation shake 3s linear infinite !important
+    &:before
+      transform: scale(2, 1)
+      opacity 1
+      transition transform 0.6s, opacity 0.2s
+      transition-delay 0.2s
 
 .shake
   animation shake 3s linear infinite

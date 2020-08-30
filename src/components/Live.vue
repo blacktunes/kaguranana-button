@@ -16,8 +16,8 @@
         <p v-if="live.length === 0 && upcoming.length === 0" class="tip">{{tip}}</p>
         <transition-group name="fade">
           <div v-if="live.length > 0">
-            <template v-for="item in live">
-              <div :key="item.id" class="live">
+            <template v-for="item in live" :key="item.id">
+              <div class="live">
                 <l-icon />
                 <a :href="item.channel.yt_channel_id ? 'https://www.youtube.com/channel/' + item.channel.yt_channel_id : 'https://live.bilibili.com/' + item.channel.bb_space_id" class="live-title" target="_blank">
                   {{item.title}}

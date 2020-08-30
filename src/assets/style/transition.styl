@@ -14,3 +14,17 @@
   opacity 0
 .fade-delay-enter-to, .fade-delay-leave-from
   opacity 1
+
+.slider-up-enter-active, .slider-up-leave-active
+  transition all 0.5s
+.slider-up-enter-from, .slider-up-leave-to
+  transform translateY(100%)
+.slider-up-enter-to, .slider-up-leave-from
+  transform translateY(0)
+
+.slider-down-enter-active, .slider-down-leave-active
+  transition all 0.5s
+.slider-down-enter-from, .slider-down-leave-to
+  transform translateY(-100%)
+.slider-down-enter-to, .slider-down-leave-from
+  transform translateY(0)

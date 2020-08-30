@@ -1,32 +1,37 @@
+/* eslint-disable no-labels */
 <template>
-  <div>
-    <div v-for="item in voices" :key="item.categoryName">
-      <card v-if="_needToShow(item.translate)">
-        <template v-slot:header>
-          <div class="category">{{ $t('voicecategory.' + item.name) }}</div>
-        </template>
-        <div class="content">
-          <div v-for="voice in item.voiceList" :key="voice.name">
-            <div v-if="_needToShow(voice.translate)" class="btn-wrapper">
-              <v-btn :text="$t('voice.' + voice.name)" :playing="overlapShowList.includes(voice.name)" :progress="setting && setting.nowPlay && setting.nowPlay.name === voice.name ? progress : 0" @click="play(voice, item.name)" />
-              <img class="pic" v-if="_needUsePicture(voice.usePicture)" :src="usePicture(item.name, voice.usePicture)">
+  <transition name="fade" appear>
+    <div>
+      <div v-for="item in voices" :key="item.categoryName">
+        <card v-if="_needToShow(item.translate)">
+          <template v-slot:header>
+            <div class="category">{{ $t('voicecategory.' + item.name) }}</div>
+          </template>
+          <div class="content">
+            <div v-for="voice in item.voiceList" :key="voice.name">
+              <div v-if="_needToShow(voice.translate)" class="btn-wrapper">
+                <v-btn :text="$t('voice.' + voice.name)"
+                      :playing="overlapShowList.includes(voice.name)"
+                      :name="voice.name"
+                      @click="play(voice, item.name)" />
+                <img class="pic" v-if="_needUsePicture(voice.usePicture)" :src="usePicture(item.name, voice.usePicture)">
+              </div>
             </div>
           </div>
-        </div>
+        </card>
+      </div>
+      <card>
+        <div style="text-align: center">{{ $t('voiceTotalTip') }}: {{ $t('voiceTotal') }}</div>
+      </card>
+      <card style="display: flex;justify-content: center">
+        <a href="https://vtbbtn.org/" target="_blank">{{ $t('vtbbtn') }}</a>
       </card>
     </div>
-    <card>
-      <div style="text-align: center">{{ $t('voiceTotalTip') }}: {{ $t('voiceTotal') }}</div>
-    </card>
-    <card style="display: flex;justify-content: center">
-      <a href="https://vtbbtn.org/" target="_blank">{{ $t('vtbbtn') }}</a>
-    </card>
-    <audio ref="player" @ended="voiceEnd" @canplay="canplay" @error="error"></audio>
-  </div>
+  </transition>
 </template>
 
 <script>
-import { reactive, inject, ref, getCurrentInstance, computed } from 'vue'
+import { reactive, provide, inject, getCurrentInstance } from 'vue'
 import VoiceList from '../../public/translate/voices.json'
 import { other } from '../../public/translate/locales'
 import Card from './common/Card'
@@ -45,7 +50,7 @@ export default {
 
     const setting = inject('setting')
 
-    const voices = []
+    const voices = reactive([])
     VoiceList.category.forEach(category => {
       const temp = { ...category, voiceList: [] }
       VoiceList.voices.forEach(voice => {
@@ -55,8 +60,8 @@ export default {
       })
       voices.push(temp)
     })
+    provide('data', voices)
 
-    const overlapPlayList = {}
     const overlapShowList = reactive([])
 
     if ('mediaSession' in navigator) {
@@ -67,35 +72,20 @@ export default {
         randomPlay()
       })
       navigator.mediaSession.setActionHandler('pause', () => {
-        player.value.pause()
+        if (playerList.has('once')) playerList.get('once').audio.pause()
         navigator.mediaSession.playbackState = 'paused'
       })
     }
 
-    const player = ref(null)
-
-    let timeout = null
-    let interval = null
+    let timer = null
 
     const reset = () => {
-      if (isQuark) {
-        overlapShowList.length = 0
-      } else {
-        resetInterval()
-        currentTime.value = 0
-        duration.value = 0
-      }
       setting.loading = true
       setting.nowPlay = null
       setting.error = false
     }
 
-    const resetInterval = () => {
-      if (interval) {
-        clearInterval(interval)
-        interval = null
-      }
-    }
+    const playerList = new Map()
 
     const play = (data, category) => {
       if (process.env.NODE_ENV === 'production') {
@@ -106,24 +96,16 @@ export default {
         })
       }
       if (!setting.overlap) {
-        player.value.pause()
-        resetInterval()
+        if (playerList.has('once')) playerList.get('once').audio.pause()
         if (setting.nowPlay && setting.nowPlay.name === data.name) {
-          player.value.currentTime = 0
-          player.value.pause()
-          timeout = setTimeout(() => {
-            player.value.play()
-          }, 350)
+          clearTimeout(timer)
+          playerList.get('once').audio.currentTime = 0
+          playerList.get('once').audio.pause()
+          timer = setTimeout(() => {
+            playerList.get('once').audio.play()
+          }, 250)
         } else {
-          if (setting.nowPlay) {
-            reset()
-          }
-          if (isQuark) {
-            overlapShowList.push(data.name)
-          }
-          player.value.src = `voices/${category}/${data.path}`
-          setting.nowPlay = data
-          player.value.play()
+          addPlayer(data, category, 'once')
 
           if ('mediaSession' in navigator) {
             const meta = {
@@ -138,63 +120,72 @@ export default {
         }
       } else {
         const key = new Date().getTime()
-        overlapShowList.push(data.name)
-        overlapPlayList[key] = new Audio(`voices/${category}/${data.path}`)
-        overlapPlayList[key].addEventListener('ended', () => {
-          delete overlapPlayList[key]
-          if (overlapShowList.includes(data.name)) {
-            overlapShowList.splice(overlapShowList.indexOf(data.name), 1)
-          }
-        }, {
-          capture: false,
-          passive: false,
-          once: true
-        })
-        overlapPlayList[key].play()
+        addPlayer(data, category, key)
       }
     }
 
-    const duration = ref(0)
-    const currentTime = ref(0)
-
-    const progress = computed(() => {
-      const num = Number(((currentTime.value / duration.value) * 100).toFixed(0))
-      if (num !== Infinity && !isNaN(num)) {
-        return num
-      } else {
-        return 0
-      }
-    })
-
-    const canplay = (e) => {
-      setting.loading = false
-      if (!isQuark) {
-        duration.value = e.target.duration
-        interval = setInterval(() => {
-          if (e) {
-            currentTime.value = e.target.currentTime
-          } else {
-            resetInterval()
-          }
-        }, 100)
-      }
-    }
-
-    const error = () => {
-      setting.loading = false
-      setting.error = true
-    }
-
-    const voiceEnd = () => {
-      resetInterval()
-      currentTime.value = duration.value
-      if (setting.loop) {
-        play(setting.nowPlay)
-        return
-      }
+    const addPlayer = (data, category, key) => {
       reset()
-      if (setting.autoRandom) {
-        randomPlay()
+      playerList.set(key, {
+        name: data.name,
+        audio: new Audio(`voices/${category}/${data.path}`)
+      })
+      if (!setting.overlap) setting.nowPlay = data
+      playerList.get(key).audio.play()
+      playerList.get(key).audio.onerror = () => {
+        setting.loading = false
+        setting.error = true
+      }
+      playerList.get(key).audio.oncanplay = () => {
+        if (setting.overlap) {
+          for (const i of playerList.keys()) {
+            if (playerList.get(i).name === data.name) {
+              playerList.get(i).audio.ontimeupdate = null
+              playerList.get(i).audio.onended = () => {
+                playerList.get(i).audio = null
+                playerList.delete(i)
+              }
+            }
+          }
+        }
+        setting.loading = false
+        // eslint-disable-next-line no-labels
+        voices:
+        for (const i in voices) {
+          for (const j in voices[i].voiceList) {
+            if (voices[i].voiceList[j].name === data.name) {
+              playerList.get(key).voicesKey = [i, j]
+              const duration = playerList.get(key).audio.duration
+              let currentTime = 0
+              playerList.get(key).audio.ontimeupdate = () => {
+                currentTime = Number(((playerList.get(key).audio.currentTime / duration) * 100).toFixed(0))
+                if (isQuark) {
+                  if (currentTime !== 0) {
+                    voices[i].voiceList[j].progress = 100
+                  } else {
+                    voices[i].voiceList[j].progress = 0
+                  }
+                } else {
+                  voices[i].voiceList[j].progress = currentTime
+                }
+              }
+              playerList.get(key).audio.onended = () => {
+                voices[i].voiceList[j].progress = 0
+                reset()
+                if (setting.loop) {
+                  play(data, category)
+                } else {
+                  playerList.delete(key)
+                }
+                if (setting.autoRandom) {
+                  randomPlay()
+                }
+              }
+              // eslint-disable-next-line no-labels
+              break voices
+            }
+          }
+        }
       }
     }
 
@@ -219,17 +210,17 @@ export default {
     }
 
     mitt.on('stopPlay', () => {
-      for (const key in overlapPlayList) {
-        overlapPlayList[key].pause()
-        delete overlapPlayList[key]
+      for (const key of playerList.keys()) {
+        playerList.get(key).audio.pause()
+        playerList.get(key).audio.onerror = null
+        playerList.get(key).audio.oncanplay = null
+        playerList.get(key).audio.ontimeupdate = null
+        playerList.get(key).audio.onended = null
+        const voicesKey = playerList.get(key).voicesKey
+        voices[voicesKey[0]].voiceList[voicesKey[1]].progress = 0
       }
-      overlapShowList.length = 0
-      if (timeout) {
-        clearTimeout(timeout)
-        timeout = null
-      }
+      playerList.clear()
       reset()
-      player.value.pause()
     })
 
     const usePicture = (categoryName, name) => {
@@ -255,16 +246,13 @@ export default {
       return locale in description
     }
 
+    console.log('done!')
+
     return {
       setting,
-      player,
       overlapShowList,
       voices,
       play,
-      progress,
-      canplay,
-      error,
-      voiceEnd,
       usePicture,
       _needUsePicture,
       _needToShow
@@ -305,6 +293,7 @@ export default {
       .pic
         opacity 1
         box-shadow 0px 5px 10px 0px $main-color
+
 @media only screen and (max-width: 600px)
   .btn-wrapper
     .pic

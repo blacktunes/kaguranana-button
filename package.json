@@ -12,6 +12,7 @@
     "axios": "^0.20.0",
     "core-js": "^3.6.5",
     "mitt": "^2.1.0",
+    "register-service-worker": "^1.7.1",
     "vue": "^3.0.0-rc.9",
     "vue-i18n": "^9.0.0-alpha.15",
     "vue-router": "^4.0.0-beta.7"
@@ -19,6 +20,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.4",
     "@vue/cli-plugin-eslint": "~4.5.4",
+    "@vue/cli-plugin-pwa": "^4.5.4",
     "@vue/cli-plugin-router": "~4.5.4",
     "@vue/cli-service": "~4.5.4",
     "@vue/compiler-sfc": "^3.0.0-rc.9",

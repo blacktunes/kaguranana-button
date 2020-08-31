@@ -7,6 +7,7 @@ import VoiceList from '../public/translate/voices.json'
 import Locales from '../public/translate/locales'
 
 import './assets/style/transition.styl'
+import './registerServiceWorker'
 
 import { gtag } from './assets/js/gtag'
 

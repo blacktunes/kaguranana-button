@@ -1,3 +1,8 @@
+/**
+ * 组件存在问题需要修改
+ * 修改分类名称不会反映到语音里，输入时会重新渲染导致失去焦点
+ */
+
 <template>
   <div style="margin: 0 10px">
     <div class="header">
@@ -5,7 +10,7 @@
       <button @click="add">增加{{ showCategory ? '分类' : '语音'}}</button>
       <button @click="dlJson">下载</button>
     </div>
-    <div v-show="showCategory">
+    <div v-if="showCategory">
       <template v-for="item in data.category" :key="item.name">
         <div class="input">
           <div>name: </div>
@@ -22,7 +27,7 @@
         <hr>
       </template>
     </div>
-    <div v-show="!showCategory">
+    <div v-else>
       <template v-for="item in data.voices" :key="item.name">
         <div class="input">
           <div>name: </div>

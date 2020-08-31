@@ -12,6 +12,10 @@ const routes = [
     component: () => import('../views/VoiceEditor.vue')
   },
   {
+    path: '/search',
+    component: () => import('../views/Search.vue')
+  },
+  {
     path: '/:catchAll(.*)',
     redirect: '/'
   }

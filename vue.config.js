@@ -1,10 +1,10 @@
 module.exports = {
   // publicPath: process.env.NODE_ENV === 'production' ? '/nanakagura-button/' : '/',
   pwa: {
+    themeColor: '#c4afd0',
     manifestOptions: {
       name: '七奈按钮',
       short_name: '七奈按钮',
-      themeColor: '#c4afd0',
       icons: [
         {
           src: '/image/nana_avatar.jpg',

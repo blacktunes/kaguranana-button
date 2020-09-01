@@ -1,62 +1,67 @@
-/**
- * 组件存在问题需要修改
- * 修改分类名称不会反映到语音里，输入时会重新渲染导致失去焦点
- */
-
 <template>
-  <div style="margin: 0 10px">
+  <div class="editor">
     <div class="header">
       <button @click="changeShow">切换至{{ !showCategory ? '分类' : '语音'}}</button>
       <button @click="add">增加{{ showCategory ? '分类' : '语音'}}</button>
       <button @click="dlJson">下载</button>
     </div>
-    <div v-if="showCategory">
-      <template v-for="item in data.category" :key="item.name">
-        <div class="input">
-          <div>name: </div>
-          <input type="text" v-model="item.name">
-        </div>
-        <div class="input">
-          <div>zh-CN: </div>
-          <input type="text" v-model="item.translate['zh-CN']">
-        </div>
-        <div class="input">
-          <div>ja-JP: </div>
-          <input type="text" v-model="item.translate['ja-JP']">
-        </div>
-        <hr>
+    <table v-if="showCategory">
+      <tr>
+        <th></th>
+        <th>name</th>
+        <th>zh-CN</th>
+        <th>ja-JP</th>
+      </tr>
+      <template v-for="(item, index) in data.category" :key="index">
+        <tr>
+          <td>{{data.category.length - index}}</td>
+          <td>
+            <input type="text" v-model="item.name">
+          </td>
+          <td>
+            <input type="text" v-model="item.translate['zh-CN']">
+          </td>
+          <td>
+            <input type="text" v-model="item.translate['ja-JP']">
+          </td>
+        </tr>
       </template>
-    </div>
-    <div v-else>
-      <template v-for="item in data.voices" :key="item.name">
-        <div class="input">
-          <div>name: </div>
-          <input type="text" v-model="item.name">
-        </div>
-        <div class="input">
-          <div>path: </div>
-          <input type="text" v-model="item.path">
-        </div>
-        <div class="input">
-          <div>category: </div>
-          <edit-select :name="item.name" :category="item.category"/>
-        </div>
-        <div class="input">
-          <div>zh-CN: </div>
-          <input type="text" v-model="item.translate['zh-CN']">
-        </div>
-        <div class="input">
-          <div>ja-JP: </div>
-          <input type="text" v-model="item.translate['ja-JP']">
-        </div>
-        <hr>
+    </table>
+    <table v-else>
+      <tr>
+        <th></th>
+        <th>name</th>
+        <th>path</th>
+        <th>category</th>
+        <th>zh-CN</th>
+        <th>ja-JP</th>
+      </tr>
+      <template v-for="(item, index) in data.voices" :key="item.name">
+        <tr>
+          <td>{{data.voices.length - index}}</td>
+          <td>
+            <input type="text" v-model="item.name">
+          </td>
+          <td>
+            <input type="text" v-model="item.path">
+          </td>
+          <td>
+            <edit-select :name="item.name" :category="item.category"/>
+          </td>
+          <td>
+            <input type="text" v-model="item.translate['zh-CN']">
+          </td>
+          <td>
+            <input type="text" v-model="item.translate['ja-JP']">
+          </td>
+        </tr>
       </template>
-    </div>
+    </table>
   </div>
 </template>
 
 <script>
-import { ref, provide } from 'vue'
+import { ref, provide, computed, watch } from 'vue'
 import VoiceList from '../../public/translate/voices.json'
 import EditSelect from '../components/EditSelect'
 
@@ -65,7 +70,10 @@ export default {
     EditSelect
   },
   setup () {
-    const data = ref(VoiceList)
+    const data = ref({
+      category: VoiceList.category.reverse(),
+      voices: VoiceList.voices.reverse()
+    })
     const showCategory = ref(true)
 
     provide('data', data)
@@ -76,7 +84,7 @@ export default {
 
     const add = () => {
       if (showCategory.value) {
-        data.value.category.push({
+        data.value.category.unshift({
           name: null,
           translate: {
             'zh-CN': null,
@@ -84,7 +92,7 @@ export default {
           }
         })
       } else {
-        data.value.voices.push({
+        data.value.voices.unshift({
           name: null,
           path: null,
           translate: {
@@ -95,6 +103,26 @@ export default {
         })
       }
     }
+
+    const tempData = computed(() => JSON.parse(JSON.stringify(data.value.category)))
+
+    watch(tempData, (newVal, oldVal) => {
+      let oldCategory = null
+      let newCategory = null
+      for (const i in newVal) {
+        const oldIndex = newVal.length - oldVal.length + Number(i)
+        if (newVal[i].name !== oldVal[oldIndex].name) {
+          oldCategory = oldVal[oldIndex].name
+          newCategory = newVal[i].name
+          break
+        }
+      }
+      for (const j in data.value.voices) {
+        if (data.value.voices[j].category === oldCategory) {
+          data.value.voices[j].category = newCategory
+        }
+      }
+    })
 
     const dlJson = () => {
       const jsonData = JSON.stringify(data.value)
@@ -112,10 +140,6 @@ export default {
       document.body.removeChild(eleLink)
     }
 
-    // setInterval(() => {
-    //   console.log(data.value.voices[0])
-    // }, 5000)
-
     return {
       data,
       showCategory,
@@ -128,17 +152,19 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.header
-  position fixed
-  top 48px
-  right 10px
-  margin 10px 0
-.input
-  display flex
-  align-items center
-  height 30px
-  line-height 30px
-  div
-    width 100px
+table
+  max-width 100%
+  th
+    position sticky
+    top 48px
+    padding 5px
+    background #fff
+  td
     text-align center
+
+.editor
+  min-height calc(100vh - 67px - 48px - 10px)
+  margin 0 10px
+  .header
+    margin 5px 0 5px 5px
 </style>

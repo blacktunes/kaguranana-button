@@ -80,7 +80,7 @@ export default {
     width 0
     min-height 34px
     height 100%
-    background linear-gradient(to right, $sub-color 90%, transparent 100%)
+    background linear-gradient(to right, $sub-color 98%, transparent 100%)
   span
     display block
     position relative

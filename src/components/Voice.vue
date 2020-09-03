@@ -11,9 +11,11 @@
             <div v-for="voice in item.voiceList" :key="voice.name">
               <div v-if="_needToShow(voice.translate)" class="btn-wrapper">
                 <v-btn :text="$t('voice.' + voice.name)"
-                      :playing="overlapShowList.includes(voice.name)"
-                      :name="voice.name"
-                      @click="play(voice, item.name)" />
+                       class="v-btn"
+                       :class="{ 'search': searchList.length > 0 && !searchList.includes(voice.name), 'highlight': highlight === voice.name }"
+                       :name="voice.name"
+                       @click="play(voice, item.name)"
+                       :ref="el => { if (el) btnList[voice.name] = el }" />
                 <img class="pic" v-if="_needUsePicture(voice.usePicture)" :src="usePicture(item.name, voice.usePicture)">
               </div>
             </div>
@@ -31,7 +33,7 @@
 </template>
 
 <script>
-import { reactive, provide, inject, getCurrentInstance } from 'vue'
+import { ref, reactive, provide, inject, getCurrentInstance, watch } from 'vue'
 import VoiceList from '../../public/translate/voices.json'
 import { other } from '../../public/translate/locales'
 import Card from './common/Card'
@@ -50,6 +52,32 @@ export default {
 
     const setting = inject('setting')
 
+    const btnList = ref({})
+
+    const searchData = inject('searchData')
+    const highlight = ref('')
+
+    mitt.on('autoScroll', () => {
+      if (searchData.list && searchData.list.length > 0) {
+        for (const i in btnList.value) {
+          if (searchData.index + 1 > searchData.list.length) searchData.index = 0
+          if (i === searchData.list[searchData.index]) {
+            searchData.index++
+            const scrollPos = document.documentElement.scrollTop + btnList.value[i].$el.getBoundingClientRect().top - 200
+            highlight.value = i
+            window.scrollTo({ top: scrollPos, behavior: 'smooth' })
+            break
+          }
+        }
+      }
+    })
+
+    watch(() => {
+      return searchData.value
+    }, () => {
+      highlight.value = ''
+    })
+
     const voices = reactive([])
     VoiceList.category.forEach(category => {
       const temp = { ...category, voiceList: [] }
@@ -61,8 +89,6 @@ export default {
       voices.push(temp)
     })
     provide('data', voices)
-
-    const overlapShowList = reactive([])
 
     if ('mediaSession' in navigator) {
       navigator.mediaSession.setActionHandler('nexttrack', () => {
@@ -171,10 +197,10 @@ export default {
               }
               playerList.get(key).audio.onended = () => {
                 voices[i].voiceList[j].progress = 0
-                reset()
                 if (setting.loop) {
                   play(data, category)
                 } else {
+                  reset()
                   playerList.delete(key)
                 }
                 if (setting.autoRandom) {
@@ -250,7 +276,9 @@ export default {
 
     return {
       setting,
-      overlapShowList,
+      btnList,
+      searchList: searchData.list,
+      highlight,
       voices,
       play,
       usePicture,
@@ -264,6 +292,11 @@ export default {
 <style lang="stylus" scoped>
 @import '~@/assets/style/base.styl'
 
+.search
+  background #ccc
+.highlight
+  background $active-color
+
 .category
   font-size 24px
   padding 14px 10px
@@ -274,6 +307,8 @@ export default {
   .btn-wrapper
     position relative
     margin 5px
+    .v-btn
+      transition background 0.2s
     .pic
       position absolute
       bottom calc(100% + 10px)

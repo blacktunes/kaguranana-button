@@ -33,6 +33,13 @@ export default {
 
     provide('setting', setting)
 
+    const searchData = reactive({
+      value: '',
+      list: [],
+      index: 0
+    })
+    provide('searchData', searchData)
+
     console.log(`%c${other.consoleTip}%c `, `font-size:20px;color:${other.consoleTipColor}`, `padding-right:${other.consoleImgWidth};padding-top:${other.consoleImgHeight};background:url('${location.origin}/image/${other.consoleImg}') no-repeat;background-size:100% 100%`)
   }
 }

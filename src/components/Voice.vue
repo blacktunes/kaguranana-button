@@ -2,6 +2,9 @@
 <template>
   <transition name="fade" appear>
     <div>
+      <card class="search-wrapper" :class="{'show-search': isShowSearch}">
+        <search class="search" />
+      </card>
       <div v-for="item in voices" :key="item.categoryName">
         <card v-if="_needToShow(item.translate)">
           <template v-slot:header>
@@ -12,7 +15,7 @@
               <div v-if="_needToShow(voice.translate)" class="btn-wrapper">
                 <v-btn :text="$t('voice.' + voice.name)"
                        class="v-btn"
-                       :class="{ 'search': searchList.length > 0 && !searchList.includes(voice.name), 'highlight': highlight === voice.name }"
+                       :class="{ 'search-list': searchList.length > 0 && !searchList.includes(voice.name), 'highlight': highlight === voice.name }"
                        :name="voice.name"
                        @click="play(voice, item.name)"
                        :ref="el => { if (el) btnList[voice.name] = el }" />
@@ -36,21 +39,25 @@
 import { ref, reactive, provide, inject, getCurrentInstance, watch } from 'vue'
 import VoiceList from '../../public/translate/voices.json'
 import { other } from '../../public/translate/locales'
+import { gtag } from '../assets/js/gtag'
+import mitt from '../assets/js/mitt'
 import Card from './common/Card'
 import VBtn from './common/VoiveBtn'
-import mitt from '../assets/js/mitt'
-import { gtag } from '../assets/js/gtag'
+import Search from '../components/Search'
 
 export default {
   components: {
     Card,
-    VBtn
+    VBtn,
+    Search
   },
   setup () {
     const { ctx } = getCurrentInstance()
     const isQuark = navigator.userAgent.toLowerCase().includes('quark')
 
     const setting = inject('setting')
+
+    const isShowSearch = inject('isShowSearch')
 
     const btnList = ref({})
 
@@ -272,10 +279,9 @@ export default {
       return locale in description
     }
 
-    console.log('done!')
-
     return {
       setting,
+      isShowSearch,
       btnList,
       searchList: searchData.list,
       highlight,
@@ -292,7 +298,27 @@ export default {
 <style lang="stylus" scoped>
 @import '~@/assets/style/base.styl'
 
-.search
+.search-wrapper
+    // box-sizing border-box
+    z-index 1
+    position sticky
+    top 58px
+    height 0
+    opacity 0
+    margin-top 0
+    margin-bottom 0
+    transition all 0.3s
+    background #fff
+    .search
+      width 90%
+      margin auto
+
+.show-search
+  height 60px
+  opacity 1
+  margin-top 10px
+
+.search-list
   background #ccc
 .highlight
   background $active-color
@@ -339,4 +365,11 @@ export default {
         opacity 1
         transition opacity 0s
         transition-delay 0s
+
+@media only screen and (min-width: 550px)
+  .search-wrapper
+    height 0
+    opacity 0
+    margin-top 0
+    margin-bottom 0
 </style>

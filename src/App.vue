@@ -12,7 +12,7 @@ import VHeader from './views/Header'
 import Control from './views/Control'
 import VFooter from './views/Footer'
 import { other } from '../public/translate/locales'
-import { provide, reactive } from 'vue'
+import { provide, reactive, ref } from 'vue'
 
 export default {
   components: {
@@ -39,6 +39,9 @@ export default {
       index: 0
     })
     provide('searchData', searchData)
+
+    const isShowSearch = ref(false)
+    provide('isShowSearch', isShowSearch)
 
     console.log(`%c${other.consoleTip}%c `, `font-size:20px;color:${other.consoleTipColor}`, `padding-right:${other.consoleImgWidth};padding-top:${other.consoleImgHeight};background:url('${location.origin}/image/${other.consoleImg}') no-repeat;background-size:100% 100%`)
   }

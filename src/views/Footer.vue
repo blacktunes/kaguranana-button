@@ -1,4 +1,5 @@
 <template>
+<transition name="fade" appear>
   <div class="footer">
     <div>
       <div class="author">
@@ -21,6 +22,7 @@
       <div>{{$t("info.notOfficial")}}</div>
     </div>
   </div>
+</transition>
 </template>
 
 <script>

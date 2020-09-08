@@ -1,4 +1,5 @@
 <template>
+<transition name="fade" appear>
   <div class="editor">
     <div class="header">
       <button @click="changeShow">切换至{{ !showCategory ? '分类' : '语音'}}</button>
@@ -58,6 +59,7 @@
       </template>
     </table>
   </div>
+</transition>
 </template>
 
 <script>
@@ -163,7 +165,6 @@ table
     text-align center
 
 .editor
-  min-height calc(100vh - 67px - 48px - 10px)
   margin 0 10px
   .header
     margin 5px 0 5px 5px

@@ -25,12 +25,6 @@
           </div>
         </card>
       </div>
-      <card>
-        <div style="text-align: center">{{ $t('voiceTotalTip') }}: {{ $t('voiceTotal') }}</div>
-      </card>
-      <card style="display: flex;justify-content: center">
-        <a href="https://vtbbtn.org/" target="_blank">{{ $t('vtbbtn') }}</a>
-      </card>
     </div>
   </transition>
 </template>

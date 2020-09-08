@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <v-header />
-    <router-view/>
-    <control v-if="$route.path === '/'"/>
+    <router-view style="min-height: calc(100vh - 67px - 48px)"/>
+    <control v-if="showControl"/>
     <v-footer />
   </div>
 </template>
@@ -12,7 +12,8 @@ import VHeader from './views/Header'
 import Control from './views/Control'
 import VFooter from './views/Footer'
 import { other } from '../public/translate/locales'
-import { provide, reactive, ref } from 'vue'
+import { provide, reactive, ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
 
 export default {
   components: {
@@ -21,6 +22,8 @@ export default {
     VFooter
   },
   setup () {
+    const route = useRoute()
+
     // 播放状态
     const setting = reactive({
       loading: true,
@@ -44,6 +47,20 @@ export default {
     provide('isShowSearch', isShowSearch)
 
     console.log(`%c${other.consoleTip}%c `, `font-size:20px;color:${other.consoleTipColor}`, `padding-right:${other.consoleImgWidth};padding-top:${other.consoleImgHeight};background:url('${location.origin}/image/${other.consoleImg}') no-repeat;background-size:100% 100%`)
+
+    const showControl = ref(false)
+
+    watch(route, () => {
+      if (route.path === '/') {
+        showControl.value = true
+      } else {
+        showControl.value = false
+      }
+    })
+
+    return {
+      showControl
+    }
   }
 }
 </script>

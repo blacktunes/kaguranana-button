@@ -1,19 +1,19 @@
 <template>
   <div id="app">
     <v-header />
-    <router-view style="min-height: calc(100vh - 67px - 48px)"/>
+    <router-view />
     <control v-if="showControl"/>
     <v-footer />
   </div>
 </template>
 
 <script>
+import { provide, reactive, ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
+import ConsoleData from '../public/other/data.json'
 import VHeader from './views/Header'
 import Control from './views/Control'
 import VFooter from './views/Footer'
-import { other } from '../public/translate/locales'
-import { provide, reactive, ref, watch } from 'vue'
-import { useRoute } from 'vue-router'
 
 export default {
   components: {
@@ -22,8 +22,6 @@ export default {
     VFooter
   },
   setup () {
-    const route = useRoute()
-
     // 播放状态
     const setting = reactive({
       loading: true,
@@ -33,9 +31,9 @@ export default {
       autoRandom: false,
       loop: false
     })
-
     provide('setting', setting)
 
+    // 搜索状态
     const searchData = reactive({
       value: '',
       list: [],
@@ -43,13 +41,13 @@ export default {
     })
     provide('searchData', searchData)
 
+    // 窄屏状态下是否显示搜索栏
     const isShowSearch = ref(false)
     provide('isShowSearch', isShowSearch)
 
-    console.log(`%c${other.consoleTip}%c `, `font-size:20px;color:${other.consoleTipColor}`, `padding-right:${other.consoleImgWidth};padding-top:${other.consoleImgHeight};background:url('${location.origin}/image/${other.consoleImg}') no-repeat;background-size:100% 100%`)
-
+    // 是否显示控制栏
+    const route = useRoute()
     const showControl = ref(false)
-
     watch(route, () => {
       if (route.path === '/') {
         showControl.value = true
@@ -57,6 +55,8 @@ export default {
         showControl.value = false
       }
     })
+
+    console.log(`%c${ConsoleData.consoleTip}%c `, `font-size:20px;color:${ConsoleData.consoleTipColor}`, `padding-right:${ConsoleData.consoleImgWidth};padding-top:${ConsoleData.consoleImgHeight};background:url('${location.origin}/image/${ConsoleData.consoleImg}') no-repeat;background-size:100% 100%`)
 
     return {
       showControl

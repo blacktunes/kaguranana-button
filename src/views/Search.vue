@@ -48,9 +48,10 @@ export default {
     Waterfall
   },
   setup () {
+    // 搜索文字
     const value = ref('')
+    // 结果列表
     const searchList = reactive([])
-    const path = ref(data[Math.floor(Math.random() * Math.floor(data.length - 1))].path)
 
     const search = () => {
       searchList.length = 0
@@ -67,6 +68,7 @@ export default {
       showList.value = true
     }
 
+    // 是否显示结果
     const showList = ref(false)
 
     const clear = () => {
@@ -75,8 +77,6 @@ export default {
       showList.value = false
     }
 
-    const length = data.length
-
     const showAll = () => {
       showList.value = true
       data.forEach(item => {
@@ -84,15 +84,20 @@ export default {
       })
     }
 
+    // 随机标题图片
+    const path = ref(data[Math.floor(Math.random() * Math.floor(data.length - 1))].path)
+    // 总图片数
+    const length = data.length
+
     return {
       value,
       searchList,
-      path,
       search,
       showList,
       clear,
-      length,
-      showAll
+      showAll,
+      path,
+      length
     }
   }
 

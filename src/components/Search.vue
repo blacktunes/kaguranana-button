@@ -17,13 +17,14 @@
 </template>
 
 <script>
-import { inject, getCurrentInstance, watch } from 'vue'
+import { inject, watch } from 'vue'
+import { useI18n } from 'vue-i18n'
 import mitt from '../assets/js/mitt'
 import VoiceList from '../../public/translate/voices.json'
 
 export default {
   setup () {
-    const { ctx } = getCurrentInstance()
+    const { locale } = useI18n()
 
     const isShowSearch = inject('isShowSearch')
 
@@ -43,7 +44,7 @@ export default {
       if (searchData.value.length < 1) return
       const reg = new RegExp(searchData.value, 'i')
       for (const i in voiceList) {
-        const name = voiceList[i].translate[ctx.$i18n.locale]
+        const name = voiceList[i].translate[locale.value]
         if (name && reg.test(name)) {
           searchData.list.push(voiceList[i].name)
         }

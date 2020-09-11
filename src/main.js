@@ -4,7 +4,7 @@ import router from './router'
 
 import { createI18n } from 'vue-i18n'
 import VoiceList from '../public/translate/voices.json'
-import Locales from '../public/translate/locales'
+import Locales from '../public/translate/locales.json'
 
 import './assets/style/transition.styl'
 import './registerServiceWorker'
@@ -46,7 +46,6 @@ CN.voiceTotal = Object.keys(CN.voice).length.toString()
 JP.voiceTotal = Object.keys(JP.voice).length.toString()
 
 const i18n = createI18n({
-  legacy: true,
   locale: /ja/i.test(navigator.language) ? 'ja-JP' : 'zh-CN',
   messages: {
     'zh-CN': CN,

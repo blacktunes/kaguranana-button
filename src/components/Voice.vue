@@ -8,12 +8,12 @@
       <div v-for="item in voices" :key="item.categoryName">
         <card v-if="_needToShow(item.translate)">
           <template v-slot:header>
-            <div class="category">{{ $t('voicecategory.' + item.name) }}</div>
+            <div class="category">{{ t('voicecategory.' + item.name) }}</div>
           </template>
           <div class="content">
             <div v-for="voice in item.voiceList" :key="voice.name">
               <div v-if="_needToShow(voice.translate)" class="btn-wrapper">
-                <v-btn :text="$t('voice.' + voice.name)"
+                <v-btn :text="t('voice.' + voice.name)"
                        class="v-btn"
                        :class="{ 'search-list': searchList.length > 0 && !searchList.includes(voice.name), 'highlight': highlight === voice.name }"
                        :name="voice.name"
@@ -30,11 +30,12 @@
 </template>
 
 <script>
-import { ref, reactive, provide, inject, getCurrentInstance, watch } from 'vue'
-import VoiceList from '../../public/translate/voices.json'
-import { other } from '../../public/translate/locales'
+import { ref, reactive, provide, inject, watch } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { gtag } from '../assets/js/gtag'
 import mitt from '../assets/js/mitt'
+import VoiceList from '../../public/translate/voices.json'
+import MediaData from '../../public/other/data.json'
 import Card from './common/Card'
 import VBtn from './common/VoiveBtn'
 import Search from '../components/Search'
@@ -46,13 +47,16 @@ export default {
     Search
   },
   setup () {
-    const { ctx } = getCurrentInstance()
+    const { t, locale } = useI18n()
+
+    // 判断浏览器是否为夸克从而停用部分功能
     const isQuark = navigator.userAgent.toLowerCase().includes('quark')
 
     const setting = inject('setting')
 
     const isShowSearch = inject('isShowSearch')
 
+    // 所有按钮的引用
     const btnList = ref({})
 
     const searchData = inject('searchData')
@@ -115,6 +119,7 @@ export default {
     const playerList = new Map()
 
     const play = (data, category) => {
+      // GA的事件上报
       if (process.env.NODE_ENV === 'production') {
         gtag('event', '播放语音', {
           event_category: data.name,
@@ -136,10 +141,10 @@ export default {
 
           if ('mediaSession' in navigator) {
             const meta = {
-              title: ctx.$t('voice.' + data.name),
-              artist: ctx.$t('info.fullName'),
-              album: ctx.$t('info.title'),
-              artwork: [{ src: `/image/${other.artwork}`, sizes: '128x128' }]
+              title: t('voice.' + data.name),
+              artist: t('info.fullName'),
+              album: t('info.title'),
+              artwork: [{ src: `/image/${MediaData.artwork}`, sizes: '128x128' }]
             }
             navigator.mediaSession.metadata = new window.MediaMetadata(meta)
             navigator.mediaSession.playbackState = 'playing'
@@ -237,6 +242,7 @@ export default {
     }
 
     mitt.on('stopPlay', () => {
+      clearTimeout(timer)
       for (const key of playerList.keys()) {
         playerList.get(key).audio.pause()
         playerList.get(key).audio.onerror = null
@@ -251,14 +257,14 @@ export default {
     })
 
     const usePicture = (categoryName, name) => {
-      const locale = ctx.$i18n.locale
-      return `/voices/${categoryName}/${name[locale]}`
+      const lang = locale.value
+      return `/voices/${categoryName}/${name[lang]}`
     }
 
     const _needUsePicture = (usePicture) => {
       if (usePicture) {
-        const locale = ctx.$i18n.locale
-        return locale in usePicture
+        const lang = locale.value
+        return lang in usePicture
       } else {
         return false
       }
@@ -269,12 +275,12 @@ export default {
     }
 
     const _needToShow = (description) => {
-      const locale = ctx.$i18n.locale
-      return locale in description
+      const lang = locale.value
+      return lang in description
     }
 
     return {
-      setting,
+      t,
       isShowSearch,
       btnList,
       searchList: searchData.list,

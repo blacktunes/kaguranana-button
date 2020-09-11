@@ -16,25 +16,30 @@
       <div class="git">
         <i-btn class="btn" :url="githubUrl" :img="require('../assets/image/github-fill.png')" />
         <a :href="githubUrl" target="_blank">
-          {{$t("info.toGithub")}}
+          {{t("info.toGithub")}}
         </a>
       </div>
-      <div>{{$t("info.notOfficial")}}</div>
+      <div>{{t("info.notOfficial")}}</div>
     </div>
   </div>
 </transition>
 </template>
 
 <script>
+import { useI18n } from 'vue-i18n'
 import IBtn from '../components/common/IconBtn'
 
 export default {
   components: {
     IBtn
   },
-  data () {
+  setup () {
+    const { t } = useI18n()
+    const githubUrl = 'https://github.com/blacktunes/kaguranana-button'
+
     return {
-      githubUrl: 'https://github.com/blacktunes/kaguranana-button'
+      t,
+      githubUrl
     }
   }
 }

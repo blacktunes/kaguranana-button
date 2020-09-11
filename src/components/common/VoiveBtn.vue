@@ -11,12 +11,10 @@ import { inject, ref, watch } from 'vue'
 export default {
   props: {
     text: {
-      type: String,
-      default: ''
+      type: String
     },
     name: {
-      type: String,
-      default: ''
+      type: String
     }
   },
   setup (props) {

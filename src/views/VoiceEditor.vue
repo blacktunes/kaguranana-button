@@ -72,12 +72,13 @@ export default {
     EditSelect
   },
   setup () {
+    // 是否显示分类
+    const showCategory = ref(true)
+
     const data = ref({
       category: VoiceList.category.reverse(),
       voices: VoiceList.voices.reverse()
     })
-    const showCategory = ref(true)
-
     provide('data', data)
 
     const changeShow = () => {
@@ -106,6 +107,7 @@ export default {
       }
     }
 
+    // 需要定义中间变量才能监听到引用的变化值
     const tempData = computed(() => JSON.parse(JSON.stringify(data.value.category)))
 
     watch(tempData, (newVal, oldVal) => {
@@ -126,19 +128,20 @@ export default {
       }
     })
 
+    // 下载JSON文件
     const dlJson = () => {
       const jsonData = JSON.stringify(data.value)
 
-      var eleLink = document.createElement('a')
+      const eleLink = document.createElement('a')
       eleLink.download = 'voices.json'
       eleLink.style.display = 'none'
       // 字符内容转变成blob地址
-      var blob = new Blob([jsonData])
+      const blob = new Blob([jsonData])
       eleLink.href = URL.createObjectURL(blob)
       // 触发点击
       document.body.appendChild(eleLink)
       eleLink.click()
-      // 然后移除
+      // 移除DOM
       document.body.removeChild(eleLink)
     }
 

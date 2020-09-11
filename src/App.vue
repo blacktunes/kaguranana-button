@@ -56,7 +56,7 @@ export default {
       }
     })
 
-    console.log(`%c${ConsoleData.consoleTip}%c `, `font-size:20px;color:${ConsoleData.consoleTipColor}`, `padding-right:${ConsoleData.consoleImgWidth};padding-top:${ConsoleData.consoleImgHeight};background:url('${location.origin}/image/${ConsoleData.consoleImg}') no-repeat;background-size:100% 100%`)
+    console.log(`%c${ConsoleData.consoleTip}%c `, `font-size:20px;color:${ConsoleData.consoleTipColor}`, `padding-right:${ConsoleData.consoleImgWidth};padding-top:${ConsoleData.consoleImgHeight};background:url('${location.origin}/other/${ConsoleData.consoleImg}') no-repeat;background-size:100% 100%`)
 
     return {
       showControl

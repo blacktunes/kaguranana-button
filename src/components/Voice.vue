@@ -144,7 +144,7 @@ export default {
               title: t('voice.' + data.name),
               artist: t('info.fullName'),
               album: t('info.title'),
-              artwork: [{ src: `/image/${MediaData.artwork}`, sizes: '128x128' }]
+              artwork: [{ src: `/other/${MediaData.artwork}`, sizes: '128x128' }]
             }
             navigator.mediaSession.metadata = new window.MediaMetadata(meta)
             navigator.mediaSession.playbackState = 'playing'

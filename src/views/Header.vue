@@ -19,12 +19,13 @@
   </transition>
 </template>
 
-<script>
-import { ref, inject, watch, onMounted } from 'vue'
+<script lang="ts">
+import { ref, inject, watch, onMounted, Ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
-import IBtn from '../components/common/IconBtn'
-import Search from '../components/Search'
+import { IsShowSearch, SearchData } from '@/assets/script/option'
+import IBtn from '@/components/common/IconBtn.vue'
+import Search from '@/components/Search.vue'
 
 export default {
   components: {
@@ -32,7 +33,7 @@ export default {
     Search
   },
   setup () {
-    const searchData = inject('searchData')
+    const searchData: SearchData = inject('searchData') as SearchData
 
     const btnList = [
       {
@@ -49,9 +50,10 @@ export default {
       }
     ]
 
-    const logo = ref(null)
+    const logo: Ref<HTMLElement> = ref() as Ref<HTMLElement>
     let isRestart = false
     const logoClick = () => {
+      if (!logo.value) return
       if (isRestart) {
         logo.value.style.animation = 'logo 1s'
         isRestart = !isRestart
@@ -61,7 +63,7 @@ export default {
       }
     }
 
-    const isShowSearch = inject('isShowSearch')
+    const isShowSearch: Ref<IsShowSearch> = inject('isShowSearch') as Ref<IsShowSearch>
 
     const showSearch = () => {
       isShowSearch.value = !isShowSearch.value

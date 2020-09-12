@@ -5,8 +5,9 @@
   </div>
 </template>
 
-<script>
-import { inject, ref, watch } from 'vue'
+<script lang="ts">
+import { inject, Ref, ref, watch } from 'vue'
+import { Voices } from '@/assets/script/option'
 
 export default {
   props: {
@@ -18,17 +19,17 @@ export default {
     }
   },
   setup (props) {
-    const btnBg = ref(null)
-    let timer = null
+    const btnBg: Ref<HTMLElement> = ref() as Ref<HTMLElement>
+    let timer: any = null
 
-    const data = inject('data')
+    const voices: Voices = inject('voices') as Voices
     const playing = ref(false)
 
     watch(() => {
-      for (const i in data) {
-        for (const j in data[i].voiceList) {
-          if (data[i].voiceList[j].name === props.name) {
-            return data[i].voiceList[j].progress
+      for (const i in voices) {
+        for (const j in voices[i].voiceList) {
+          if (voices[i].voiceList[j].name === props.name) {
+            return voices[i].voiceList[j].progress
           }
         }
       }
@@ -44,7 +45,7 @@ export default {
         clearTimeout(timer)
         timer = null
         btnBg.value.style.transition = 'width 0.25s linear'
-        btnBg.value.style.width = val + 5 + '%'
+        btnBg.value.style.width = (val as number) + 5 + '%'
       }
     })
 

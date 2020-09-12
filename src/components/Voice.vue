@@ -1,11 +1,10 @@
-/* eslint-disable no-labels */
 <template>
   <transition name="fade" appear>
     <div>
       <card class="search-wrapper" :class="{'show-search': isShowSearch}">
         <search class="search" />
       </card>
-      <div v-for="item in voices" :key="item.categoryName">
+      <div v-for="item in voices" :key="item.name">
         <card v-if="_needToShow(item.translate)">
           <template v-slot:header>
             <div class="category">{{ t('voicecategory.' + item.name) }}</div>
@@ -19,7 +18,7 @@
                        :name="voice.name"
                        @click="play(voice, item.name)"
                        :ref="el => { if (el) btnList[voice.name] = el }" />
-                <img class="pic" v-if="_needUsePicture(voice.usePicture)" :src="usePicture(item.name, voice.usePicture)">
+                <img class="pic" v-if="_needUsePicture(voice.usePicture)" :src="_usePicture(item.name, voice.usePicture)">
               </div>
             </div>
           </div>
@@ -29,16 +28,17 @@
   </transition>
 </template>
 
-<script>
-import { ref, reactive, provide, inject, watch } from 'vue'
+<script lang="ts">
+import { ref, reactive, provide, inject, watch, Ref } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { gtag } from '../assets/js/gtag'
-import mitt from '../assets/js/mitt'
-import VoiceList from '../../public/translate/voices.json'
-import MediaData from '../../public/other/data.json'
-import Card from './common/Card'
-import VBtn from './common/VoiveBtn'
-import Search from '../components/Search'
+import { gtag } from '@/assets/script/gtag'
+import { EVENT, IsShowSearch, Player, PlayerList, PlaySetting, SearchData, Translate, Voices, VoicesCategory, VoicesItem } from '@/assets/script/option'
+import mitt from '@/assets/script/mitt'
+import VoiceList from '@/../public/translate/voices.json'
+import MediaData from '@/../public/other/data.json'
+import Card from './common/Card.vue'
+import VBtn from './common/VoiveBtn.vue'
+import Search from '@/components/Search.vue'
 
 export default {
   components: {
@@ -52,17 +52,17 @@ export default {
     // 判断浏览器是否为夸克从而停用部分功能
     const isQuark = navigator.userAgent.toLowerCase().includes('quark')
 
-    const setting = inject('setting')
+    const playSetting: PlaySetting = inject('playSetting') as PlaySetting
 
-    const isShowSearch = inject('isShowSearch')
+    const isShowSearch: Ref<IsShowSearch> = inject('isShowSearch') as Ref<IsShowSearch>
 
     // 所有按钮的引用
     const btnList = ref({})
 
-    const searchData = inject('searchData')
+    const searchData: SearchData = inject('searchData') as SearchData
     const highlight = ref('')
 
-    mitt.on('autoScroll', () => {
+    mitt.on(EVENT.autoScroll, () => {
       if (searchData.list && searchData.list.length > 0) {
         for (const i in btnList.value) {
           if (searchData.index + 1 > searchData.list.length) searchData.index = 0
@@ -83,9 +83,9 @@ export default {
       highlight.value = ''
     })
 
-    const voices = reactive([])
+    const voices: Voices = reactive([]) as Voices
     VoiceList.category.forEach(category => {
-      const temp = { ...category, voiceList: [] }
+      const temp: VoicesCategory = { ...category, voiceList: [] }
       VoiceList.voices.forEach(voice => {
         if (voice.category === category.name) {
           temp.voiceList.push(voice)
@@ -93,7 +93,7 @@ export default {
       })
       voices.push(temp)
     })
-    provide('data', voices)
+    provide('voices', voices)
 
     if ('mediaSession' in navigator) {
       navigator.mediaSession.setActionHandler('nexttrack', () => {
@@ -103,38 +103,47 @@ export default {
         randomPlay()
       })
       navigator.mediaSession.setActionHandler('pause', () => {
-        if (playerList.has('once')) playerList.get('once').audio.pause()
+        if (playerList.has('once')) (playerList.get('once') as Player).audio.pause()
         navigator.mediaSession.playbackState = 'paused'
       })
     }
 
-    let timer = null
+    let timer: any = null
 
+    /**
+     * 重置播放状态
+     */
     const reset = () => {
-      setting.loading = true
-      setting.nowPlay = null
-      setting.error = false
+      playSetting.loading = true
+      playSetting.nowPlay = null
+      playSetting.error = false
     }
 
-    const playerList = new Map()
+    const playerList: PlayerList = new Map()
 
-    const play = (data, category) => {
+    /**
+     * @param data 语音对象
+     * @param category 所属分类的name
+     */
+    const play = (data: VoicesItem, category: string) => {
       // GA的事件上报
       if (process.env.NODE_ENV === 'production') {
+        /* eslint-disable @typescript-eslint/camelcase */
         gtag('event', '播放语音', {
           event_category: data.name,
           event_label: category,
           value: 1
         })
+        /* eslint-enable */
       }
-      if (!setting.overlap) {
-        if (playerList.has('once')) playerList.get('once').audio.pause()
-        if (setting.nowPlay && setting.nowPlay.name === data.name) {
+      if (!playSetting.overlap) {
+        if (playerList.has('once')) (playerList.get('once') as Player).audio.pause()
+        if (playSetting.nowPlay && playSetting.nowPlay.name === data.name) {
           clearTimeout(timer)
-          playerList.get('once').audio.currentTime = 0
-          playerList.get('once').audio.pause()
+          playerList.get('once')!.audio.currentTime = 0
+          playerList.get('once')!.audio.pause()
           timer = setTimeout(() => {
-            playerList.get('once').audio.play()
+            playerList.get('once')!.audio.play()
           }, 250)
         } else {
           addPlayer(data, category, 'once')
@@ -156,41 +165,43 @@ export default {
       }
     }
 
-    const addPlayer = (data, category, key) => {
+    /**
+     * 把语音对象添加到MAP
+     */
+    const addPlayer = (data: VoicesItem, category: string, key: any) => {
       reset()
       playerList.set(key, {
         name: data.name,
         audio: new Audio(`voices/${category}/${data.path}`)
       })
-      if (!setting.overlap) setting.nowPlay = data
-      playerList.get(key).audio.play()
-      playerList.get(key).audio.onerror = () => {
-        setting.loading = false
-        setting.error = true
+      if (!playSetting.overlap) playSetting.nowPlay = data
+      playerList.get(key)!.audio.play()
+      playerList.get(key)!.audio.onerror = () => {
+        playSetting.loading = false
+        playSetting.error = true
       }
-      playerList.get(key).audio.oncanplay = () => {
-        if (setting.overlap) {
+      playerList.get(key)!.audio.oncanplay = () => {
+        if (playSetting.overlap) {
           for (const i of playerList.keys()) {
-            if (playerList.get(i).name === data.name) {
-              playerList.get(i).audio.ontimeupdate = null
-              playerList.get(i).audio.onended = () => {
-                playerList.get(i).audio = null
+            if (playerList.get(i)!.name === data.name) {
+              playerList.get(i)!.audio.ontimeupdate = null
+              playerList.get(i)!.audio.onended = () => {
                 playerList.delete(i)
               }
             }
           }
         }
-        setting.loading = false
+        playSetting.loading = false
         // eslint-disable-next-line no-labels
         voices:
         for (const i in voices) {
           for (const j in voices[i].voiceList) {
             if (voices[i].voiceList[j].name === data.name) {
-              playerList.get(key).voicesKey = [i, j]
-              const duration = playerList.get(key).audio.duration
+              playerList.get(key)!.voicesKey = [i, j]
+              const duration = playerList.get(key)!.audio.duration
               let currentTime = 0
-              playerList.get(key).audio.ontimeupdate = () => {
-                currentTime = Number(((playerList.get(key).audio.currentTime / duration) * 100).toFixed(0))
+              playerList.get(key)!.audio.ontimeupdate = () => {
+                currentTime = Number(((playerList.get(key)!.audio.currentTime / duration) * 100).toFixed(0))
                 if (isQuark) {
                   if (currentTime !== 0) {
                     voices[i].voiceList[j].progress = 100
@@ -201,15 +212,15 @@ export default {
                   voices[i].voiceList[j].progress = currentTime
                 }
               }
-              playerList.get(key).audio.onended = () => {
+              playerList.get(key)!.audio.onended = () => {
                 voices[i].voiceList[j].progress = 0
-                if (setting.loop) {
+                if (playSetting.loop) {
                   play(data, category)
                 } else {
                   reset()
                   playerList.delete(key)
                 }
-                if (setting.autoRandom) {
+                if (playSetting.autoRandom) {
                   randomPlay()
                 }
               }
@@ -221,62 +232,79 @@ export default {
       }
     }
 
-    mitt.on('randomPlay', () => {
+    mitt.on(EVENT.randomPlay, () => {
       randomPlay()
     })
 
+    /**
+     * 随机播放失败次数
+     */
     let errTimes = 0
 
+    /**
+     * 随机播放
+     */
     const randomPlay = () => {
       const randomList = voices[_getrRandomInt(voices.length - 1)]
       const randomVoice = randomList.voiceList[_getrRandomInt(randomList.voiceList.length - 1)]
       if (_needToShow(randomList.translate) && _needToShow(randomVoice.translate)) {
         errTimes = 0
         play(randomVoice, randomList.name)
-      } else if (errTimes >= 5) {
-        // 连续五次不存在停止随机
-      } else {
+      } else if (errTimes <= 5) {
         ++errTimes
         randomPlay()
+        // 连续五次不存在停止随机
       }
     }
 
-    mitt.on('stopPlay', () => {
+    mitt.on(EVENT.stopPlay, () => {
       clearTimeout(timer)
       for (const key of playerList.keys()) {
-        playerList.get(key).audio.pause()
-        playerList.get(key).audio.onerror = null
-        playerList.get(key).audio.oncanplay = null
-        playerList.get(key).audio.ontimeupdate = null
-        playerList.get(key).audio.onended = null
-        const voicesKey = playerList.get(key).voicesKey
-        voices[voicesKey[0]].voiceList[voicesKey[1]].progress = 0
+        playerList.get(key)!.audio.pause()
+        playerList.get(key)!.audio.onerror = null
+        playerList.get(key)!.audio.oncanplay = null
+        playerList.get(key)!.audio.ontimeupdate = null
+        playerList.get(key)!.audio.onended = null
+        const voicesKey = playerList.get(key)!.voicesKey
+        if (voicesKey) {
+          voices[voicesKey[0]].voiceList[voicesKey[1]].progress = 0
+        }
       }
       playerList.clear()
       reset()
     })
 
-    const usePicture = (categoryName, name) => {
+    /**
+     * 返回需要显示的表情包url
+     */
+    const _usePicture = (categoryName: string, name: Translate): string => {
       const lang = locale.value
       return `/voices/${categoryName}/${name[lang]}`
     }
 
-    const _needUsePicture = (usePicture) => {
+    /**
+     * 判断是否使用表情包
+     */
+    const _needUsePicture = (usePicture: Translate): boolean => {
       if (usePicture) {
-        const lang = locale.value
-        return lang in usePicture
+        return locale.value in usePicture
       } else {
         return false
       }
     }
 
-    const _getrRandomInt = (max) => {
-      return Math.floor(Math.random() * Math.floor(max))
+    /**
+     * 判断是否需要显示
+     */
+    const _needToShow = (translate: Translate): boolean => {
+      return locale.value in translate
     }
 
-    const _needToShow = (description) => {
-      const lang = locale.value
-      return lang in description
+    /**
+     * 获取随机数
+     */
+    const _getrRandomInt = (max): number => {
+      return Math.floor(Math.random() * Math.floor(max))
     }
 
     return {
@@ -287,7 +315,7 @@ export default {
       highlight,
       voices,
       play,
-      usePicture,
+      _usePicture,
       _needUsePicture,
       _needToShow
     }

@@ -12,7 +12,7 @@
   </transition>
 </template>
 
-<script type="text/ecmascript-6">
+<script lang="ts">
 import { ref, reactive, watch, nextTick, computed, onUnmounted } from 'vue'
 
 export default {
@@ -27,8 +27,8 @@ export default {
     }
   },
   setup (props) {
-    const refList = reactive([])
-    const list = reactive([])
+    const refList: any[] = reactive([])
+    const list: any[] = reactive([])
     const line = ref(0)
 
     const waterfallInit = () => {

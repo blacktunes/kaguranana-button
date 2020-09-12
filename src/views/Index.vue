@@ -10,11 +10,11 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { useI18n } from 'vue-i18n'
 
-import Voice from '../components/Voice'
-import Card from '../components/common/Card'
+import Voice from '@/components/Voice.vue'
+import Card from '@/components/common/Card.vue'
 
 export default {
   components: {

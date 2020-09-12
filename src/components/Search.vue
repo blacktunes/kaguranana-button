@@ -16,19 +16,20 @@
   </div>
 </template>
 
-<script>
-import { inject, watch } from 'vue'
+<script lang="ts">
+import { inject, Ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
-import mitt from '../assets/js/mitt'
-import VoiceList from '../../public/translate/voices.json'
+import { EVENT, IsShowSearch, SearchData } from '@/assets/script/option'
+import mitt from '@/assets/script/mitt'
+import VoiceList from '@/../public/translate/voices.json'
 
 export default {
   setup () {
     const { locale } = useI18n()
 
-    const isShowSearch = inject('isShowSearch')
+    const isShowSearch: Ref<IsShowSearch> = inject('isShowSearch') as Ref<IsShowSearch>
 
-    const searchData = inject('searchData')
+    const searchData: SearchData = inject('searchData') as SearchData
     const voiceList = VoiceList.voices
 
     const clear = () => {
@@ -60,7 +61,7 @@ export default {
     })
 
     const autoScroll = () => {
-      mitt.emit('autoScroll')
+      mitt.emit(EVENT.autoScroll)
     }
 
     return {

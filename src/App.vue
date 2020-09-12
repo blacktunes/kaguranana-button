@@ -7,13 +7,14 @@
   </div>
 </template>
 
-<script>
-import { provide, reactive, ref, watch } from 'vue'
+<script lang="ts">
+import { provide, reactive, ref, watch, Ref } from 'vue'
 import { useRoute } from 'vue-router'
-import ConsoleData from '../public/other/data.json'
-import VHeader from './views/Header'
-import Control from './views/Control'
-import VFooter from './views/Footer'
+import { IsShowSearch, PlaySetting, SearchData } from '@/assets/script/option'
+import ConsoleData from '@/../public/other/data.json'
+import VHeader from '@/views/Header.vue'
+import Control from '@/views/Control.vue'
+import VFooter from '@/views/Footer.vue'
 
 export default {
   components: {
@@ -22,8 +23,7 @@ export default {
     VFooter
   },
   setup () {
-    // 播放状态
-    const setting = reactive({
+    const playSetting: PlaySetting = reactive({
       loading: true,
       error: false,
       nowPlay: null,
@@ -31,18 +31,16 @@ export default {
       autoRandom: false,
       loop: false
     })
-    provide('setting', setting)
+    provide('playSetting', playSetting)
 
-    // 搜索状态
-    const searchData = reactive({
+    const searchData: SearchData = reactive({
       value: '',
       list: [],
       index: 0
     })
     provide('searchData', searchData)
 
-    // 窄屏状态下是否显示搜索栏
-    const isShowSearch = ref(false)
+    const isShowSearch: Ref<IsShowSearch> = ref(false)
     provide('isShowSearch', isShowSearch)
 
     // 是否显示控制栏

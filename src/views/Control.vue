@@ -3,10 +3,10 @@
     <div class="control">
       <div class="playing" ref="titleRef">
         <transition name="fade">
-          <loading v-if="setting.nowPlay && setting.loading" class="tip" />
+          <loading v-if="playSetting.nowPlay && playSetting.loading" class="tip" />
         </transition>
         <transition name="fade-delay">
-          <error v-if="setting.nowPlay && setting.error" class="tip" />
+          <error v-if="playSetting.nowPlay && playSetting.error" class="tip" />
         </transition>
         {{title}}
       </div>
@@ -17,13 +17,13 @@
         <div class="icon" :title="t('action.stopvoice')" @click="stopPlay">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true"><path d="M18,18H6V6H18V18Z"></path></svg>
         </div>
-        <div class="icon" :title="t('action.overlap')" @click="overlapChange" :class="{'icon-active': setting.overlap}">
+        <div class="icon" :title="t('action.overlap')" @click="overlapChange" :class="{'icon-active': playSetting.overlap}">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true"><path d="M19 3V21H15V3H19M14 3V21H10V3H14M9 3V21H5V3H9Z"></path></svg>
         </div>
-        <div class="icon" :title="t('action.autoRandom')" @click="autoRandomChange" :class="{'icon-active': setting.autoRandom}">
+        <div class="icon" :title="t('action.autoRandom')" @click="autoRandomChange" :class="{'icon-active': playSetting.autoRandom}">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true"><path d="M14.83,13.41L13.42,14.82L16.55,17.95L14.5,20H20V14.5L17.96,16.54L14.83,13.41M14.5,4L16.54,6.04L4,18.59L5.41,20L17.96,7.46L20,9.5V4M10.59,9.17L5.41,4L4,5.41L9.17,10.58L10.59,9.17Z"></path></svg>
         </div>
-        <div class="icon" :title="t('action.loop')" @click="loopChange" :class="{'icon-active': setting.loop}">
+        <div class="icon" :title="t('action.loop')" @click="loopChange" :class="{'icon-active': playSetting.loop}">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true"><path d="M17,17H7V14L3,18L7,22V19H19V13H17M7,7H17V10L21,6L17,2V5H5V11H7V7Z"></path></svg>
         </div>
       </div>
@@ -31,12 +31,13 @@
   </transition>
 </template>
 
-<script>
-import { ref, inject, computed, watch } from 'vue'
+<script lang="ts">
+import { ref, inject, computed, watch, Ref } from 'vue'
 import { useI18n } from 'vue-i18n'
-import mitt from '../assets/js/mitt'
-import Loading from '../components/common/Loading'
-import Error from '../components/common/Error'
+import { EVENT, PlaySetting } from '@/assets/script/option'
+import mitt from '@/assets/script/mitt'
+import Loading from '@/components/common/Loading.vue'
+import Error from '@/components/common/Error.vue'
 
 export default {
   components: {
@@ -45,17 +46,17 @@ export default {
   },
   setup () {
     const { t } = useI18n()
-    const setting = inject('setting')
+    const playSetting: PlaySetting = inject('playSetting') as PlaySetting
 
     // 控制栏文字显示
     const title = computed(() => {
-      if (setting.overlap) {
+      if (playSetting.overlap) {
         return t('action.overlapTip')
-      } else if (setting.nowPlay) {
-        return t('voice.' + setting.nowPlay.name)
-      } else if (setting.autoRandom) {
+      } else if (playSetting.nowPlay) {
+        return t('voice.' + playSetting.nowPlay.name)
+      } else if (playSetting.autoRandom) {
         return t('action.autoRandomTip')
-      } else if (setting.loop) {
+      } else if (playSetting.loop) {
         return t('action.loopTip')
       } else {
         return t('action.noplay')
@@ -63,14 +64,14 @@ export default {
     })
 
     // 标题文字的引用
-    const titleRef = ref(null)
+    const titleRef: Ref<HTMLElement> = ref() as Ref<HTMLElement>
 
-    let timer = null
+    let timer: any = null
 
     watch(() => {
-      return setting.error
+      return playSetting.error
     }, () => {
-      if (setting.error) {
+      if (playSetting.error) {
         timer = setTimeout(() => {
           titleRef.value.style.textDecoration = 'line-through'
         }, 500)
@@ -82,36 +83,36 @@ export default {
     })
 
     const randomPlay = () => {
-      mitt.emit('randomPlay')
+      mitt.emit(EVENT.randomPlay)
     }
 
     const stopPlay = () => {
-      mitt.emit('stopPlay')
+      mitt.emit(EVENT.stopPlay)
     }
 
     const overlapChange = () => {
-      setting.autoRandom = false
-      setting.loop = false
-      setting.overlap = !setting.overlap
+      playSetting.autoRandom = false
+      playSetting.loop = false
+      playSetting.overlap = !playSetting.overlap
     }
 
     const autoRandomChange = () => {
-      setting.overlap = false
-      setting.loop = false
-      setting.autoRandom = !setting.autoRandom
+      playSetting.overlap = false
+      playSetting.loop = false
+      playSetting.autoRandom = !playSetting.autoRandom
     }
 
     const loopChange = () => {
-      setting.overlap = false
-      setting.autoRandom = false
-      setting.loop = !setting.loop
+      playSetting.overlap = false
+      playSetting.autoRandom = false
+      playSetting.loop = !playSetting.loop
     }
 
     return {
       t,
       titleRef,
       title,
-      setting,
+      playSetting,
       randomPlay,
       stopPlay,
       overlapChange,

@@ -25,9 +25,9 @@
 </transition>
 </template>
 
-<script>
+<script lang="ts">
 import { useI18n } from 'vue-i18n'
-import IBtn from '../components/common/IconBtn'
+import IBtn from '@/components/common/IconBtn.vue'
 
 export default {
   components: {

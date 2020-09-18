@@ -7,7 +7,7 @@ module.exports = {
       short_name: '七奈按钮',
       icons: [
         {
-          src: '/other/nana_avatar.jpg',
+          src: '/other/icon.png',
           sizes: '192x192',
           type: 'image/png'
         }

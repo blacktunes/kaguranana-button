@@ -86,7 +86,7 @@ export default {
     })
 
     const searchType = computed(() => {
-      return showSearchBtn.value ? SEARCH_TYPE.voice : SEARCH_TYPE.memes
+      return route.path === '/' ? SEARCH_TYPE.voice : SEARCH_TYPE.memes
     })
 
     const { t, locale } = useI18n()

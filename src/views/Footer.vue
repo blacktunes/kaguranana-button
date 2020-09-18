@@ -16,10 +16,10 @@
       <div class="git">
         <i-btn class="btn" :url="githubUrl" :img="require('../assets/image/github-fill.png')" />
         <a :href="githubUrl" target="_blank">
-          {{t("info.toGithub")}}
+          {{ t(INFO_I18N.toGithub) }}
         </a>
       </div>
-      <div>{{t("info.notOfficial")}}</div>
+      <div>{{ t(INFO_I18N.notOfficial) }}</div>
     </div>
   </div>
 </transition>
@@ -27,6 +27,7 @@
 
 <script lang="ts">
 import { useI18n } from 'vue-i18n'
+import { INFO_I18N } from '@/assets/script/option'
 import IBtn from '@/components/common/IconBtn.vue'
 
 export default {
@@ -38,6 +39,7 @@ export default {
     const githubUrl = 'https://github.com/blacktunes/kaguranana-button'
 
     return {
+      INFO_I18N,
       t,
       githubUrl
     }

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <v-header />
-    <router-view />
+    <router-view style="min-height: calc(100vh - 48px - 67px)" />
     <control v-if="showControl"/>
     <v-footer />
   </div>
@@ -47,6 +47,13 @@ export default {
     const route = useRoute()
     const showControl = ref(false)
     watch(route, () => {
+      // 路由改变后重置搜索
+      isShowSearch.value = false
+      if (!isShowSearch.value) {
+        searchData.value = ''
+        searchData.list.length = 0
+      }
+
       if (route.path === '/') {
         showControl.value = true
       } else {

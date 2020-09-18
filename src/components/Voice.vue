@@ -1,9 +1,7 @@
 <template>
   <transition name="fade" appear>
     <div>
-      <card class="search-wrapper" :class="{'show-search': isShowSearch}">
-        <search class="search" />
-      </card>
+      <search class="search" />
       <div v-for="item in voices" :key="item.name">
         <card v-if="_needToShow(item.translate)">
           <template v-slot:header>
@@ -29,16 +27,16 @@
 </template>
 
 <script lang="ts">
-import { ref, reactive, provide, inject, watch, Ref } from 'vue'
+import { ref, reactive, provide, inject, watch, Ref, ComponentPublicInstance } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { gtag } from '@/assets/script/gtag'
-import { EVENT, IsShowSearch, Player, PlayerList, PlaySetting, SearchData, Translate, Voices, VoicesCategory, VoicesItem } from '@/assets/script/option'
+import { EVENT, INFO_I18N, Player, PlayerList, PlaySetting, SearchData, Translate, Voices, VoicesCategory, VoicesItem } from '@/assets/script/option'
 import mitt from '@/assets/script/mitt'
 import VoiceList from '@/../public/translate/voices.json'
 import MediaData from '@/../public/other/data.json'
 import Card from './common/Card.vue'
 import VBtn from './common/VoiveBtn.vue'
-import Search from '@/components/Search.vue'
+import Search from '@/components/SearchCard.vue'
 
 export default {
   components: {
@@ -54,10 +52,8 @@ export default {
 
     const playSetting: PlaySetting = inject('playSetting') as PlaySetting
 
-    const isShowSearch: Ref<IsShowSearch> = inject('isShowSearch') as Ref<IsShowSearch>
-
     // 所有按钮的引用
-    const btnList = ref({})
+    const btnList: Ref<{ [x: string]: ComponentPublicInstance }> = ref({})
 
     const searchData: SearchData = inject('searchData') as SearchData
     const highlight = ref('')
@@ -151,8 +147,8 @@ export default {
           if ('mediaSession' in navigator) {
             const meta = {
               title: t('voice.' + data.name),
-              artist: t('info.fullName'),
-              album: t('info.title'),
+              artist: t(INFO_I18N.fullName),
+              album: t(INFO_I18N.title),
               artwork: [{ src: `/other/${MediaData.artwork}`, sizes: '128x128' }]
             }
             navigator.mediaSession.metadata = new window.MediaMetadata(meta)
@@ -277,15 +273,17 @@ export default {
     /**
      * 返回需要显示的表情包url
      */
-    const _usePicture = (categoryName: string, name: Translate): string => {
-      const lang = locale.value
-      return `/voices/${categoryName}/${name[lang]}`
+    const _usePicture = (categoryName: string, name?: Translate): string | void => {
+      if (name) {
+        const lang = locale.value
+        return `/voices/${categoryName}/${name[lang]}`
+      }
     }
 
     /**
      * 判断是否使用表情包
      */
-    const _needUsePicture = (usePicture: Translate): boolean => {
+    const _needUsePicture = (usePicture?: Translate): boolean => {
       if (usePicture) {
         return locale.value in usePicture
       } else {
@@ -309,7 +307,6 @@ export default {
 
     return {
       t,
-      isShowSearch,
       btnList,
       searchList: searchData.list,
       highlight,
@@ -325,26 +322,6 @@ export default {
 </script>
 <style lang="stylus" scoped>
 @import '~@/assets/style/base.styl'
-
-.search-wrapper
-    // box-sizing border-box
-    z-index 1
-    position sticky
-    top 58px
-    height 0
-    opacity 0
-    margin-top 0
-    margin-bottom 0
-    transition all 0.3s
-    background #fff
-    .search
-      width 90%
-      margin auto
-
-.show-search
-  height 60px
-  opacity 1
-  margin-top 10px
 
 .search-list
   background #ccc
@@ -393,11 +370,4 @@ export default {
         opacity 1
         transition opacity 0s
         transition-delay 0s
-
-@media only screen and (min-width: 550px)
-  .search-wrapper
-    height 0
-    opacity 0
-    margin-top 0
-    margin-bottom 0
 </style>

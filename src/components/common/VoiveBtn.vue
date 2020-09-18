@@ -45,7 +45,7 @@ export default {
         clearTimeout(timer)
         timer = null
         btnBg.value.style.transition = 'width 0.25s linear'
-        btnBg.value.style.width = (val as number) + 5 + '%'
+        btnBg.value.style.width = val! + 5 + '%'
       }
     })
 
@@ -61,6 +61,8 @@ export default {
 @import '~@/assets/style/base.styl'
 
 .btn
+  display flex
+  align-items center
   position relative
   overflow hidden
   min-height 34px
@@ -81,12 +83,9 @@ export default {
     height 100%
     background linear-gradient(to right, $sub-color 98%, transparent 100%)
   span
-    display block
     position relative
-    top -100%
-    left 0
-    line-height 34px
-    padding 0 15px
+    line-height 20px
+    padding 5px 15px
     word-break break-all
   &:before
     content ''

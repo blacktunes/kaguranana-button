@@ -2,17 +2,17 @@
   <div class="index">
     <voice />
     <card>
-      <div style="text-align: center">{{ t('voiceTotalTip') }}: {{ t('voiceTotal') }}</div>
+      <div style="text-align: center">{{ t(INFO_I18N.voiceTotalTip) }}: {{ t(INFO_I18N.voiceTotal) }}</div>
     </card>
     <card style="display: flex;justify-content: center">
-      <a href="https://vtbbtn.org/" target="_blank">{{ t('vtbbtn') }}</a>/<router-link to="/search">表情包搜索</router-link>
+      <a href="https://vtbbtn.org/" target="_blank">{{ t(INFO_I18N.vtbbtn) }}</a>
     </card>
   </div>
 </template>
 
 <script lang="ts">
 import { useI18n } from 'vue-i18n'
-
+import { INFO_I18N } from '@/assets/script/option'
 import Voice from '@/components/Voice.vue'
 import Card from '@/components/common/Card.vue'
 
@@ -25,7 +25,8 @@ export default {
     const { t } = useI18n()
 
     return {
-      t
+      t,
+      INFO_I18N
     }
   }
 }

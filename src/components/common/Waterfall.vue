@@ -1,13 +1,15 @@
 <template>
   <transition name="fade" appear>
     <div class="waterfall">
-      <div v-for="(col, index) in list" :key="index" class="col" :ref="el => { if (el) refList[index] = el }">
-        <transition-group name="fade">
-          <div class="item" v-for="(item, key) in col" :key="'item' + key">
-            <slot :item="item" name="item"></slot>
-          </div>
-        </transition-group>
-      </div>
+      <transition-group name="fade">
+        <div v-for="(col, index) in list" :key="index" class="col" :ref="el => { if (el) refList[index] = el }">
+          <transition-group name="slider">
+            <div class="item" v-for="item in col" :key="item">
+              <slot :item="item" name="item"></slot>
+            </div>
+          </transition-group>
+        </div>
+      </transition-group>
     </div>
   </transition>
 </template>
@@ -23,32 +25,41 @@ export default {
     },
     width: {
       type: Number,
-      default: 200
+      default: 150
     }
   },
   setup (props) {
-    const refList: any[] = reactive([])
+    const refList: HTMLElement[] = reactive([])
     const list: any[] = reactive([])
     const line = ref(0)
 
-    const waterfallInit = () => {
+    const sleep = (interval: number) => {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          resolve()
+        }, interval)
+      })
+    }
+
+    const waterfallInit = (isSearch = true) => {
       line.value = Math.floor(document.documentElement.clientWidth / props.width) || 1
       list.length = 0
       for (let i = 0; i < line.value; i++) {
         list.push([])
       }
-      let temp = 0
-      props.data.forEach(item => {
-        list[temp].push(item)
-        temp++
-        if (temp === line.value) {
-          temp = 0
-        }
-      })
-      nextTick(() => {
+      nextTick(async () => {
         refList.forEach(item => {
           item.style.flex = `0 0 ${1 / line.value * 100}%`
         })
+        let temp = 0
+        for (const i in props.data) {
+          list[temp].push(props.data[i])
+          temp++
+          if (temp === line.value) {
+            temp = 0
+          }
+          if (isSearch) await sleep(10)
+        }
       })
     }
 
@@ -59,10 +70,12 @@ export default {
     })
 
     waterfallInit()
-    window.addEventListener('resize', waterfallInit)
+    window.onresize = () => {
+      waterfallInit(false)
+    }
 
     onUnmounted(() => {
-      window.removeEventListener('resize', waterfallInit)
+      window.onresize = null
     })
 
     return {
@@ -78,6 +91,7 @@ export default {
 .waterfall
   display flex
   flex-wrap wrap
+  align-items flex-start
   .col
     overflow hidden
     .item

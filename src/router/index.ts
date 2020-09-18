@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import Index from '../views/Index.vue'
+import Index from '@/views/Index.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -23,7 +23,13 @@ const routes: Array<RouteRecordRaw> = [
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
+  routes,
+  scrollBehavior (to, _from, savedPosition) {
+    if (savedPosition && to.path !== '/search') {
+      return savedPosition
+    }
+    return { top: 0 }
+  }
 })
 
 export default router

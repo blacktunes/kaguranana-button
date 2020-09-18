@@ -13,7 +13,51 @@ export enum EVENT {
   /**
    * 滚动到指定位置
    */
-  autoScroll = 'autoScroll'
+  autoScroll = 'autoScroll',
+  /**
+   * 滚动到指定位置
+   */
+  memesSearch = 'memesSearch'
+}
+
+/**
+ * 信息相关的I18N
+ */
+export enum INFO_I18N {
+  title = 'info.title',
+  toGithub = 'info.toGithub',
+  notOfficial = 'info.notOfficial',
+  fullName = 'info.fullName',
+  vtbbtn = 'vtbbtn',
+  voiceTotal = 'voiceTotal',
+  voiceTotalTip = 'voiceTotalTip',
+  lang = 'lang'
+}
+
+/**
+ * 操作相关的I18N
+ */
+export enum ACTION_I18N {
+  randomplay = 'action.randomplay',
+  stopvoice = 'action.stopvoice',
+  overlap = 'action.overlap',
+  overlapTip = 'action.overlapTip',
+  autoRandom = 'action.autoRandom',
+  autoRandomTip = 'action.autoRandomTip',
+  loop = 'action.loop',
+  loopTip = 'action.loopTip',
+  noplay = 'action.noplay'
+}
+
+export enum SEARCH_TYPE {
+  /**
+   * 语音搜索
+   */
+  voice = 'voice',
+  /**
+   * 表情包搜索
+   */
+  memes = 'memes',
 }
 
 /**
@@ -124,4 +168,9 @@ export interface Player {
   name: string;
   audio: HTMLAudioElement;
   voicesKey?: [string, string];
+}
+
+export interface MemeItem {
+  name: string;
+  path: string;
 }

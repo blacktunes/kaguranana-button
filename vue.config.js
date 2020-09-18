@@ -15,7 +15,7 @@ module.exports = {
     },
     workboxOptions: {
       skipWaiting: true,
-      exclude: [/\.(?:mp3)$/],
+      exclude: [/\.(?:mp3|jpg|png|gif)$/],
       // include: [/\.(?:js|css|html|json|ico)$/],
       runtimeCaching: [
         {
@@ -23,6 +23,17 @@ module.exports = {
           handler: 'CacheFirst',
           options: {
             cacheName: 'voice-cache',
+            expiration: {
+              // maxEntries: 10, // 缓存数量
+              maxAgeSeconds: 60 * 60 * 24 * 7 // 缓存有效时长
+            }
+          }
+        },
+        {
+          urlPattern: /\.(?:jpg|png|gif)$/,
+          handler: 'CacheFirst',
+          options: {
+            cacheName: 'image-cache',
             expiration: {
               // maxEntries: 10, // 缓存数量
               maxAgeSeconds: 60 * 60 * 24 * 7 // 缓存有效时长

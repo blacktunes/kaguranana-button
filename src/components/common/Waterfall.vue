@@ -2,7 +2,12 @@
   <transition name="fade" appear>
     <div class="waterfall">
       <transition-group name="fade">
-        <div v-for="(col, index) in list" :key="index" class="col" :ref="el => { if (el) refList[index] = el }">
+        <div
+          v-for="(col, index) in list"
+          :key="index"
+          class="col"
+          :ref="el => { el ? refList[index] = el : null }"
+        >
           <transition-group name="slider">
             <div class="item" v-for="item in col" :key="item">
               <slot :item="item" name="item"></slot>
@@ -28,7 +33,7 @@ export default {
       default: 150
     }
   },
-  setup (props) {
+  setup(props) {
     const refList: HTMLElement[] = reactive([])
     const list: any[] = reactive([])
     const line = ref(0)
@@ -92,8 +97,10 @@ export default {
   display flex
   flex-wrap wrap
   align-items flex-start
+
   .col
     overflow hidden
+
     .item
       overflow hidden
       margin 0

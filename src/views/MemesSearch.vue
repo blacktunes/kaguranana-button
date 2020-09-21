@@ -6,7 +6,10 @@
         <card v-if="searchList.length > 0">
           <waterfall :data="searchList">
             <template v-slot:item="props">
-              <img style="width: 100%;margin: 2px" :src="require('../../public/memes/' + props.item.path)">
+              <img
+                style="width: 100%;margin: 2px"
+                :src="require('../../public/memes/' + props.item.path)"
+              />
             </template>
           </waterfall>
         </card>
@@ -23,6 +26,7 @@ import Search from '@/components/SearchCard.vue'
 import Card from '@/components/common/Card.vue'
 import mitt from '@/assets/script/mitt'
 import { EVENT, MemeItem, SearchData } from '@/assets/script/option'
+import router from '@/router'
 
 export default {
   components: {
@@ -30,7 +34,10 @@ export default {
     Search,
     Card
   },
-  setup () {
+  setup() {
+    if (MemesData.length < 1) {
+      router.push('/')
+    }
     // 结果列表
     const searchList: MemeItem[] = reactive([])
 
@@ -81,8 +88,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '~@/assets/style/base.styl'
-
 .search-wrapper
   // background-color rgba(255, 255, 255, 0.5)
   .search
@@ -90,6 +95,7 @@ export default {
     flex-direction column
     align-items center
     justify-content center
+
     .logo
       overflow hidden
       display flex
@@ -99,15 +105,18 @@ export default {
       max-width 50%
       margin-top 150px
       cursor pointer
+
       img
         height 100%
         margin auto
+
     .input
       display flex
       align-items center
       justify-content center
       margin 50px 0
       width 100%
+
       input
         box-sizing border-box
         font-size 20px
@@ -117,8 +126,10 @@ export default {
         padding 0 15px
         border 1px solid #ddd
         border-right none
+
         &:focus
           outline none
+
       .clear
         overflow hidden
         display flex
@@ -131,8 +142,10 @@ export default {
         border 1px solid #ddd
         border-left none
         border-right none
+
         svg
           width 20px
+
       button
         background-color $main-color
         height 50px
@@ -142,13 +155,16 @@ export default {
         border $main-color
         border-left none
         cursor pointer
+
         &:focus
           outline none
+
         &:active
           background $active-color
 
 .logo-enter-active
   animation logo 0.5s
+
 .logo-leave-active
   animation logo-leave 0.5s
 
@@ -157,6 +173,7 @@ export default {
     height 0
     margin-top 0
     opacity 0
+
   100%
     height 100px
     margin-top 150px
@@ -167,6 +184,7 @@ export default {
     height 100px
     margin-top 150px
     opacity 1
+
   100%
     height 0
     margin-top 0

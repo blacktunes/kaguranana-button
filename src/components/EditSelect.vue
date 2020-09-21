@@ -23,7 +23,7 @@ export default {
       default: ''
     }
   },
-  setup (props) {
+  setup(props) {
     const data = inject('data')
 
     const select = ref(props.category)
@@ -46,6 +46,4 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-
-</style>
+<style lang="stylus" scoped></style>

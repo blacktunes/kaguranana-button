@@ -2,7 +2,9 @@
   <div class="index">
     <voice />
     <card>
-      <div style="text-align: center">{{ t(INFO_I18N.voiceTotalTip) }}: {{ t(INFO_I18N.voiceTotal) }}</div>
+      <div
+        style="text-align: center"
+      >{{ t(INFO_I18N.voiceTotalTip) }}: {{ t(INFO_I18N.voiceTotal) }}</div>
     </card>
     <card style="display: flex;justify-content: center">
       <a href="https://vtbbtn.org/" target="_blank">{{ t(INFO_I18N.vtbbtn) }}</a>
@@ -21,7 +23,7 @@ export default {
     Voice,
     Card
   },
-  setup () {
+  setup() {
     const { t } = useI18n()
 
     return {
@@ -40,7 +42,7 @@ a
   margin 0 auto
   width 90%
 
-@media only screen and (max-width: 600px)
+@media only screen and (max-width 600px)
   .index
     width 95%
 </style>

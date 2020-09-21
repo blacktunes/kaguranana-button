@@ -4,11 +4,16 @@ declare module '*.vue' {
   export default component
 }
 
+declare module '*.png'
+declare module '*.jpg'
+declare module '*.gif'
+declare module '*.svg'
+
 interface Window {
-  dataLayer: any
-  MediaMetadata: any
+  dataLayer: any;
+  MediaMetadata: any;
 }
 
 interface Navigator {
-  mediaSession: any
+  mediaSession: any;
 }

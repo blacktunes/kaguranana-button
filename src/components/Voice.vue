@@ -3,20 +3,26 @@
     <div>
       <search class="search" />
       <div v-for="item in voices" :key="item.name">
-        <card v-if="_needToShow(item.translate)">
+        <card v-if="needToShow(item.translate)">
           <template v-slot:header>
             <div class="category">{{ t('voicecategory.' + item.name) }}</div>
           </template>
           <div class="content">
             <div v-for="voice in item.voiceList" :key="voice.name">
-              <div v-if="_needToShow(voice.translate)" class="btn-wrapper">
-                <v-btn :text="t('voice.' + voice.name)"
-                       class="v-btn"
-                       :class="{ 'search-list': searchList.length > 0 && !searchList.includes(voice.name), 'highlight': highlight === voice.name }"
-                       :name="voice.name"
-                       @click="play(voice, item.name)"
-                       :ref="el => { if (el) btnList[voice.name] = el }" />
-                <img class="pic" v-if="_needUsePicture(voice.usePicture)" :src="_usePicture(item.name, voice.usePicture)">
+              <div v-if="needToShow(voice.translate)" class="btn-wrapper">
+                <v-btn
+                  :text="t('voice.' + voice.name)"
+                  class="v-btn"
+                  :class="{ 'search-list': searchList.length > 0 && !searchList.includes(voice.name), 'highlight': highlight === voice.name }"
+                  :name="voice.name"
+                  @click="play(voice)"
+                  :ref="el => { el ? btnList[voice.name] = el : null }"
+                />
+                <img
+                  class="pic"
+                  v-if="needUsePicture(voice.usePicture)"
+                  :src="usePicture(voice.usePicture)"
+                />
               </div>
             </div>
           </div>
@@ -33,7 +39,7 @@ import { gtag } from '@/assets/script/gtag'
 import { EVENT, INFO_I18N, Player, PlayerList, PlaySetting, SearchData, Translate, Voices, VoicesCategory, VoicesItem } from '@/assets/script/option'
 import mitt from '@/assets/script/mitt'
 import VoiceList from '@/../public/translate/voices.json'
-import MediaData from '@/../public/other/data.json'
+import Setting from '@/../public/setting/setting.json'
 import Card from './common/Card.vue'
 import VBtn from './common/VoiveBtn.vue'
 import Search from '@/components/SearchCard.vue'
@@ -44,7 +50,7 @@ export default {
     VBtn,
     Search
   },
-  setup () {
+  setup() {
     const { t, locale } = useI18n()
 
     // 判断浏览器是否为夸克从而停用部分功能
@@ -118,23 +124,23 @@ export default {
     const playerList: PlayerList = new Map()
 
     /**
-     * @param data 语音对象
+     * @param voice 语音对象
      * @param category 所属分类的name
      */
-    const play = (data: VoicesItem, category: string) => {
+    const play = (voice: VoicesItem) => {
       // GA的事件上报
       if (process.env.NODE_ENV === 'production') {
         /* eslint-disable @typescript-eslint/camelcase */
         gtag('event', '播放语音', {
-          event_category: data.name,
-          event_label: category,
+          event_category: voice.name,
+          event_label: voice.category,
           value: 1
         })
         /* eslint-enable */
       }
       if (!playSetting.overlap) {
         if (playerList.has('once')) (playerList.get('once') as Player).audio.pause()
-        if (playSetting.nowPlay && playSetting.nowPlay.name === data.name) {
+        if (playSetting.nowPlay && playSetting.nowPlay.name === voice.name) {
           clearTimeout(timer)
           playerList.get('once')!.audio.currentTime = 0
           playerList.get('once')!.audio.pause()
@@ -142,14 +148,14 @@ export default {
             playerList.get('once')!.audio.play()
           }, 250)
         } else {
-          addPlayer(data, category, 'once')
+          addPlayer(voice, 'once')
 
           if ('mediaSession' in navigator) {
             const meta = {
-              title: t('voice.' + data.name),
+              title: t('voice.' + voice.name),
               artist: t(INFO_I18N.fullName),
               album: t(INFO_I18N.title),
-              artwork: [{ src: `/other/${MediaData.artwork}`, sizes: '128x128' }]
+              artwork: [{ src: `/other/${Setting.mediaSession.artwork}`, sizes: '128x128' }]
             }
             navigator.mediaSession.metadata = new window.MediaMetadata(meta)
             navigator.mediaSession.playbackState = 'playing'
@@ -157,20 +163,20 @@ export default {
         }
       } else {
         const key = new Date().getTime()
-        addPlayer(data, category, key)
+        addPlayer(voice, key)
       }
     }
 
     /**
      * 把语音对象添加到MAP
      */
-    const addPlayer = (data: VoicesItem, category: string, key: any) => {
+    const addPlayer = (voice: VoicesItem, key: any) => {
       reset()
       playerList.set(key, {
-        name: data.name,
-        audio: new Audio(`voices/${category}/${data.path}`)
+        name: voice.name,
+        audio: new Audio(`voices/${voice.path}`)
       })
-      if (!playSetting.overlap) playSetting.nowPlay = data
+      if (!playSetting.overlap) playSetting.nowPlay = voice
       playerList.get(key)!.audio.play()
       playerList.get(key)!.audio.onerror = () => {
         playSetting.loading = false
@@ -179,7 +185,7 @@ export default {
       playerList.get(key)!.audio.oncanplay = () => {
         if (playSetting.overlap) {
           for (const i of playerList.keys()) {
-            if (playerList.get(i)!.name === data.name) {
+            if (playerList.get(i)!.name === voice.name) {
               playerList.get(i)!.audio.ontimeupdate = null
               playerList.get(i)!.audio.onended = () => {
                 playerList.delete(i)
@@ -192,7 +198,7 @@ export default {
         voices:
         for (const i in voices) {
           for (const j in voices[i].voiceList) {
-            if (voices[i].voiceList[j].name === data.name) {
+            if (voices[i].voiceList[j].name === voice.name) {
               playerList.get(key)!.voicesKey = [i, j]
               const duration = playerList.get(key)!.audio.duration
               let currentTime = 0
@@ -211,7 +217,7 @@ export default {
               playerList.get(key)!.audio.onended = () => {
                 voices[i].voiceList[j].progress = 0
                 if (playSetting.loop) {
-                  play(data, category)
+                  play(voice)
                 } else {
                   reset()
                   playerList.delete(key)
@@ -243,9 +249,9 @@ export default {
     const randomPlay = () => {
       const randomList = voices[_getrRandomInt(voices.length - 1)]
       const randomVoice = randomList.voiceList[_getrRandomInt(randomList.voiceList.length - 1)]
-      if (_needToShow(randomList.translate) && _needToShow(randomVoice.translate)) {
+      if (needToShow(randomList.translate) && needToShow(randomVoice.translate)) {
         errTimes = 0
-        play(randomVoice, randomList.name)
+        play(randomVoice)
       } else if (errTimes <= 5) {
         ++errTimes
         randomPlay()
@@ -273,17 +279,17 @@ export default {
     /**
      * 返回需要显示的表情包url
      */
-    const _usePicture = (categoryName: string, name?: Translate): string | void => {
+    const usePicture = (name?: Translate): string | void => {
       if (name) {
         const lang = locale.value
-        return `/voices/${categoryName}/${name[lang]}`
+        return `/voices/img/${name[lang]}`
       }
     }
 
     /**
      * 判断是否使用表情包
      */
-    const _needUsePicture = (usePicture?: Translate): boolean => {
+    const needUsePicture = (usePicture?: Translate): boolean => {
       if (usePicture) {
         return locale.value in usePicture
       } else {
@@ -294,7 +300,7 @@ export default {
     /**
      * 判断是否需要显示
      */
-    const _needToShow = (translate: Translate): boolean => {
+    const needToShow = (translate: Translate): boolean => {
       return locale.value in translate
     }
 
@@ -312,19 +318,18 @@ export default {
       highlight,
       voices,
       play,
-      _usePicture,
-      _needUsePicture,
-      _needToShow
+      usePicture,
+      needUsePicture,
+      needToShow
     }
   }
 }
 
 </script>
 <style lang="stylus" scoped>
-@import '~@/assets/style/base.styl'
-
 .search-list
   background #ccc
+
 .highlight
   background $active-color
 
@@ -332,14 +337,18 @@ export default {
   font-size 24px
   padding 14px 10px
   user-select none
+
 .content
   display flex
   flex-wrap wrap
+
   .btn-wrapper
     position relative
     margin 5px
+
     .v-btn
       transition background 0.2s
+
     .pic
       position absolute
       bottom calc(100% + 10px)
@@ -351,20 +360,22 @@ export default {
       transform translateX(-50%)
       pointer-events none
 
-@media only screen and (min-width: 600px)
+@media only screen and (min-width 600px)
   .btn-wrapper
     .pic
       transition opacity 0.5s
+
     &:hover
       .pic
         opacity 1
         box-shadow 0px 5px 10px 0px $main-color
 
-@media only screen and (max-width: 600px)
+@media only screen and (max-width 600px)
   .btn-wrapper
     .pic
       transition opacity 0.5s
       transition-delay 1.5s
+
     &:active
       .pic
         opacity 1

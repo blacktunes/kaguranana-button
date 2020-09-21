@@ -20,7 +20,7 @@ export default {
     Search,
     Card
   },
-  setup () {
+  setup() {
     const isShowSearch: Ref<IsShowSearch> = inject('isShowSearch') as Ref<IsShowSearch>
 
     return {
@@ -31,30 +31,30 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-
 .search-wrapper
-    // box-sizing border-box
-    z-index 1
-    position sticky
-    top 58px
-    height 0
-    opacity 0
-    margin-top 0
-    margin-bottom 0
-    transition all 0.3s
-    background #fff
-    .search
-      width 90%
-      margin auto
+  // box-sizing border-box
+  z-index 1
+  position sticky
+  top 58px
+  height 0
+  opacity 0
+  margin-top 0
+  margin-bottom 0
+  transition all 0.3s
+  background #fff
 
-@media only screen and (min-width: 550px)
+  .search
+    width 90%
+    margin auto
+
+@media only screen and (min-width 550px)
   .search-wrapper
     height 0
     opacity 0
     margin-top 0
     margin-bottom 0
 
-@media only screen and (max-width: 550px)
+@media only screen and (max-width 550px)
   .show-search
     height 60px
     opacity 1

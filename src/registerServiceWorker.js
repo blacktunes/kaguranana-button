@@ -2,8 +2,6 @@
  * 若要使用请在package.json的devDependencies里增加@vue/cli-plugin-pwa
  */
 
-/* eslint-disable no-console */
-
 import { register } from 'register-service-worker'
 
 if (process.env.NODE_ENV === 'production') {

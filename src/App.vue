@@ -2,7 +2,7 @@
   <div id="app">
     <v-header />
     <router-view style="min-height: calc(100vh - 48px - 67px)" />
-    <control v-if="showControl"/>
+    <control v-if="showControl" />
     <v-footer />
   </div>
 </template>
@@ -11,7 +11,7 @@
 import { provide, reactive, ref, watch, Ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { IsShowSearch, PlaySetting, SearchData } from '@/assets/script/option'
-import ConsoleData from '@/../public/other/data.json'
+import Setting from '@/../public/setting/setting.json'
 import VHeader from '@/views/Header.vue'
 import Control from '@/views/Control.vue'
 import VFooter from '@/views/Footer.vue'
@@ -22,7 +22,7 @@ export default {
     Control,
     VFooter
   },
-  setup () {
+  setup() {
     const playSetting: PlaySetting = reactive({
       loading: true,
       error: false,
@@ -61,7 +61,7 @@ export default {
       }
     })
 
-    console.log(`%c${ConsoleData.consoleTip}%c `, `font-size:20px;color:${ConsoleData.consoleTipColor}`, `padding-right:${ConsoleData.consoleImgWidth};padding-top:${ConsoleData.consoleImgHeight};background:url('${location.origin}/other/${ConsoleData.consoleImg}') no-repeat;background-size:100% 100%`)
+    console.log(`%c${Setting.consoleShow.consoleTip}%c `, `font-size:20px;color:${Setting.consoleShow.consoleTipColor}`, `padding-right:${Setting.consoleShow.consoleImgWidth};padding-top:${Setting.consoleShow.consoleImgHeight};background:url('${location.origin}/other/${Setting.consoleShow.consoleImg}') no-repeat;background-size:100% 100%`)
 
     return {
       showControl
@@ -71,8 +71,6 @@ export default {
 </script>
 
 <style lang="stylus">
-@import '~@/assets/style/base.styl'
-
 body
   margin 0
   -webkit-tap-highlight-color rgba(0, 0, 0, 0)
@@ -92,8 +90,8 @@ a
   background-color $main-color
 
 ::-webkit-scrollbar-thumb
-  box-shadow inset 0 0 6px rgba(0, 0, 0, .1)
-  -webkit-box-shadow inset 0 0 6px rgba(0, 0, 0, .1)
+  box-shadow inset 0 0 6px rgba(0, 0, 0, 0.1)
+  -webkit-box-shadow inset 0 0 6px rgba(0, 0, 0, 0.1)
   background-color $sub-color
 
 ::-webkit-scrollbar-thumb:active

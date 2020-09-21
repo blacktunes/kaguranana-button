@@ -24,7 +24,7 @@ const routes: Array<RouteRecordRaw> = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
-  scrollBehavior (to, _from, savedPosition) {
+  scrollBehavior(to, _from, savedPosition) {
     if (savedPosition && to.path !== '/search') {
       return savedPosition
     }

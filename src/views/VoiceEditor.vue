@@ -1,65 +1,65 @@
 <template>
-<transition name="fade" appear>
-  <div class="editor">
-    <div class="header">
-      <button @click="changeShow">切换至{{ !showCategory ? '分类' : '语音'}}</button>
-      <button @click="add">增加{{ showCategory ? '分类' : '语音'}}</button>
-      <button @click="dlJson">下载</button>
+  <transition name="fade" appear>
+    <div class="editor">
+      <div class="header">
+        <button @click="changeShow">切换至{{ !showCategory ? '分类' : '语音'}}</button>
+        <button @click="add">增加{{ showCategory ? '分类' : '语音'}}</button>
+        <button @click="dlJson">下载</button>
+      </div>
+      <table v-if="showCategory">
+        <tr>
+          <th></th>
+          <th>name</th>
+          <th>zh-CN</th>
+          <th>ja-JP</th>
+        </tr>
+        <template v-for="(item, index) in data.category" :key="index">
+          <tr>
+            <td>{{data.category.length - index}}</td>
+            <td>
+              <input type="text" v-model="item.name" />
+            </td>
+            <td>
+              <input type="text" v-model="item.translate['zh-CN']" />
+            </td>
+            <td>
+              <input type="text" v-model="item.translate['ja-JP']" />
+            </td>
+          </tr>
+        </template>
+      </table>
+      <table v-else>
+        <tr>
+          <th></th>
+          <th>name</th>
+          <th>path</th>
+          <th>category</th>
+          <th>zh-CN</th>
+          <th>ja-JP</th>
+        </tr>
+        <template v-for="(item, index) in data.voices" :key="item.name">
+          <tr>
+            <td>{{data.voices.length - index}}</td>
+            <td>
+              <input type="text" v-model="item.name" />
+            </td>
+            <td>
+              <input type="text" v-model="item.path" />
+            </td>
+            <td>
+              <edit-select :name="item.name" :category="item.category" />
+            </td>
+            <td>
+              <input type="text" v-model="item.translate['zh-CN']" />
+            </td>
+            <td>
+              <input type="text" v-model="item.translate['ja-JP']" />
+            </td>
+          </tr>
+        </template>
+      </table>
     </div>
-    <table v-if="showCategory">
-      <tr>
-        <th></th>
-        <th>name</th>
-        <th>zh-CN</th>
-        <th>ja-JP</th>
-      </tr>
-      <template v-for="(item, index) in data.category" :key="index">
-        <tr>
-          <td>{{data.category.length - index}}</td>
-          <td>
-            <input type="text" v-model="item.name">
-          </td>
-          <td>
-            <input type="text" v-model="item.translate['zh-CN']">
-          </td>
-          <td>
-            <input type="text" v-model="item.translate['ja-JP']">
-          </td>
-        </tr>
-      </template>
-    </table>
-    <table v-else>
-      <tr>
-        <th></th>
-        <th>name</th>
-        <th>path</th>
-        <th>category</th>
-        <th>zh-CN</th>
-        <th>ja-JP</th>
-      </tr>
-      <template v-for="(item, index) in data.voices" :key="item.name">
-        <tr>
-          <td>{{data.voices.length - index}}</td>
-          <td>
-            <input type="text" v-model="item.name">
-          </td>
-          <td>
-            <input type="text" v-model="item.path">
-          </td>
-          <td>
-            <edit-select :name="item.name" :category="item.category"/>
-          </td>
-          <td>
-            <input type="text" v-model="item.translate['zh-CN']">
-          </td>
-          <td>
-            <input type="text" v-model="item.translate['ja-JP']">
-          </td>
-        </tr>
-      </template>
-    </table>
-  </div>
-</transition>
+  </transition>
 </template>
 
 <script>
@@ -71,7 +71,7 @@ export default {
   components: {
     EditSelect
   },
-  setup () {
+  setup() {
     // 是否显示分类
     const showCategory = ref(true)
 
@@ -159,16 +159,19 @@ export default {
 <style lang="stylus" scoped>
 table
   max-width 100%
+
   th
     position sticky
     top 48px
     padding 5px
     background #fff
+
   td
     text-align center
 
 .editor
   margin 0 10px
+
   .header
     margin 5px 0 5px 5px
 </style>

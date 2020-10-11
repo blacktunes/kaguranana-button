@@ -20,15 +20,14 @@
     ],
     "githubUrl": "https://github.com/blacktunes/kaguranana-button"
   },
-  "consoleShow": {
-    "consoleTip": "❤神楽七奈",
-    "consoleTipColor": "pink",
-    "consoleImg": "nana.png",
-    "consoleImgWidth": "100%",
-    "consoleImgHeight": "84%"
+  "console": {
+    "text": "❤神楽七奈",
+    "size": "20px",
+    "color": "pink",
+    "img": "nana.png",
+    "imgWidth": "100%",
+    "imgHeight": "84%"
   },
-  "mediaSession": {
-    "artwork": "nana.png"
-  },
+  "mediaSession": "nana.png",
   "GA_ID": "UA-176441751-1"
 }

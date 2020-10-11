@@ -63,20 +63,23 @@ export default {
   setup() {
     const searchData: SearchData = inject('searchData') as SearchData
 
-    const btnList = [
-      {
-        url: Setting.header.youtube || false,
-        img: require('../assets/image/youtube-fill.png')
-      },
-      {
-        url: Setting.header.twitter || false,
-        img: require('../assets/image/twitter-fill.png')
-      },
-      {
-        url: Setting.header.bilibili || false,
-        img: require('../assets/image/bilibili-fill.png')
-      }
-    ]
+    let btnList: { url: string | false; img: string }[] = []
+    if ((Setting as any).header) {
+      btnList = [
+        {
+          url: (Setting as any).header.youtube || false,
+          img: require('../assets/image/youtube-fill.png')
+        },
+        {
+          url: (Setting as any).header.twitter || false,
+          img: require('../assets/image/twitter-fill.png')
+        },
+        {
+          url: (Setting as any).header.bilibili || false,
+          img: require('../assets/image/bilibili-fill.png')
+        }
+      ]
+    }
 
     const logo: Ref<HTMLElement> = ref() as Ref<HTMLElement>
     let isRestart = false

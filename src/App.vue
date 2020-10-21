@@ -68,7 +68,7 @@ export default {
 
       const width = (Setting as any).console.imgWidth || '100%'
       const height = (Setting as any).console.imgHeight || '100%'
-      const img = (Setting as any).console.img ? `padding-right:${width};padding-top:${height};background:url('${location.origin}/setting/${(Setting as any).console.img}') no-repeat;background-size:100% 100%` : ''
+      const img = (Setting as any).console.img ? `padding-right:${width};padding-top:${height};background:url('${location.origin}/img/${(Setting as any).console.img}') no-repeat;background-size:100% 100%` : ''
 
       console.log(`%c${text}%c `, `font-size:${size};color:${color}`, img)
     }

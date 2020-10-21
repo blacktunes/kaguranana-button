@@ -2525,6 +2525,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ansi-escapes@npm:^3.0.0":
+  version: 3.2.0
+  resolution: "ansi-escapes@npm:3.2.0"
+  checksum: 0a106c53c71bc831a3245b49016a2630de4217674f4383761c7ef4fe78dfe73a897e323f27298783494b45ce3703f903013d4548c5411bafb6c5c937fb0b3f4e
+  languageName: node
+  linkType: hard
+
 "ansi-escapes@npm:^4.2.1":
   version: 4.3.1
   resolution: "ansi-escapes@npm:4.3.1"
@@ -3499,6 +3506,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"chalk@npm:2.3.x":
+  version: 2.3.2
+  resolution: "chalk@npm:2.3.2"
+  dependencies:
+    ansi-styles: ^3.2.1
+    escape-string-regexp: ^1.0.5
+    supports-color: ^5.3.0
+  checksum: 97342241268a8279293525c4297e0da1d86b8c878b21fa82b74c886121df9da4f930281c2dd7fb078d8b64937ade83a3a720c4f85a260b638ac624cc26a8e8b8
+  languageName: node
+  linkType: hard
+
 "chalk@npm:^1.1.3":
   version: 1.1.3
   resolution: "chalk@npm:1.1.3"
@@ -3667,7 +3685,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cli-cursor@npm:^2.1.0":
+"cli-cursor@npm:^2.0.0, cli-cursor@npm:^2.1.0":
   version: 2.1.0
   resolution: "cli-cursor@npm:2.1.0"
   dependencies:
@@ -5668,6 +5686,15 @@ __metadata:
   version: 3.5.2
   resolution: "figgy-pudding@npm:3.5.2"
   checksum: 737645f602631734ad53b7445128e255939f809565350b376b3b8fad7673f37c82525a16463f176643ff4b989bb79ed0ecc18111a364ead1082a74c99195a6ca
+  languageName: node
+  linkType: hard
+
+"figures@npm:2.0.x":
+  version: 2.0.0
+  resolution: "figures@npm:2.0.0"
+  dependencies:
+    escape-string-regexp: ^1.0.5
+  checksum: de1145903784bd0b8bca1716426825d0a608fa81f370e0779047ef3f8d4509896f81435093e62a887717aeed0b8c8a92da7953f7f506ca57e62cf95d12b6c65a
   languageName: node
   linkType: hard
 
@@ -7831,6 +7858,17 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"log-update@npm:2.3.x":
+  version: 2.3.0
+  resolution: "log-update@npm:2.3.0"
+  dependencies:
+    ansi-escapes: ^3.0.0
+    cli-cursor: ^2.0.0
+    wrap-ansi: ^3.0.1
+  checksum: 9b284678617abcdeb6da5589b82f88bdad7129b6d8cd428c010c5e4e1b6d7a4ccfcadb3375701e4cf7900cff735fcff123b9dea3fd28f7636e129f3a7566455c
+  languageName: node
+  linkType: hard
+
 "loglevel@npm:^1.6.8":
   version: 1.7.0
   resolution: "loglevel@npm:1.7.0"
@@ -8372,12 +8410,14 @@ fsevents@~2.1.2:
     eslint-plugin-vue: ^7.0.0-beta.3
     mitt: ^2.1.0
     register-service-worker: ^1.7.1
+    simple-progress-webpack-plugin: ^1.1.2
     stylus: ^0.54.8
     stylus-loader: ^3.0.2
     typescript: ~3.9.7
     vue: ^3.0.0
     vue-i18n: ^9.0.0-beta.2
     vue-router: ^4.0.0-beta.11
+    webpack-bundle-analyzer: ^3.9.0
   languageName: unknown
   linkType: soft
 
@@ -10707,6 +10747,19 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"simple-progress-webpack-plugin@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "simple-progress-webpack-plugin@npm:1.1.2"
+  dependencies:
+    chalk: 2.3.x
+    figures: 2.0.x
+    log-update: 2.3.x
+  peerDependencies:
+    webpack: ">=2.0.0"
+  checksum: 3e1764a7eca0379319749f940c8903e3f7e5a74a26f2a2c153f081fe9e35b4847ad5a0f25f8bfc319c84701fef1d8ae4ea3834785b14790019552e1b46b1696b
+  languageName: node
+  linkType: hard
+
 "simple-swizzle@npm:^0.2.2":
   version: 0.2.2
   resolution: "simple-swizzle@npm:0.2.2"
@@ -11089,7 +11142,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"string-width@npm:^1.0.2 || 2, string-width@npm:^2.0.0":
+"string-width@npm:^1.0.2 || 2, string-width@npm:^2.0.0, string-width@npm:^2.1.1":
   version: 2.1.1
   resolution: "string-width@npm:2.1.1"
   dependencies:
@@ -12278,6 +12331,29 @@ typescript@~3.9.7:
   languageName: node
   linkType: hard
 
+"webpack-bundle-analyzer@npm:^3.9.0":
+  version: 3.9.0
+  resolution: "webpack-bundle-analyzer@npm:3.9.0"
+  dependencies:
+    acorn: ^7.1.1
+    acorn-walk: ^7.1.1
+    bfj: ^6.1.1
+    chalk: ^2.4.1
+    commander: ^2.18.0
+    ejs: ^2.6.1
+    express: ^4.16.3
+    filesize: ^3.6.1
+    gzip-size: ^5.0.0
+    lodash: ^4.17.19
+    mkdirp: ^0.5.1
+    opener: ^1.5.1
+    ws: ^6.0.0
+  bin:
+    webpack-bundle-analyzer: lib/bin/analyzer.js
+  checksum: 3ec0daf957cc17143f73bf00113aa567b466d674baae68e6f9148dfb80bdcc81c94f6da9f8e8cbb7782a6161319efcccc4a013b3820d13993934818cce7650c0
+  languageName: node
+  linkType: hard
+
 "webpack-chain@npm:^6.4.0":
   version: 6.5.1
   resolution: "webpack-chain@npm:6.5.1"
@@ -12670,6 +12746,16 @@ typescript@~3.9.7:
   dependencies:
     microevent.ts: ~0.1.1
   checksum: f1ff1b619f37d304b4d0011ee2d2648b5ee93a984ed8ef869c7d42386d36fd042c63ae797a720dd4a32d9d0a7686e84ebbee2dbb26e0b00cf0cfbd65bc4f19eb
+  languageName: node
+  linkType: hard
+
+"wrap-ansi@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "wrap-ansi@npm:3.0.1"
+  dependencies:
+    string-width: ^2.1.1
+    strip-ansi: ^4.0.0
+  checksum: a5425ff35d2b2d8b683045f1bbb947b7e018cf0ed7aee01aa68fc1d97b4babb09a98d1c3020d0848fdaec9bc96b008acab9d93bfd71e37959b96a4764b0ba026
   languageName: node
   linkType: hard
 

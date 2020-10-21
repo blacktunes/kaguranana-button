@@ -6,7 +6,7 @@ module.exports = {
     short_name: 'NANA BUTTON',
     icons: [
       {
-        src: '/setting/icon.png',
+        src: '/img/icon.png',
         sizes: '192x192',
         type: 'image/png'
       }

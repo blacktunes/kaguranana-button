@@ -39,7 +39,7 @@ import { gtag } from '@/assets/script/gtag'
 import { EVENT, INFO_I18N, Player, PlayerList, PlaySetting, SearchData, Translate, Voices, VoicesCategory, VoicesItem } from '@/assets/script/option'
 import mitt from '@/assets/script/mitt'
 import VoiceList from '@/../public/translate/voices.json'
-import Setting from '@/../public/setting/setting.json'
+import Setting from '@/setting/setting.json'
 import Card from './common/Card.vue'
 import VBtn from './common/VoiveBtn.vue'
 import Search from '@/components/SearchCard.vue'
@@ -153,7 +153,7 @@ export default {
             title: t('voice.' + voice.name),
             artist: t(INFO_I18N.fullName),
             album: t(INFO_I18N.title),
-            artwork: (Setting as any).mediaSession ? [{ src: `/setting/${(Setting as any).mediaSession}`, sizes: '128x128' }] : []
+            artwork: (Setting as any).mediaSession ? [{ src: `/img/${(Setting as any).mediaSession}`, sizes: '128x128' }] : []
           }
           navigator.mediaSession.metadata = new window.MediaMetadata(meta)
           navigator.mediaSession.playbackState = 'playing'

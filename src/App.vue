@@ -11,7 +11,7 @@
 import { provide, reactive, ref, watch, Ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { IsShowSearch, PlaySetting, SearchData } from '@/assets/script/option'
-import Setting from '@/../public/setting/setting.json'
+import Setting from '@/setting/setting.json'
 import VHeader from '@/views/Header.vue'
 import Control from '@/views/Control.vue'
 import VFooter from '@/views/Footer.vue'

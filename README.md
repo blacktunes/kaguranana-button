@@ -30,7 +30,7 @@
 请帮助进行日语翻译！
 暂未添加英语翻译。
 
-`public/translate/locales.js`为网页的翻译。
+`public/translate/locales.json`为网页的翻译。
 `public/translate/voices.json`为音频信息的翻译。
 
 ### 参与网页开发
@@ -44,8 +44,8 @@
 
 ### 使用模板
 
-项目的主要配置在`public`目录。
-若要使用几乎要修改该目录下所有文件。
+项目的主要配置在`src/setting`目录。
+若要使用需要修改该目录以及`public`下的几乎所有文件。
 
 ### 贡献者
 

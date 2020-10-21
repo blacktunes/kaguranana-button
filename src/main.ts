@@ -10,7 +10,7 @@ import './assets/style/transition.styl'
 import './registerServiceWorker'
 
 import { gtag } from './assets/script/gtag.js'
-import Setting from '../public/setting/setting.json'
+import Setting from './setting/setting.json'
 
 if (process.env.NODE_ENV === 'production' && (Setting as any).GA_ID) {
   window.dataLayer = window.dataLayer || []

@@ -8,7 +8,7 @@
             <template v-slot:item="props">
               <img
                 style="width: 100%;margin: 2px"
-                :src="require('../../public/memes/' + props.item.path)"
+                :src="'/memes/' + props.item.path"
               />
             </template>
           </waterfall>

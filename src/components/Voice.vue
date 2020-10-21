@@ -142,24 +142,21 @@ export default {
         if (playerList.has('once')) (playerList.get('once') as Player).audio.pause()
         if (playSetting.nowPlay && playSetting.nowPlay.name === voice.name) {
           clearTimeout(timer)
-          playerList.get('once')!.audio.currentTime = 0
-          playerList.get('once')!.audio.pause()
           timer = setTimeout(() => {
-            playerList.get('once')!.audio.play()
+            addPlayer(voice, 'once')
           }, 250)
         } else {
           addPlayer(voice, 'once')
-
-          if ('mediaSession' in navigator) {
-            const meta = {
-              title: t('voice.' + voice.name),
-              artist: t(INFO_I18N.fullName),
-              album: t(INFO_I18N.title),
-              artwork: (Setting as any).mediaSession ? [{ src: `/setting/${(Setting as any).mediaSession}`, sizes: '128x128' }] : []
-            }
-            navigator.mediaSession.metadata = new window.MediaMetadata(meta)
-            navigator.mediaSession.playbackState = 'playing'
+        }
+        if ('mediaSession' in navigator) {
+          const meta = {
+            title: t('voice.' + voice.name),
+            artist: t(INFO_I18N.fullName),
+            album: t(INFO_I18N.title),
+            artwork: (Setting as any).mediaSession ? [{ src: `/setting/${(Setting as any).mediaSession}`, sizes: '128x128' }] : []
           }
+          navigator.mediaSession.metadata = new window.MediaMetadata(meta)
+          navigator.mediaSession.playbackState = 'playing'
         }
       } else {
         const key = new Date().getTime()
@@ -183,16 +180,6 @@ export default {
         playSetting.error = true
       }
       playerList.get(key)!.audio.oncanplay = () => {
-        if (playSetting.overlap) {
-          for (const i of playerList.keys()) {
-            if (playerList.get(i)!.name === voice.name) {
-              playerList.get(i)!.audio.ontimeupdate = null
-              playerList.get(i)!.audio.onended = () => {
-                playerList.delete(i)
-              }
-            }
-          }
-        }
         playSetting.loading = false
         // eslint-disable-next-line no-labels
         voices:
@@ -211,16 +198,26 @@ export default {
                     voices[i].voiceList[j].progress = 0
                   }
                 } else {
-                  voices[i].voiceList[j].progress = currentTime
+                  let num = 0
+                  for (const k of playerList.keys()) {
+                    if (playerList.get(k)!.name === voice.name) {
+                      num++
+                    }
+                  }
+                  if (num > 1) {
+                    voices[i].voiceList[j].progress = 100
+                  } else {
+                    voices[i].voiceList[j].progress = currentTime
+                  }
                 }
               }
               playerList.get(key)!.audio.onended = () => {
                 voices[i].voiceList[j].progress = 0
+                playerList.delete(key)
                 if (playSetting.loop) {
                   play(voice)
                 } else {
                   reset()
-                  playerList.delete(key)
                 }
                 if (playSetting.autoRandom) {
                   randomPlay()

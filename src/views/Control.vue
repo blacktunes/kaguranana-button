@@ -134,7 +134,6 @@ export default {
 
     const overlapChange = () => {
       playSetting.autoRandom = false
-      playSetting.loop = false
       playSetting.overlap = !playSetting.overlap
     }
 
@@ -145,7 +144,6 @@ export default {
     }
 
     const loopChange = () => {
-      playSetting.overlap = false
       playSetting.autoRandom = false
       playSetting.loop = !playSetting.loop
     }

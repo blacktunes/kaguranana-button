@@ -1,8 +1,8 @@
 <template>
   <div>
-    <search class="search" />
-    <div v-for="item in voices" :key="item.name">
-      <card v-if="needToShow(item.translate)">
+    <Search />
+    <template v-for="item in voices" :key="item.name">
+      <Card v-if="needToShow(item.translate)">
         <template v-slot:header>
           <div class="category">{{ t("voicecategory." + item.name) }}</div>
         </template>
@@ -10,16 +10,23 @@
           <div v-for="voice in item.voiceList" :key="voice.name">
             <div v-if="needToShow(voice.translate)" class="btn-wrapper">
               <NewIcon class="icon" v-if="voice.date === showNew" />
-              <v-btn
+              <VBtn
                 :text="t('voice.' + voice.name)"
                 class="v-btn"
                 :class="{
                   'search-list':
-                    searchList.length > 0 && !searchList.includes(voice.name),
+                    (searchList.length > 0 &&
+                      !searchList.includes(voice.name)) ||
+                    (playSetting.showInfo && !voice.mark),
                   highlight: highlight === voice.name,
+                  disable: playSetting.showInfo && !voice.mark
                 }"
                 :name="voice.name"
-                @click="play(voice)"
+                @click="
+                  playSetting.showInfo
+                    ? showInfo(voice.mark)
+                    : play(voice)
+                "
                 :ref="
                   (el) => {
                     el ? (btnList[voice.name] = el) : null;
@@ -28,14 +35,14 @@
               />
               <img
                 class="pic"
-                v-if="needUsePicture(voice.usePicture)"
+                v-if="needUsePicture(voice.usePicture) && !playSetting.showInfo"
                 :src="usePicture(voice.usePicture)"
               />
             </div>
           </div>
         </div>
-      </card>
-    </div>
+      </Card>
+    </template>
   </div>
 </template>
 
@@ -267,6 +274,11 @@ export default {
       }
     }
 
+    const infoDate = inject('infoDate') as any
+    const showInfo = (showInfo) => {
+      infoDate.value = showInfo
+    }
+
     mitt.on(EVENT.stopPlay, () => {
       clearTimeout(timer)
       for (const key of playerList.keys()) {
@@ -321,12 +333,14 @@ export default {
 
     return {
       t,
+      playSetting,
       btnList,
       searchList: searchData.list,
       highlight,
       voices,
       showNew,
       play,
+      showInfo,
       usePicture,
       needUsePicture,
       needToShow
@@ -338,6 +352,9 @@ export default {
 <style lang="stylus" scoped>
 .search-list
   background #ccc
+
+.disable
+  pointer-events none
 
 .highlight
   background $active-color

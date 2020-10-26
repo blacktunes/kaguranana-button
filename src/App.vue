@@ -29,9 +29,17 @@ export default {
       nowPlay: null,
       overlap: false,
       autoRandom: false,
-      loop: false
+      loop: false,
+      showInfo: false
     })
     provide('playSetting', playSetting)
+
+    const infoDate = ref({
+      title: '',
+      time: '',
+      url: ''
+    })
+    provide('infoDate', infoDate)
 
     const searchData: SearchData = reactive({
       value: '',

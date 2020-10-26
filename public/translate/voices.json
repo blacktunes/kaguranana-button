@@ -1898,11 +1898,11 @@
         "zh-CN": "好耶"
       },
       "category": "中文七奈",
-      "mark": [
-        "好耶！！边画画边唱歌边吃棉花糖咯！！",
-        "6:48~6~50",
-        "https://www.bilibili.com/video/BV17T4y1F7i1"
-      ]
+      "mark": {
+        "title": "好耶！！边画画边唱歌边吃棉花糖咯！！",
+        "time": "6:48~6:50",
+        "url": "https://www.bilibili.com/video/BV17T4y1F7i1"
+      }
     }
   ]
 }

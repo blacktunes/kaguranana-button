@@ -88,6 +88,10 @@ export interface PlaySetting {
    * 是否循环播放
    */
   loop: boolean;
+  /**
+   * 是否开启详情显示
+   */
+  showInfo: boolean;
 }
 
 /**

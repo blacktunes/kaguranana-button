@@ -1,12 +1,22 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
+const path = require('path')
+const fs = require('fs')
+
 let pwa = {}
 try {
   pwa = require('./src/setting/pwa')
 } catch {
-  console.log('没有找到PWA设置')
+  console.warn('没有找到PWA设置')
 }
 
-const path = require('path')
+let style = []
+const styleURL = path.join(__dirname, './src/setting/color.styl')
+if (fs.existsSync(styleURL)) {
+  style = [styleURL]
+} else {
+  console.warn('没有找到stylus全局变量')
+}
+
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const SimpleProgressWebpackPlugin = require('simple-progress-webpack-plugin')
 
@@ -16,7 +26,7 @@ module.exports = {
   css: {
     loaderOptions: {
       stylus: {
-        import: [path.join(__dirname, './src/setting/color.styl')]
+        import: style
       }
     }
   },
@@ -27,8 +37,10 @@ module.exports = {
       },
       plugins: [
         new BundleAnalyzerPlugin({
-          analyzerMode: 'static',
-          openAnalyzer: false,
+          analyzerMode: process.env.NODE_ENV === 'production'
+            ? 'static'
+            : 'server',
+          openAnalyzer: process.env.NODE_ENV !== 'production',
           generateStatsFile: false
         }),
         new SimpleProgressWebpackPlugin()

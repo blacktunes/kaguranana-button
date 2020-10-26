@@ -5,7 +5,7 @@
       <div v-for="item in voices" :key="item.name">
         <card v-if="needToShow(item.translate)">
           <template v-slot:header>
-            <div class="category">{{ t('voicecategory.' + item.name) }}</div>
+            <div class="category">{{ t("voicecategory." + item.name) }}</div>
           </template>
           <div class="content">
             <div v-for="voice in item.voiceList" :key="voice.name">
@@ -13,10 +13,18 @@
                 <v-btn
                   :text="t('voice.' + voice.name)"
                   class="v-btn"
-                  :class="{ 'search-list': searchList.length > 0 && !searchList.includes(voice.name), 'highlight': highlight === voice.name }"
+                  :class="{
+                    'search-list':
+                      searchList.length > 0 && !searchList.includes(voice.name),
+                    highlight: highlight === voice.name,
+                  }"
                   :name="voice.name"
                   @click="play(voice)"
-                  :ref="el => { el ? btnList[voice.name] = el : null }"
+                  :ref="
+                    (el) => {
+                      el ? (btnList[voice.name] = el) : null;
+                    }
+                  "
                 />
                 <img
                   class="pic"
@@ -52,9 +60,6 @@ export default {
   },
   setup() {
     const { t, locale } = useI18n()
-
-    // 判断浏览器是否为夸克从而停用部分功能
-    const isQuark = navigator.userAgent.toLowerCase().includes('quark')
 
     const playSetting: PlaySetting = inject('playSetting') as PlaySetting
 
@@ -191,24 +196,16 @@ export default {
               let currentTime = 0
               playerList.get(key)!.audio.ontimeupdate = () => {
                 currentTime = Number(((playerList.get(key)!.audio.currentTime / duration) * 100).toFixed(0))
-                if (isQuark) {
-                  if (currentTime !== 0) {
-                    voices[i].voiceList[j].progress = 100
-                  } else {
-                    voices[i].voiceList[j].progress = 0
+                let num = 0
+                for (const k of playerList.keys()) {
+                  if (playerList.get(k)!.name === voice.name) {
+                    num++
                   }
+                }
+                if (num > 1) {
+                  voices[i].voiceList[j].progress = 100
                 } else {
-                  let num = 0
-                  for (const k of playerList.keys()) {
-                    if (playerList.get(k)!.name === voice.name) {
-                      num++
-                    }
-                  }
-                  if (num > 1) {
-                    voices[i].voiceList[j].progress = 100
-                  } else {
-                    voices[i].voiceList[j].progress = currentTime
-                  }
+                  voices[i].voiceList[j].progress = currentTime
                 }
               }
               playerList.get(key)!.audio.onended = () => {

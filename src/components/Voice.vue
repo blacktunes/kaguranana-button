@@ -1,44 +1,42 @@
 <template>
-  <transition name="fade" appear>
-    <div>
-      <search class="search" />
-      <div v-for="item in voices" :key="item.name">
-        <card v-if="needToShow(item.translate)">
-          <template v-slot:header>
-            <div class="category">{{ t("voicecategory." + item.name) }}</div>
-          </template>
-          <div class="content">
-            <div v-for="voice in item.voiceList" :key="voice.name">
-              <div v-if="needToShow(voice.translate)" class="btn-wrapper">
-                <NewIcon class="icon" v-if="voice.date === showNew" />
-                <v-btn
-                  :text="t('voice.' + voice.name)"
-                  class="v-btn"
-                  :class="{
-                    'search-list':
-                      searchList.length > 0 && !searchList.includes(voice.name),
-                    highlight: highlight === voice.name,
-                  }"
-                  :name="voice.name"
-                  @click="play(voice)"
-                  :ref="
-                    (el) => {
-                      el ? (btnList[voice.name] = el) : null;
-                    }
-                  "
-                />
-                <img
-                  class="pic"
-                  v-if="needUsePicture(voice.usePicture)"
-                  :src="usePicture(voice.usePicture)"
-                />
-              </div>
+  <div>
+    <search class="search" />
+    <div v-for="item in voices" :key="item.name">
+      <card v-if="needToShow(item.translate)">
+        <template v-slot:header>
+          <div class="category">{{ t("voicecategory." + item.name) }}</div>
+        </template>
+        <div class="content">
+          <div v-for="voice in item.voiceList" :key="voice.name">
+            <div v-if="needToShow(voice.translate)" class="btn-wrapper">
+              <NewIcon class="icon" v-if="voice.date === showNew" />
+              <v-btn
+                :text="t('voice.' + voice.name)"
+                class="v-btn"
+                :class="{
+                  'search-list':
+                    searchList.length > 0 && !searchList.includes(voice.name),
+                  highlight: highlight === voice.name,
+                }"
+                :name="voice.name"
+                @click="play(voice)"
+                :ref="
+                  (el) => {
+                    el ? (btnList[voice.name] = el) : null;
+                  }
+                "
+              />
+              <img
+                class="pic"
+                v-if="needUsePicture(voice.usePicture)"
+                :src="usePicture(voice.usePicture)"
+              />
             </div>
           </div>
-        </card>
-      </div>
+        </div>
+      </card>
     </div>
-  </transition>
+  </div>
 </template>
 
 <script lang="ts">
@@ -360,7 +358,7 @@ export default {
     .icon
       z-index 2
       position absolute
-      top -10px
+      top -9px
       right -15px
 
     .v-btn

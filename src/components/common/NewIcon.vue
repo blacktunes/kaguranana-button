@@ -6,16 +6,11 @@
   </div>
 </template>
 
-<script lang="ts">
-export default {
-
-}
-</script>
-
 <style lang="stylus" scoped>
 .new-icon
+  pointer-events none
   display flex
-  height 20px
+  height 18px
   align-items center
   justify-content center
   padding 0 6px

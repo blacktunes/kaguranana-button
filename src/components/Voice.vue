@@ -10,6 +10,7 @@
           <div class="content">
             <div v-for="voice in item.voiceList" :key="voice.name">
               <div v-if="needToShow(voice.translate)" class="btn-wrapper">
+                <NewIcon class="icon" v-if="voice.date === showNew" />
                 <v-btn
                   :text="t('voice.' + voice.name)"
                   class="v-btn"
@@ -51,12 +52,14 @@ import Setting from '@/setting/setting.json'
 import Card from './common/Card.vue'
 import VBtn from './common/VoiveBtn.vue'
 import Search from '@/components/SearchCard.vue'
+import NewIcon from '@/components/common/NewIcon.vue'
 
 export default {
   components: {
     Card,
     VBtn,
-    Search
+    Search,
+    NewIcon
   },
   setup() {
     const { t, locale } = useI18n()
@@ -91,6 +94,19 @@ export default {
     })
 
     const voices: Voices = reactive([]) as Voices
+    const showNew = ref('')
+
+    for (const i in VoiceList.voices) {
+      let lastDate = new Date('2000-01-01')
+      if (VoiceList.voices[i].date) {
+        const voiceDate = new Date(VoiceList.voices[i].date!)
+        if (voiceDate > lastDate) {
+          lastDate = voiceDate
+          showNew.value = VoiceList.voices[i].date!
+        }
+      }
+    }
+
     VoiceList.category.forEach(category => {
       const temp: VoicesCategory = { ...category, voiceList: [] }
       VoiceList.voices.forEach(voice => {
@@ -311,6 +327,7 @@ export default {
       searchList: searchData.list,
       highlight,
       voices,
+      showNew,
       play,
       usePicture,
       needUsePicture,
@@ -339,6 +356,12 @@ export default {
   .btn-wrapper
     position relative
     margin 5px
+
+    .icon
+      z-index 2
+      position absolute
+      top -10px
+      right -15px
 
     .v-btn
       transition background 0.2s

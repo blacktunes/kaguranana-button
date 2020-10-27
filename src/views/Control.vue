@@ -230,6 +230,7 @@ a
   font-size 14px
 
 .control
+  z-index 5
   display flex
   flex-direction column
   align-items center

@@ -1,9 +1,15 @@
 {
   "category": [
     {
-      "name": "中文七奈",
+      "name": "中文狗妈",
       "translate": {
         "zh-CN": "中文七奈"
+      }
+    },
+    {
+      "name": "七奈的夸奖",
+      "translate": {
+        "zh-CN": "七奈的夸奖"
       }
     },
     {
@@ -25,6 +31,12 @@
       "translate": {
         "zh-CN": "七奈可爱声音斯哈斯哈",
         "ja-JP": "ななのかわいい声！ハァハァ"
+      }
+    },
+    {
+      "name": "七奈的叫声",
+      "translate": {
+        "zh-CN": "七奈的叫声"
       }
     },
     {
@@ -65,7 +77,7 @@
     {
       "name": "日常会話",
       "translate": {
-        "zh-CN": "我家妈妈的日常用语",
+        "zh-CN": "七奈的日常用语",
         "ja-JP": "日常会話"
       }
     },
@@ -91,7 +103,7 @@
       "translate": {
         "zh-CN": "AWSL"
       },
-      "category": "中文七奈"
+      "category": "中文狗妈"
     },
     {
       "name": "我很可爱1",
@@ -99,7 +111,7 @@
       "translate": {
         "zh-CN": "我很可爱1"
       },
-      "category": "中文七奈"
+      "category": "中文狗妈"
     },
     {
       "name": "我很可爱2",
@@ -107,7 +119,7 @@
       "translate": {
         "zh-CN": "我很可爱2"
       },
-      "category": "中文七奈"
+      "category": "中文狗妈"
     },
     {
       "name": "我很可爱3",
@@ -115,7 +127,7 @@
       "translate": {
         "zh-CN": "我很可爱3"
       },
-      "category": "中文七奈"
+      "category": "中文狗妈"
     },
     {
       "name": "我爱你1",
@@ -123,7 +135,7 @@
       "translate": {
         "zh-CN": "我爱你1"
       },
-      "category": "中文七奈"
+      "category": "中文狗妈"
     },
     {
       "name": "我爱你2",
@@ -131,7 +143,7 @@
       "translate": {
         "zh-CN": "我爱你2"
       },
-      "category": "中文七奈"
+      "category": "中文狗妈"
     },
     {
       "name": "我爱你3",
@@ -139,7 +151,7 @@
       "translate": {
         "zh-CN": "我爱你3"
       },
-      "category": "中文七奈"
+      "category": "中文狗妈"
     },
     {
       "name": "我爱你4",
@@ -147,7 +159,7 @@
       "translate": {
         "zh-CN": "我爱你4"
       },
-      "category": "中文七奈"
+      "category": "中文狗妈"
     },
     {
       "name": "我爱你5",
@@ -155,7 +167,7 @@
       "translate": {
         "zh-CN": "我爱你5"
       },
-      "category": "中文七奈"
+      "category": "中文狗妈"
     },
     {
       "name": "我爱你6",
@@ -163,7 +175,7 @@
       "translate": {
         "zh-CN": "我爱你6"
       },
-      "category": "中文七奈"
+      "category": "中文狗妈"
     },
     {
       "name": "我爱你7",
@@ -171,7 +183,7 @@
       "translate": {
         "zh-CN": "我爱你7"
       },
-      "category": "中文七奈"
+      "category": "中文狗妈"
     },
     {
       "name": "我爱你8",
@@ -179,7 +191,7 @@
       "translate": {
         "zh-CN": "我爱你8"
       },
-      "category": "中文七奈"
+      "category": "中文狗妈"
     },
     {
       "name": "窝,窝恨可爱,窝恨可爱,嗯,窝恨可爱！",
@@ -187,7 +199,7 @@
       "translate": {
         "zh-CN": "窝,窝恨可爱,窝恨可爱,嗯,窝恨可爱!"
       },
-      "category": "中文七奈"
+      "category": "中文狗妈"
     },
     {
       "name": "震撼狗妈",
@@ -195,7 +207,7 @@
       "translate": {
         "zh-CN": "震撼狗妈"
       },
-      "category": "中文七奈"
+      "category": "中文狗妈"
     },
     {
       "name": "DD打ち首",
@@ -1897,11 +1909,529 @@
       "translate": {
         "zh-CN": "好耶"
       },
-      "category": "中文七奈",
+      "category": "中文狗妈",
       "mark": {
         "title": "好耶！！边画画边唱歌边吃棉花糖咯！！",
         "time": "6:48~6:50",
         "url": "https://www.bilibili.com/video/BV17T4y1F7i1"
+      }
+    },
+    {
+      "name": "欢迎回来主人",
+      "path": "欢迎回来主人.mp3",
+      "date": "2020-10-27",
+      "translate": {
+        "zh-CN": "欢迎回来主人"
+      },
+      "category": "ななのかわいい台詞！ハァハァ",
+      "mark": {
+        "title": "“恐怖”游戏PIEN初见！",
+        "time": "25:16~25:23",
+        "url": "https://www.bilibili.com/video/BV1Ga4y1E74H"
+      }
+    },
+    {
+      "name": "呀~",
+      "path": "呀~.mp3",
+      "date": "2020-10-27",
+      "translate": {
+        "zh-CN": "呀~"
+      },
+      "category": "七奈的叫声",
+      "mark": {
+        "title": "“恐怖”游戏PIEN初见！",
+        "time": "25:23~25:25",
+        "url": "https://www.bilibili.com/video/BV1Ga4y1E74H"
+      }
+    },
+    {
+      "name": "天才(笑)",
+      "path": "天才(笑).mp3",
+      "date": "2020-10-27",
+      "translate": {
+        "zh-CN": "天才(笑)"
+      },
+      "category": "七奈的夸奖",
+      "mark": {
+        "title": "“恐怖”游戏PIEN初见！",
+        "time": "7:58~8:00",
+        "url": "https://www.bilibili.com/video/BV1Ga4y1E74H"
+      }
+    },
+    {
+      "name": "首次见面",
+      "path": "首次见面.mp3",
+      "date": "2020-10-27",
+      "translate": {
+        "zh-CN": "首次见面"
+      },
+      "category": "中文狗妈",
+      "mark": {
+        "title": "“恐怖”游戏PIEN初见！",
+        "time": "8:00~8:02",
+        "url": "https://www.bilibili.com/video/BV1Ga4y1E74H"
+      }
+    },
+    {
+      "name": "我是神乐七奈",
+      "path": "我是神乐七奈.mp3",
+      "date": "2020-10-27",
+      "translate": {
+        "zh-CN": "我是神乐七奈"
+      },
+      "category": "中文狗妈",
+      "mark": {
+        "title": "“恐怖”游戏PIEN初见！",
+        "time": "8:02~8:04",
+        "url": "https://www.bilibili.com/video/BV1Ga4y1E74H"
+      }
+    },
+    {
+      "name": "我很可爱~",
+      "path": "我很可爱~.mp3",
+      "date": "2020-10-27",
+      "translate": {
+        "zh-CN": "我很可爱~"
+      },
+      "category": "中文狗妈",
+      "mark": {
+        "title": "“恐怖”游戏PIEN初见！",
+        "time": "8:04~8:06",
+        "url": "https://www.bilibili.com/video/BV1Ga4y1E74H"
+      }
+    },
+    {
+      "name": "老板大气",
+      "path": "老板大气.mp3",
+      "date": "2020-10-27",
+      "translate": {
+        "zh-CN": "老板大气"
+      },
+      "category": "中文狗妈",
+      "mark": {
+        "title": "“恐怖”游戏PIEN初见！",
+        "time": "8:07~8:09",
+        "url": "https://www.bilibili.com/video/BV1Ga4y1E74H"
+      }
+    },
+    {
+      "name": "说的是啥",
+      "path": "说的是啥.mp3",
+      "date": "2020-10-27",
+      "translate": {
+        "zh-CN": "不懂,说的是啥?"
+      },
+      "category": "日常会話",
+      "mark": {
+        "title": "“恐怖”游戏PIEN初见！",
+        "time": "11:08~11:10",
+        "url": "https://www.bilibili.com/video/BV1Ga4y1E74H"
+      }
+    },
+    {
+      "name": "想不想摸摸看",
+      "path": "想不想摸摸看.mp3",
+      "date": "2020-10-27",
+      "translate": {
+        "zh-CN": "想不想摸摸看"
+      },
+      "category": "清楚だよ",
+      "mark": {
+        "title": "“恐怖”游戏PIEN初见！",
+        "time": "13:02~13:04",
+        "url": "https://www.bilibili.com/video/BV1Ga4y1E74H"
+      }
+    },
+    {
+      "name": "不行",
+      "path": "不行.mp3",
+      "date": "2020-10-27",
+      "translate": {
+        "zh-CN": "不行"
+      },
+      "category": "日常会話",
+      "mark": {
+        "title": "“恐怖”游戏PIEN初见！",
+        "time": "13:04~13:05",
+        "url": "https://www.bilibili.com/video/BV1Ga4y1E74H"
+      }
+    },
+    {
+      "name": "PIENx8",
+      "path": "PIENx8.mp3",
+      "date": "2020-10-27",
+      "translate": {
+        "zh-CN": "PIENx8"
+      },
+      "category": "ななのかわいい声！ハァハァ",
+      "mark": {
+        "title": "“恐怖”游戏PIEN初见！",
+        "time": "14:14~14:19",
+        "url": "https://www.bilibili.com/video/BV1Ga4y1E74H"
+      }
+    },
+    {
+      "name": "恶灵退散",
+      "path": "恶灵退散.mp3",
+      "date": "2020-10-27",
+      "translate": {
+        "zh-CN": "恶灵退散"
+      },
+      "category": "日常会話",
+      "mark": {
+        "title": "“恐怖”游戏PIEN初见！",
+        "time": "14:21~14:22",
+        "url": "https://www.bilibili.com/video/BV1Ga4y1E74H"
+      }
+    },
+    {
+      "name": "DD斩首x5",
+      "path": "DD斩首x5.mp3",
+      "date": "2020-10-27",
+      "translate": {
+        "zh-CN": "DD斩首x5"
+      },
+      "category": "ななちゃん罵倒して",
+      "mark": {
+        "title": "“恐怖”游戏PIEN初见！",
+        "time": "15:24~15:29",
+        "url": "https://www.bilibili.com/video/BV1Ga4y1E74H"
+      }
+    },
+    {
+      "name": "没有什么事七奈不能打败的",
+      "path": "没有什么事七奈不能打败的.mp3",
+      "date": "2020-10-27",
+      "translate": {
+        "zh-CN": "没有什么事七奈不能打败的"
+      },
+      "category": "名言",
+      "mark": {
+        "title": "“恐怖”游戏PIEN初见！",
+        "time": "15:31~15:34",
+        "url": "https://www.bilibili.com/video/BV1Ga4y1E74H"
+      }
+    },
+    {
+      "name": "不行不行不行别过来",
+      "path": "不行不行不行别过来.mp3",
+      "date": "2020-10-27",
+      "translate": {
+        "zh-CN": "不行不行不行别过来"
+      },
+      "category": "ななのかわいい声！ハァハァ",
+      "mark": {
+        "title": "“恐怖”游戏PIEN初见！",
+        "time": "16:04~16:10",
+        "url": "https://www.bilibili.com/video/BV1Ga4y1E74H"
+      }
+    },
+    {
+      "name": "等下x5",
+      "path": "等下x5.mp3",
+      "date": "2020-10-27",
+      "translate": {
+        "zh-CN": "等下x5"
+      },
+      "category": "ななのかわいい声！ハァハァ",
+      "mark": {
+        "title": "“恐怖”游戏PIEN初见！",
+        "time": "18:05~18:07",
+        "url": "https://www.bilibili.com/video/BV1Ga4y1E74H"
+      }
+    },
+    {
+      "name": "没听说过啊",
+      "path": "没听说过啊.mp3",
+      "date": "2020-10-27",
+      "translate": {
+        "zh-CN": "没听说过啊"
+      },
+      "category": "ななのかわいい声！ハァハァ",
+      "mark": {
+        "title": "“恐怖”游戏PIEN初见！",
+        "time": "18:10~18:12",
+        "url": "https://www.bilibili.com/video/BV1Ga4y1E74H"
+      }
+    },
+    {
+      "name": "尖叫(音量注意)",
+      "path": "尖叫(音量注意).mp3",
+      "date": "2020-10-27",
+      "translate": {
+        "zh-CN": "尖叫(音量注意)"
+      },
+      "category": "七奈的叫声",
+      "mark": {
+        "title": "“恐怖”游戏PIEN初见！",
+        "time": "19:51~19:53",
+        "url": "https://www.bilibili.com/video/BV1Ga4y1E74H"
+      }
+    },
+    {
+      "name": "太可怕了(哭)",
+      "path": "太可怕了(哭).mp3",
+      "date": "2020-10-27",
+      "translate": {
+        "zh-CN": "太可怕了(哭)"
+      },
+      "category": "ななのかわいい声！ハァハァ",
+      "mark": {
+        "title": "“恐怖”游戏PIEN初见！",
+        "time": "20:05~20:07",
+        "url": "https://www.bilibili.com/video/BV1Ga4y1E74H"
+      }
+    },
+    {
+      "name": "欧尼酱~来poki游戏吧~(慎点)",
+      "path": "欧尼酱~来poki游戏吧~(慎点).mp3",
+      "date": "2020-10-27",
+      "translate": {
+        "zh-CN": "欧尼酱~来poki游戏吧~(慎点)"
+      },
+      "category": "ななのかわいい台詞！ハァハァ",
+      "mark": {
+        "title": "“恐怖”游戏PIEN初见！",
+        "time": "31:22~31:27",
+        "url": "https://www.bilibili.com/video/BV1Ga4y1E74H"
+      }
+    },
+    {
+      "name": "3~2~1~啾~",
+      "path": "3~2~1~啾~.mp3",
+      "date": "2020-10-27",
+      "translate": {
+        "zh-CN": "3~2~1~啾~"
+      },
+      "category": "日常会話",
+      "mark": {
+        "title": "“恐怖”游戏PIEN初见！",
+        "time": "31:17~31:21",
+        "url": "https://www.bilibili.com/video/BV1Ga4y1E74H"
+      }
+    },
+    {
+      "name": "现在正在和欧尼酱玩poki游戏啦",
+      "path": "现在正在和欧尼酱玩poki游戏啦.mp3",
+      "date": "2020-10-27",
+      "translate": {
+        "zh-CN": "现在正在和欧尼酱玩poki游戏啦"
+      },
+      "category": "ななのかわいい台詞！ハァハァ",
+      "mark": {
+        "title": "“恐怖”游戏PIEN初见！",
+        "time": "31:28~31:31",
+        "url": "https://www.bilibili.com/video/BV1Ga4y1E74H"
+      }
+    },
+    {
+      "name": "我才不怕什么DD呢",
+      "path": "我才不怕什么DD呢.mp3",
+      "date": "2020-10-27",
+      "translate": {
+        "zh-CN": "我才不怕什么DD呢"
+      },
+      "category": "ななのかわいい台詞！ハァハァ",
+      "mark": {
+        "title": "“恐怖”游戏PIEN初见！",
+        "time": "32:33~32:34",
+        "url": "https://www.bilibili.com/video/BV1Ga4y1E74H"
+      }
+    },
+    {
+      "name": "喜欢你什么的",
+      "path": "喜欢你什么的.mp3",
+      "date": "2020-10-27",
+      "translate": {
+        "zh-CN": "喜欢你什么的"
+      },
+      "category": "ななのかわいい台詞！ハァハァ",
+      "mark": {
+        "title": "“恐怖”游戏PIEN初见！",
+        "time": "33:16~33:27",
+        "url": "https://www.bilibili.com/video/BV1Ga4y1E74H"
+      }
+    },
+    {
+      "name": "最喜欢七奈了",
+      "path": "最喜欢七奈了.mp3",
+      "date": "2020-10-27",
+      "translate": {
+        "zh-CN": "最喜欢七奈了"
+      },
+      "category": "清楚だよ",
+      "mark": {
+        "title": "“恐怖”游戏PIEN初见！",
+        "time": "34:09~34:10",
+        "url": "https://www.bilibili.com/video/BV1Ga4y1E74H"
+      }
+    },
+    {
+      "name": "女王七奈",
+      "path": "女王七奈.mp3",
+      "date": "2020-10-27",
+      "translate": {
+        "zh-CN": "女王七奈"
+      },
+      "category": "ななのかわいい台詞！ハァハァ",
+      "mark": {
+        "title": "“恐怖”游戏PIEN初见！",
+        "time": "35:18~35:23",
+        "url": "https://www.bilibili.com/video/BV1Ga4y1E74H"
+      }
+    },
+    {
+      "name": "DD斩首~",
+      "path": "DD斩首~.mp3",
+      "date": "2020-10-27",
+      "translate": {
+        "zh-CN": "DD斩首~"
+      },
+      "category": "ななのかわいい台詞！ハァハァ",
+      "mark": {
+        "title": "“恐怖”游戏PIEN初见！",
+        "time": "36:44~36:46",
+        "url": "https://www.bilibili.com/video/BV1Ga4y1E74H"
+      }
+    },
+    {
+      "name": "诶？",
+      "path": "诶？.mp3",
+      "date": "2020-10-27",
+      "translate": {
+        "zh-CN": "诶？"
+      },
+      "category": "ななのかわいい声！ハァハァ",
+      "mark": {
+        "title": "“恐怖”游戏PIEN初见！",
+        "time": "36:55~36:58",
+        "url": "https://www.bilibili.com/video/BV1Ga4y1E74H"
+      }
+    },
+    {
+      "name": "花嫁七奈",
+      "path": "花嫁七奈.mp3",
+      "date": "2020-10-27",
+      "translate": {
+        "zh-CN": "花嫁七奈"
+      },
+      "category": "ななのかわいい台詞！ハァハァ",
+      "mark": {
+        "title": "“恐怖”游戏PIEN初见！",
+        "time": "38:37~38:48",
+        "url": "https://www.bilibili.com/video/BV1Ga4y1E74H"
+      }
+    },
+    {
+      "name": "竟然让我蒙受了此等羞耻",
+      "path": "竟然让我蒙受了此等羞耻.mp3",
+      "date": "2020-10-27",
+      "translate": {
+        "zh-CN": "竟然让我蒙受了此等羞耻"
+      },
+      "category": "名言",
+      "mark": {
+        "title": "“恐怖”游戏PIEN初见！",
+        "time": "38:53~38:59",
+        "url": "https://www.bilibili.com/video/BV1Ga4y1E74H"
+      }
+    },
+    {
+      "name": "吃我麻婆豆腐！",
+      "path": "吃我麻婆豆腐！.mp3",
+      "date": "2020-10-27",
+      "translate": {
+        "zh-CN": "吃我麻婆豆腐！"
+      },
+      "category": "名言",
+      "mark": {
+        "title": "“恐怖”游戏PIEN初见！",
+        "time": "39:05~39:07",
+        "url": "https://www.bilibili.com/video/BV1Ga4y1E74H"
+      }
+    },
+    {
+      "name": "傲娇七奈",
+      "path": "傲娇七奈.mp3",
+      "date": "2020-10-27",
+      "translate": {
+        "zh-CN": "傲娇七奈"
+      },
+      "category": "ななのかわいい台詞！ハァハァ",
+      "mark": {
+        "title": "“恐怖”游戏PIEN初见！",
+        "time": "40:38~40:48",
+        "url": "https://www.bilibili.com/video/BV1Ga4y1E74H"
+      }
+    },
+    {
+      "name": "一起洗澡吧",
+      "path": "一起洗澡吧.mp3",
+      "date": "2020-10-27",
+      "translate": {
+        "zh-CN": "一起洗澡吧"
+      },
+      "category": "ななのかわいい台詞！ハァハァ",
+      "mark": {
+        "title": "“恐怖”游戏PIEN初见！",
+        "time": "44:38~44:42",
+        "url": "https://www.bilibili.com/video/BV1Ga4y1E74H"
+      }
+    },
+    {
+      "name": "笨蛋",
+      "path": "笨蛋.mp3",
+      "date": "2020-10-27",
+      "translate": {
+        "zh-CN": "笨蛋"
+      },
+      "category": "ななちゃん罵倒して",
+      "mark": {
+        "title": "“恐怖”游戏PIEN初见！",
+        "time": "44:47~44:48",
+        "url": "https://www.bilibili.com/video/BV1Ga4y1E74H"
+      }
+    },
+    {
+      "name": "七奈加油",
+      "path": "七奈加油.mp3",
+      "date": "2020-10-27",
+      "translate": {
+        "zh-CN": "七奈加油"
+      },
+      "category": "中文狗妈",
+      "mark": {
+        "title": "“恐怖”游戏PIEN初见！",
+        "time": "46:46~46:47",
+        "url": "https://www.bilibili.com/video/BV1Ga4y1E74H"
+      }
+    },
+    {
+      "name": "哭",
+      "path": "哭.mp3",
+      "date": "2020-10-27",
+      "translate": {
+        "zh-CN": "哭"
+      },
+      "category": "ななのかわいい声！ハァハァ",
+      "mark": {
+        "title": "“恐怖”游戏PIEN初见！",
+        "time": "46:58~47:04",
+        "url": "https://www.bilibili.com/video/BV1Ga4y1E74H"
+      }
+    },
+    {
+      "name": "其实肯定是喜欢你的啦",
+      "path": "其实肯定是喜欢你的啦.mp3",
+      "date": "2020-10-27",
+      "translate": {
+        "zh-CN": "其实肯定是喜欢你的啦"
+      },
+      "category": "ななのかわいい台詞！ハァハァ",
+      "mark": {
+        "title": "“恐怖”游戏PIEN初见！",
+        "time": "47:22~47:29",
+        "url": "https://www.bilibili.com/video/BV1Ga4y1E74H"
       }
     }
   ]

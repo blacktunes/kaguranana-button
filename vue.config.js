@@ -35,12 +35,8 @@ module.exports = {
       performance: {
         hints: false
       },
-      plugins: [
+      plugins: process.env.NODE_ENV === 'production' ? [] : [
         new BundleAnalyzerPlugin({
-          analyzerMode: process.env.NODE_ENV === 'production'
-            ? 'static'
-            : 'server',
-          openAnalyzer: process.env.NODE_ENV !== 'production',
           generateStatsFile: false
         }),
         new SimpleProgressWebpackPlugin()

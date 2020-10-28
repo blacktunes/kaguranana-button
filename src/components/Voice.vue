@@ -15,8 +15,8 @@
                 class="v-btn"
                 :class="{
                   'search-list':
-                    (searchList.length > 0 &&
-                      !searchList.includes(voice.name)) ||
+                    (searchData.value &&
+                      !searchData.list.includes(voice.name)) ||
                     (playSetting.showInfo && !voice.mark),
                   highlight: highlight === voice.name,
                   disable: playSetting.showInfo && !voice.mark
@@ -335,7 +335,7 @@ export default {
       t,
       playSetting,
       btnList,
-      searchList: searchData.list,
+      searchData,
       highlight,
       voices,
       showNew,

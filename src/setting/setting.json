@@ -1,6 +1,16 @@
 {
-  "icon": "🌶️",
+  "name": {
+    "CN": {
+      "title": "七奈按钮",
+      "fullName": "神楽七奈"
+    },
+    "JP": {
+      "title": "ななボタン",
+      "fullName": "神楽七奈"
+    }
+  },
   "header": {
+    "icon": "🌶️",
     "youtube": "https://www.youtube.com/channel/UCbfv8uuUXt3RSJGEwxny5Rw",
     "twitter": "https://twitter.com/nana_kaguraaa",
     "bilibili": "https://live.bilibili.com/21304638"

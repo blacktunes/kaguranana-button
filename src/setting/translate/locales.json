@@ -1,10 +1,8 @@
 {
   "zh-CN": {
     "info": {
-      "title": "七奈按钮",
       "toGithub": "请在Github参与翻译、增补音频或提出建议",
-      "notOfficial": "本站为爱好者作品，和官方没有关联",
-      "fullName": "神楽七奈"
+      "notOfficial": "本站为爱好者作品，和官方没有关联"
     },
     "action": {
       "randomplay": "帮我选一个",
@@ -23,10 +21,8 @@
   },
   "ja-JP": {
     "info": {
-      "title": "ななボタン",
       "toGithub": "Githubで翻訳に参加、音声を追加および提案をしてください。",
-      "notOfficial": "このサイトはファン作品であり、公式とは関係ありません。",
-      "fullName": "神楽七奈"
+      "notOfficial": "このサイトはファン作品であり、公式とは関係ありません。"
     },
     "action": {
       "randomplay": "ランダム",

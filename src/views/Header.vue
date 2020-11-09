@@ -149,7 +149,7 @@ export default {
     })
 
     return {
-      icon: Setting.icon,
+      icon: Setting.header.icon,
       btnList,
       logo,
       logoClick,

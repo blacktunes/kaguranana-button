@@ -21,6 +21,16 @@ if (process.env.NODE_ENV === 'production' && (Setting as any).GA_ID) {
 const CN: any = { ...Locales['zh-CN'], voice: {}, voicecategory: {} }
 const JP: any = { ...Locales['ja-JP'], voice: {}, voicecategory: {} }
 
+CN.info = {
+  ...CN.info,
+  ...Setting.name.CN
+}
+
+JP.info = {
+  ...JP.info,
+  ...Setting.name.CN
+}
+
 for (const category of VoiceList.category) {
   if (category.translate !== undefined) {
     if (category.translate['zh-CN'] !== undefined) {

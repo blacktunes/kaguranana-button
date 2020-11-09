@@ -78,7 +78,7 @@ import { inject, Ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { EVENT, IsShowSearch, SearchData, SEARCH_TYPE } from '@/assets/script/option'
 import mitt from '@/assets/script/mitt'
-import VoiceList from '@/../public/translate/voices.json'
+import VoiceList from '@/setting/translate/voices.json'
 
 export default {
   props: {

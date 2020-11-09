@@ -2,7 +2,7 @@
   <transition name="slider-down" appear>
     <div class="header">
       <transition name="logo" appear>
-        <div class="logo" ref="logo" @click="logoClick">🌶️</div>
+        <div class="logo" ref="logo" @click="logoClick">{{icon}}</div>
       </transition>
       <router-link :to="titlePath">
         <div class="title">{{ headerTitle }}</div>
@@ -149,6 +149,7 @@ export default {
     })
 
     return {
+      icon: Setting.icon,
       btnList,
       logo,
       logoClick,

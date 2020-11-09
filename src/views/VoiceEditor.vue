@@ -64,7 +64,7 @@
 
 <script>
 import { ref, provide, computed, watch } from 'vue'
-import VoiceList from '@/../public/translate/voices.json'
+import VoiceList from '@/setting/translate/voices.json'
 import EditSelect from '@/components/EditSelect.vue'
 
 export default {

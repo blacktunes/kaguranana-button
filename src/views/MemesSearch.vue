@@ -20,7 +20,7 @@
 
 <script lang="ts">
 import { inject, onMounted, reactive } from 'vue'
-import MemesData from '@/../public/memes/data.json'
+import MemesData from '@/setting/memes.json'
 import Waterfall from '@/components/common/Waterfall.vue'
 import Search from '@/components/SearchCard.vue'
 import Card from '@/components/common/Card.vue'

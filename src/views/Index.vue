@@ -9,6 +9,12 @@
       </card>
       <card>
         <div class="content">
+          <Btn
+            class="btn"
+            :name="t(INFO_I18N.vtbbtn)"
+            url="https://vtbbtn.org/"
+            :color="rgb(100, 181, 246)"
+          />
           <template v-for="item in list" :key="item.name">
             <Btn
               class="btn"
@@ -41,11 +47,6 @@ export default {
     const { t } = useI18n()
 
     const list = [
-      {
-        name: t(INFO_I18N.vtbbtn),
-        url: 'https://vtbbtn.org/',
-        background: 'rgb(100, 181, 246)'
-      },
       {
         name: '豹按钮',
         url: 'https://haruka.fun/',

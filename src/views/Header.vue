@@ -2,7 +2,7 @@
   <transition name="slider-down" appear>
     <div class="header">
       <transition name="logo" appear>
-        <div class="logo" ref="logo" @click="logoClick">{{icon}}</div>
+        <div class="logo" ref="logo" @click="logoClick">{{ icon }}</div>
       </transition>
       <router-link :to="titlePath">
         <div class="title">{{ headerTitle }}</div>
@@ -10,6 +10,7 @@
       <template v-for="(btn, index) in btnList" :key="index">
         <i-btn v-if="btn.url" :url="btn.url" :img="btn.img" />
       </template>
+      <transition name="fade">
       <div class="search-btn" @click="showSearch" v-if="showSearchBtn">
         <svg
           t="1599130871274"
@@ -27,7 +28,10 @@
           />
         </svg>
       </div>
-      <search class="search" v-if="showSearchBtn" :type="searchType" />
+      </transition>
+      <transition name="fade">
+        <search class="search" v-if="showSearchBtn" :type="searchType" />
+      </transition>
       <div class="btn" :title="t(INFO_I18N.lang)" @click="changeLang">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +51,7 @@
 </template>
 
 <script lang="ts">
-import { ref, inject, onMounted, Ref, computed } from 'vue'
+import { ref, inject, onMounted, Ref, computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
 import { INFO_I18N, IsShowSearch, SearchData, SEARCH_TYPE } from '@/assets/script/option'
@@ -99,7 +103,15 @@ export default {
     const route = useRoute()
 
     const titlePath = computed(() => {
-      return route.path === '/' ? '/search' : '/'
+      return route.path === '/' ? '/memes' : '/'
+    })
+
+    const headerTitle = computed(() => {
+      if (route.path.startsWith('/memes')) {
+        return t('info.memes')
+      } else {
+        return t('info.title')
+      }
     })
 
     const showSearch = () => {
@@ -126,19 +138,24 @@ export default {
       if (locale.value === 'ja-JP') {
         locale.value = 'zh-CN'
         localStorage.setItem('lang', 'zh-CN')
-        document.title = t(INFO_I18N.title)
       } else {
         locale.value = 'ja-JP'
         localStorage.setItem('lang', 'ja-JP')
-        document.title = t(INFO_I18N.title)
       }
     }
 
-    const headerTitle = computed(() => {
-      if (route.path === '/search') {
-        return '七奈表情'
+    watch(route, () => {
+      if (route.path.startsWith('/memes')) {
+        document.title = t('info.memes')
       } else {
-        return t('info.title')
+        document.title = t(INFO_I18N.title)
+      }
+    })
+    watch(locale, () => {
+      if (route.path.startsWith('/memes')) {
+        document.title = t('info.memes')
+      } else {
+        document.title = t(INFO_I18N.title)
       }
     })
 
@@ -154,12 +171,12 @@ export default {
       logo,
       logoClick,
       titlePath,
+      headerTitle,
       showSearchBtn,
       searchType,
       t,
       changeLang,
       showSearch,
-      headerTitle,
       INFO_I18N
     }
   }
@@ -218,7 +235,7 @@ export default {
     height 30px
     margin 0 10px 0 auto
     border-radius 50%
-    background rgba(255, 255, 255, 0.5)
+    background rgba(245, 193, 187, 0.5)
     cursor pointer
 
     svg
@@ -231,7 +248,7 @@ export default {
       box-shadow 0px 0px 5px 0px #fff
 
     &:active
-      background rgba(255, 255, 255, 0.6)
+      background rgba(245, 193, 187, 0.6)
 
 @media only screen and (min-width 550px)
   .search-btn

@@ -12,8 +12,8 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('../views/VoiceEditor.vue')
   },
   {
-    path: '/search',
-    component: () => import('../views/MemesSearch.vue')
+    path: '/memes',
+    component: () => import('../views/Memes.vue')
   },
   {
     path: '/:catchAll(.*)',
@@ -25,7 +25,7 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
   scrollBehavior(to, _from, savedPosition) {
-    if (savedPosition && to.path !== '/search') {
+    if (savedPosition && to.path !== '/memes') {
       return savedPosition
     }
     return { top: 0 }

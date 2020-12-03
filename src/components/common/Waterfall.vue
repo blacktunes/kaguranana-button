@@ -4,9 +4,13 @@
       <transition-group name="fade">
         <div
           v-for="(col, index) in list"
-          :key="index"
+          :key="'col' + index"
           class="col"
-          :ref="el => { el ? refList[index] = el : null }"
+          :ref="
+            (el) => {
+              el ? (refList[index] = el) : null;
+            }
+          "
         >
           <transition-group name="slider">
             <div class="item" v-for="item in col" :key="item">
@@ -37,9 +41,10 @@ export default {
     const refList: HTMLElement[] = reactive([])
     const list: any[] = reactive([])
     const line = ref(0)
+    let first = true
 
     const sleep = (interval: number) => {
-      return new Promise(resolve => {
+      return new Promise<void>(resolve => {
         setTimeout(() => {
           resolve()
         }, interval)
@@ -52,10 +57,23 @@ export default {
       for (let i = 0; i < line.value; i++) {
         list.push([])
       }
-      nextTick(async () => {
-        refList.forEach(item => {
-          item.style.flex = `0 0 ${1 / line.value * 100}%`
+      if (first || isSearch) {
+        nextTick(async () => {
+          refList.forEach(item => {
+            item.style.flex = `0 0 ${1 / line.value * 100}%`
+          })
+          let temp = 0
+          for (const i in props.data) {
+            list[temp].push(props.data[i])
+            temp++
+            if (temp === line.value) {
+              temp = 0
+            }
+            await sleep(10)
+          }
+          first = false
         })
+      } else {
         let temp = 0
         for (const i in props.data) {
           list[temp].push(props.data[i])
@@ -63,9 +81,13 @@ export default {
           if (temp === line.value) {
             temp = 0
           }
-          if (isSearch) await sleep(10)
         }
-      })
+        nextTick(async () => {
+          refList.forEach(item => {
+            item.style.flex = `0 0 ${1 / line.value * 100}%`
+          })
+        })
+      }
     }
 
     const dataTemp = computed(() => JSON.parse(JSON.stringify(props.data)))
@@ -76,7 +98,10 @@ export default {
 
     waterfallInit()
     window.onresize = () => {
-      waterfallInit(false)
+      const temp = Math.floor(document.documentElement.clientWidth / props.width) || 1
+      if (temp !== line.value) {
+        waterfallInit(false)
+      }
     }
 
     onUnmounted(() => {

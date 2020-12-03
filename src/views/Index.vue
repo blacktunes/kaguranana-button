@@ -13,7 +13,7 @@
             class="btn"
             :name="t(INFO_I18N.vtbbtn)"
             url="https://vtbbtn.org/"
-            :color="rgb(100, 181, 246)"
+            color="rgb(100, 181, 246)"
           />
           <template v-for="item in list" :key="item.name">
             <Btn
@@ -51,6 +51,11 @@ export default {
         name: '豹按钮',
         url: 'https://haruka.fun/',
         background: 'rgb(255, 174, 166)'
+      },
+      {
+        name: 'Hiiro按钮',
+        url: 'https://hiiro.club/',
+        background: '#f5c1bb'
       }
     ]
 

@@ -8,7 +8,7 @@
         <div class="title">{{ headerTitle }}</div>
       </router-link>
       <template v-for="(btn, index) in btnList" :key="index">
-        <i-btn v-if="btn.url" :url="btn.url" :img="btn.img" />
+        <IBtn v-if="btn.url" :url="btn.url" :img="btn.img" />
       </template>
       <transition name="fade">
       <div class="search-btn" @click="showSearch" v-if="showSearchBtn">
@@ -30,7 +30,7 @@
       </div>
       </transition>
       <transition name="fade">
-        <search class="search" v-if="showSearchBtn" :type="searchType" />
+        <Search class="search" v-if="showSearchBtn" />
       </transition>
       <div class="btn" :title="t(INFO_I18N.lang)" @click="changeLang">
         <svg
@@ -54,7 +54,7 @@
 import { ref, inject, onMounted, Ref, computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
-import { INFO_I18N, IsShowSearch, SearchData, SEARCH_TYPE } from '@/assets/script/option'
+import { INFO_I18N, IsShowSearch, SearchData } from '@/assets/script/option'
 import IBtn from '@/components/common/IconBtn.vue'
 import Search from '@/components/Search.vue'
 import Setting from '@/setting/setting.json'
@@ -126,10 +126,6 @@ export default {
       return route.path === '/' || route.path === '/search'
     })
 
-    const searchType = computed(() => {
-      return route.path === '/' ? SEARCH_TYPE.voice : SEARCH_TYPE.memes
-    })
-
     const { t, locale } = useI18n()
 
     const changeLang = () => {
@@ -173,7 +169,6 @@ export default {
       titlePath,
       headerTitle,
       showSearchBtn,
-      searchType,
       t,
       changeLang,
       showSearch,

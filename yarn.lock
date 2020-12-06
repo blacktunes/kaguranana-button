@@ -8415,7 +8415,7 @@ fsevents@~2.1.2:
     stylus-loader: ^3.0.2
     typescript: ~3.9.7
     vue: ^3.0.0
-    vue-i18n: ^9.0.0-beta.2
+    vue-i18n: next
     vue-router: ^4.0.0-beta.11
     webpack-bundle-analyzer: ^3.9.0
   languageName: unknown
@@ -10901,17 +10901,17 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"source-map@npm:0.6.1, source-map@npm:^0.6.0, source-map@npm:^0.6.1, source-map@npm:~0.6.0, source-map@npm:~0.6.1":
+  version: 0.6.1
+  resolution: "source-map@npm:0.6.1"
+  checksum: 8647829a0611724114022be455ca1c8a2c8ae61df81c5b3667d9b398207226a1e21174fb7bbf0b4dbeb27ac358222afb5a14f1c74a62a62b8883b012e5eb1270
+  languageName: node
+  linkType: hard
+
 "source-map@npm:^0.5.0, source-map@npm:^0.5.6":
   version: 0.5.7
   resolution: "source-map@npm:0.5.7"
   checksum: 737face96577a2184a42f141607fcc2c9db5620cb8517ae8ab3924476defa138fc26b0bab31e98cbd6f19211ecbf78400b59f801ff7a0f87aa9faa79f7433e10
-  languageName: node
-  linkType: hard
-
-"source-map@npm:^0.6.0, source-map@npm:^0.6.1, source-map@npm:~0.6.0, source-map@npm:~0.6.1":
-  version: 0.6.1
-  resolution: "source-map@npm:0.6.1"
-  checksum: 8647829a0611724114022be455ca1c8a2c8ae61df81c5b3667d9b398207226a1e21174fb7bbf0b4dbeb27ac358222afb5a14f1c74a62a62b8883b012e5eb1270
   languageName: node
   linkType: hard
 
@@ -12183,12 +12183,14 @@ typescript@~3.9.7:
   languageName: node
   linkType: hard
 
-"vue-i18n@npm:^9.0.0-beta.2":
-  version: 9.0.0-beta.2
-  resolution: "vue-i18n@npm:9.0.0-beta.2"
+"vue-i18n@npm:next":
+  version: 9.0.0-beta.10
+  resolution: "vue-i18n@npm:9.0.0-beta.10"
+  dependencies:
+    source-map: 0.6.1
   peerDependencies:
-    vue: ^3.0.0-rc.12
-  checksum: 8d02c04e5b2f343ae8cfd79afb5fb1ea41712c65990b6036b5341d7670f7dcfef5d1ef1081bdcd056f314b4d0c2141cc0ed7b8ca05c6b6f5f776cd7a82a63bb3
+    vue: ^3.0.0
+  checksum: edc664595c2b49c702ef86d4852fbc93d9184c8ddcfc7ce35bd86c05e006b5958c49bb079700b621e028009ffb08b0cd99976156fc8dc3726ea4dbfca08a7974
   languageName: node
   linkType: hard
 

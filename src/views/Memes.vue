@@ -11,8 +11,11 @@
 </template>
 
 <script lang="ts">
+import Setting from '@/../setting/setting.json'
 import Memes from '@/../setting/memes.json'
 import Waterfall from '@/components/common/Waterfall.vue'
+
+const MEMES_CDN = Setting['memesCDN']
 
 export default {
   components: {
@@ -20,8 +23,8 @@ export default {
   },
   setup() {
     const getUrl = (path: string) => {
-      return process.env.NODE_ENV === 'production'
-        ? `https://cdn.jsdelivr.net/gh/blacktunes/kaguranana-button@master/public/memes/${path}`
+      return process.env.NODE_ENV === 'production' && MEMES_CDN
+        ? `${MEMES_CDN}/${path}`
         : `/memes/${path}`
     }
 

@@ -14,6 +14,7 @@ function Check() { }
 
 Check.prototype.apply = (compiler) => {
   compiler.hooks.done.tap('check', () => {
+    console.log()
     try {
       const mp3List = fs.readdirSync(path.join(__dirname, '../public/voices'))
         .filter(name => !((fs.statSync(path.join(__dirname, `../public/voices/${name}`))).isDirectory()))

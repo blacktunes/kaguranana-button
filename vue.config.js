@@ -3,14 +3,14 @@ const path = require('path')
 const Check = require('./plugins/check')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
-const pluginsList = [
-  new Check()
-]
+const pluginsList = []
 if (process.env.NODE_ENV === 'development') {
   pluginsList.push(new BundleAnalyzerPlugin({
-    generateStatsFile: false
+    generateStatsFile: false,
+    openAnalyzer: false
   }))
 }
+pluginsList.push(new Check())
 
 /**
  *  @typedef { import("@vue/cli-service").ProjectOptions } Options

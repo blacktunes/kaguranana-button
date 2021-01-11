@@ -16,7 +16,7 @@
   padding 0 6px
   font-size 9px
   font-weight 700
-  color #fff
+  color $btn-text-color
   background-color $sub-color
   border-radius 20px
   div

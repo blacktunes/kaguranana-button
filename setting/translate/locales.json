@@ -17,7 +17,8 @@
     },
     "vtbbtn": "VTuber按钮集合",
     "voiceTotalTip": "当前语音量",
-    "lang": "日本語に切り替え"
+    "lang": "日本語に切り替え",
+    "unknown": "不太清楚出自哪"
   },
   "ja-JP": {
     "info": {
@@ -37,6 +38,7 @@
     },
     "vtbbtn": "VTuberの音声ボタンコレクション",
     "voiceTotalTip": "現在の音声数",
-    "lang": "切换至简体中文"
+    "lang": "切换至简体中文",
+    "unknown": "Unknown"
   }
 }

@@ -1,9 +1,14 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable @typescript-eslint/camelcase */
 const path = require('path')
 
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-const SimpleProgressWebpackPlugin = require('simple-progress-webpack-plugin')
+
+const pluginsList = []
+if (process.env.NODE_ENV === 'development') {
+  pluginsList.push(new BundleAnalyzerPlugin({
+    generateStatsFile: false
+  }))
+}
 
 module.exports = {
   pwa: {
@@ -22,7 +27,7 @@ module.exports = {
     },
     workboxOptions: {
       skipWaiting: true,
-      exclude: [/\.(?:*)$/]
+      exclude: [/.*/]
     },
     iconPaths: {
       favicon32: null,
@@ -36,7 +41,7 @@ module.exports = {
   css: {
     loaderOptions: {
       stylus: {
-        import: [path.join(__dirname, './src/setting/color.styl')]
+        import: [path.join(__dirname, './setting/color.styl')]
       }
     }
   },
@@ -45,12 +50,7 @@ module.exports = {
       config.optimization.minimizer[0].options.terserOptions.compress.pure_funcs = ['console.info']
     }
     return {
-      plugins: process.env.NODE_ENV === 'production' ? [] : [
-        new BundleAnalyzerPlugin({
-          generateStatsFile: false
-        }),
-        new SimpleProgressWebpackPlugin()
-      ],
+      plugins: pluginsList,
       performance: {
         hints: false
       },

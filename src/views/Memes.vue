@@ -11,7 +11,7 @@
 </template>
 
 <script lang="ts">
-import Memes from '@/setting/memes.json'
+import Memes from '@/../setting/memes.json'
 import Waterfall from '@/components/common/Waterfall.vue'
 
 export default {

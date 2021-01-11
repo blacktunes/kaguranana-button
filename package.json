@@ -34,7 +34,6 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "eslint-plugin-vue": "^7.0.0-beta.3",
-    "simple-progress-webpack-plugin": "^1.1.2",
     "stylus": "^0.54.8",
     "stylus-loader": "^3.0.2",
     "typescript": "~3.9.7",

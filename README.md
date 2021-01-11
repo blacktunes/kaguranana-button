@@ -13,63 +13,61 @@
   - 若是请求添加新语音，请使用指定的**issues模板**，不熟悉github的用法也可以到[B站](https://space.bilibili.com/1384118)和我联系
 
 - 如果您可以进行开发，那么请**Fork**本项目进行修改，完成修改后在本项目中发起一个**Pull Request**，详细说明请查看以下条目
+> **Pull Request**请提交至**dev**分支
 
 ### 添加或修改音频/完善翻译
 
 音频文件推荐使用**mp3**格式，请先音量标准化，然后放入`public/voices/`目录
 
-所有的音频信息都存储在`src/setting/translate/voices.json`中，**添加或修改音频信息**、**完善翻译**，你同样需要修改这个文件中对应的内容
+所有的分类和音频信息都存储在`setting/translate`目录的`json`文件中，**添加或修改音频信息**、**完善翻译**，你需要修改对应文件中的内容
 
-- 添加`usePicture`字段可以添加鼠标悬浮时显示的图片(请放到`public/voices/img`目录)
+`locales.json`和`category.json`分别为UI界面翻译和分类信息，请不要修改文件名，语音信息可以使用除此外的任意名称，可使用多个`json`文件方便管理语音
 
-- 添加`mark`字段可以添加音频出处信息
-
-- `voices.json`可以使用[button-tool](https://github.com/blacktunes/button-tool)(https://button-tool.vercel.app)进行编辑(功能尚未完善)
-
-`voices.json`结构示例如下：
+`category.json`结构示例如下：
 ```
-{
-  // 语音分类列表
-  "category": [
-    {
-      // 分类命名
-      "name": "名言",
-      "translate": {
-        // 分类中文翻译
-        "zh-CN": "猫猫名言~",
-        // 分类英文翻译
-        "en-US": "witticism~"
-      }
+[
+  {
+    // 分类命名
+    "name": "ななちゃん罵倒して",
+    "translate": {
+      // 分类中文翻译
+      "zh-CN": "七奈再骂我一次~",
+      // 分类英文翻译
+      "ja-JP": "ななちゃん罵倒して~"
     }
-  ],
-  // 语音列表
-  "voices": [
-    {
-      // 语音命名
-      "name": "baba",
-      // 语音文件名
-      "path": "baba.mp3",
-      "translate": {
-        // 语音中文翻译
-        "zh-CN": "米娜我是你爸爸",
-        // 语音中文翻译
-        "en-US": "I'm your Baba"
-      },
-      // 语音所属分类(对应category的name)
-      "category": "名言",
-      // 以下属性为可选
-      // 添加时间
-      "date": "2020-11-11",
-      // 语音出处
-      "mark": {
-        "title": "【Hiiro】读评论 学中文 DD们的评论都是什么东西啊？",
-        "time": "0:01~0:03",
-        "url": "https://www.bilibili.com/video/BV1ET4y177A8"
-      }
-    }
-  ]
-}
+  }
+]
 ```
+
+语音文件结构示例如下：
+```
+[
+  {
+    // 语音命名
+    "name": "DD斩首x5",
+    // 语音文件名
+    "path": "DD斩首x5.mp3",
+    "translate": {
+      // 语音中文翻译
+      "zh-CN": "DD斩首x5",
+      // 语音日语翻译
+      "en-US": "DD斬首x5"
+    },
+    // 语音所属分类(对应category的name)
+    "category": "ななちゃん罵倒して",
+    // 以下属性为可选
+    // 添加时间
+    "date": "2020-10-27",
+    // 语音出处
+    "mark": {
+      "title": "“恐怖”游戏PIEN初见！",
+      "time": "15:24~15:29",
+      "url": "https://www.bilibili.com/video/BV1Ga4y1E74H"
+    }
+  }
+]
+```
+添加`usePicture`字段可以添加鼠标悬浮时显示的图片(请放到`public/voices/img`目录)
 
 ### 参与网页开发
 
@@ -87,7 +85,5 @@
 - 修改`public`和`scr/setting`目录下的文件以及`package.json`
 - 使用[voices-button-cli](https://github.com/blacktunes/voices-button-cli)命令行工具(开发中)
 
-### 计划中功能
-- 表情包搜索
-- 直播通知
-- 动态展示
+### LICENSE
+若使用了本项目为**范本**开发项目或使用了项目代码请在**明显位置**声明**原作者**(https://github.com/blacktunes) 以及**本仓库**(https://github.com/blacktunes/kaguranana-button).

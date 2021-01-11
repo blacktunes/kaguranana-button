@@ -8,10 +8,6 @@ const routes: Array<RouteRecordRaw> = [
     component: Index
   },
   {
-    path: '/editor',
-    component: () => import('../views/VoiceEditor.vue')
-  },
-  {
     path: '/memes',
     component: () => import('../views/Memes.vue')
   },

@@ -1,15 +1,21 @@
 /* eslint-disable @typescript-eslint/camelcase */
 const path = require('path')
-
+const Check = require('./plugins/check')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
-const pluginsList = []
+const pluginsList = [
+  new Check()
+]
 if (process.env.NODE_ENV === 'development') {
   pluginsList.push(new BundleAnalyzerPlugin({
     generateStatsFile: false
   }))
 }
 
+/**
+ *  @typedef { import("@vue/cli-service").ProjectOptions } Options
+ *  @type { Options }
+ */
 module.exports = {
   pwa: {
     themeColor: '#c4afd0',

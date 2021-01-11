@@ -1,20 +1,21 @@
 <template>
   <div id="app">
     <VHeader />
-    <router-view style="min-height: calc(100vh - 48px - 78px)" />
-    <Control />
+    <router-view style="min-height: calc(100vh - 48px - 96px)" />
+    <Control v-if="showControl" />
     <VFooter />
   </div>
 </template>
 
 <script lang="ts">
-import { provide, reactive, ref, Ref, computed } from 'vue'
+import { provide, reactive, ref, Ref, computed, watch } from 'vue'
 import { PlaySetting, SearchData, VoicesOrigin, VoicesCategory, VoicesItem, Mark } from '@/assets/script/type'
 import Setting from '@/../setting/setting.json'
 import VHeader from '@/views/Header.vue'
 import Control from '@/views/Control.vue'
 import VFooter from '@/views/Footer.vue'
 import { CategoryList, VoicesList } from './assets/script/voices'
+import { useRoute } from 'vue-router'
 
 const CONSOLE = Setting['console'] || {}
 if (CONSOLE && (CONSOLE.text || CONSOLE.img)) {
@@ -139,28 +140,6 @@ const initVoicesList = (playSetting) => {
   provide('voiceList', voiceList)
 }
 
-const initData = () => {
-  // 需要显示的来源信息
-  const infoDate: Ref<Mark | null> = ref({
-    title: '',
-    time: '',
-    url: ''
-  })
-  provide('infoDate', infoDate)
-
-  // 搜索结果
-  const searchData: SearchData = reactive({
-    value: '',
-    list: [],
-    index: 0
-  })
-  provide('searchData', searchData)
-
-  // 窄屏状态下是否显示搜索栏
-  const isShowSearch = ref(false)
-  provide('isShowSearch', isShowSearch)
-}
-
 export default {
   components: {
     VHeader,
@@ -171,7 +150,48 @@ export default {
     const playSetting = initPlaySetting()
     initVoicesDate()
     initVoicesList(playSetting)
-    initData()
+
+    // 需要显示的来源信息
+    const infoDate: Ref<Mark | null> = ref({
+      title: '',
+      time: '',
+      url: ''
+    })
+    provide('infoDate', infoDate)
+
+    // 搜索结果
+    const searchData: SearchData = reactive({
+      value: '',
+      list: [],
+      index: 0
+    })
+    provide('searchData', searchData)
+
+    // 窄屏状态下是否显示搜索栏
+    const isShowSearch = ref(false)
+    provide('isShowSearch', isShowSearch)
+
+    // 是否显示控制栏
+    const route = useRoute()
+    const showControl = ref(false)
+    watch(route, () => {
+      // 路由改变后重置搜索
+      isShowSearch.value = false
+      if (!isShowSearch.value) {
+        searchData.value = ''
+        searchData.list.length = 0
+      }
+
+      if (route.path === '/') {
+        showControl.value = true
+      } else {
+        showControl.value = false
+      }
+    })
+
+    return {
+      showControl
+    }
   }
 }
 </script>
@@ -193,12 +213,12 @@ a
 ::-webkit-scrollbar-track
   box-shadow inset 0 0 6px rgba(0, 0, 0, 0.3)
   -webkit-box-shadow inset 0 0 6px rgba(0, 0, 0, 0.3)
-  background-color $sub-color
+  background-color $main-color
 
 ::-webkit-scrollbar-thumb
   box-shadow inset 0 0 6px rgba(0, 0, 0, 0.1)
   -webkit-box-shadow inset 0 0 6px rgba(0, 0, 0, 0.1)
-  background-color $main-color
+  background-color $sub-color
 
 ::-webkit-scrollbar-thumb:active
   background-color $active-color

@@ -45,6 +45,6 @@
   "mediaSession": "nana.png",
   "GA_ID_comment": "GA_ID用于统计访问，请使用模板开发务必修改或删除",
   "GA_ID": "UA-176441751-1",
-  "CDN": "https://cdn.jsdelivr.net/gh/blacktunes/hiiro-button@master/public/voices",
+  "CDN": "https://cdn.jsdelivr.net/gh/blacktunes/kaguranana-button@master/public/voices",
   "memesCDN": "https://cdn.jsdelivr.net/gh/blacktunes/kaguranana-button@master/public/memes"
 }

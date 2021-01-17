@@ -202,7 +202,6 @@ body
   -webkit-tap-highlight-color rgba(0, 0, 0, 0)
 
 a
-  margin-left 5px
   color #888
   text-decoration none
 

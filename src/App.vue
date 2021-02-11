@@ -94,7 +94,7 @@ const initVoicesList = (playSetting) => {
     }
   })
   for (const i in temp1) {
-    originList.push({
+    originList.unshift({
       title: i,
       url: temp1[i].url,
       voiceList: temp1[i].list

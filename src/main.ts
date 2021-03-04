@@ -4,7 +4,6 @@ import i18n from '@/assets/script/i18n'
 import router from '@/router'
 import lazyload from '@/assets/script/lazyload.js'
 import '@/assets/script/analytics/index'
-import '@/assets/script/voices'
 import '@/assets/style/transition.styl'
 import './registerServiceWorker.js'
 

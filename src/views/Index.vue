@@ -73,7 +73,7 @@ export default {
   setup() {
     const { t } = useI18n()
 
-    // 友联列表
+    // 友链列表
     const friendlyLinkList: FriendlyLink[] = [
       {
         name: '豹按钮',

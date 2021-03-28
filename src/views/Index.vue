@@ -8,7 +8,7 @@
       <Card>
         <div style="text-align: center">
           {{ t(INFO_I18N.voiceTotalTip) }}: {{ t(INFO_I18N.voiceTotal)
-          }}{{ t('lastDate') ? `(+${t('newVoice')} · ${t('lastDate')})` : "" }}
+          }}{{ t("lastDate") ? `(+${t("newVoice")} · ${t("lastDate")})` : "" }}
         </div>
       </Card>
       <Card>
@@ -84,6 +84,12 @@ export default {
         name: 'Hiiro按钮',
         url: 'https://hiiro.club/',
         background: '#f5c1bb'
+      },
+      {
+        name: '希亚娜按钮',
+        url: 'https://ciyana.moe/',
+        background: '#19368f',
+        color: '#bbb'
       }
     ]
 

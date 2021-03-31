@@ -17,6 +17,24 @@
     "twitter": "https://twitter.com/nana_kaguraaa",
     "bilibili": "https://live.bilibili.com/21304638"
   },
+  "link": [
+    {
+      "name": "豹按钮",
+      "url": "https://haruka.fun/",
+      "background": "rgb(255, 174, 166)"
+    },
+    {
+      "name": "Hiiro按钮",
+      "url": "https://hiiro.club/",
+      "background": "#f5c1bb"
+    },
+    {
+      "name": "希亚娜按钮",
+      "url": "https://ciyana.moe/",
+      "background": "#19368f",
+      "color": "#bbb"
+    }
+  ],
   "footer": {
     "author": [
       {

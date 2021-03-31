@@ -42,6 +42,10 @@ import Voice from '@/components/Voice.vue'
 import Card from '@/components/common/Card.vue'
 import Btn from '@/components/common/Btn.vue'
 import { inject, ref, watch, Ref } from 'vue'
+import Setting from '@/../setting/setting.json'
+
+// 友链列表
+const LINK: FriendlyLink[] = Setting['link'] || []
 
 /**
  * 切换分类模式时触发一次渐入动画
@@ -73,32 +77,12 @@ export default {
   setup() {
     const { t } = useI18n()
 
-    // 友链列表
-    const friendlyLinkList: FriendlyLink[] = [
-      {
-        name: '豹按钮',
-        url: 'https://haruka.fun/',
-        background: 'rgb(255, 174, 166)'
-      },
-      {
-        name: 'Hiiro按钮',
-        url: 'https://hiiro.club/',
-        background: '#f5c1bb'
-      },
-      {
-        name: '希亚娜按钮',
-        url: 'https://ciyana.moe/',
-        background: '#19368f',
-        color: '#bbb'
-      }
-    ]
-
     const voice = ref() as Ref<HTMLElement>
     watchShowInfo(voice)
 
     return {
       t,
-      friendlyLinkList,
+      friendlyLinkList: LINK,
       voice,
       INFO_I18N
     }

@@ -80,10 +80,16 @@
 4. 要编译可供部署的文件，请运行`yarn build`，这将会在`dist`目录下生成可以直接部署到静态网站托管(GitHub Pages等)或服务器的文件
 
 ### 使用模板
+> 注意：
+> 本项目已基本停止更新，不推荐直接当作模板使用，请使用其它方式
 
 若想使用网站模板开发新的语音按钮，可以选择以下两种方式:
-- 修改`public`和`scr/setting`目录下的文件以及`package.json`
-- 使用[voices-button-cli](https://github.com/blacktunes/voices-button-cli)命令行工具(开发中)
+- 使用模板[模板项目](https://github.com/blacktunes/voices-button)修改
+  - 修改`public`和`setting`目录下的文件以及`package.json`
+- 使用[voices-button-cli](https://github.com/blacktunes/voices-button-cli)命令行工具生成项目
+
+> 因为本项目含有非通用的代码以及访问统计，所以不推荐直接修改本仓库，若依然要使用，请注意：
+>  - 修改或删除**setting/setting.json**里用于访问统计的**GA_ID**
 
 ### LICENSE
 若使用了本项目为**范本**开发项目或使用了项目代码请在**明显位置**声明**原作者**(https://github.com/blacktunes) 以及**本仓库**(https://github.com/blacktunes/kaguranana-button).
